@@ -4,10 +4,10 @@ const { exec } = require('child_process');
 process.env.PORT = process.env.PORT || 3000;
 process.env.NODE_ENV = process.env.NODE_ENV || 'production';
 
-// Start the Next.js application
-exec('npx next start', (error, stdout, stderr) => {
+// Install dependencies, including sharp, clean cache, build and start the Next.js application
+exec('npm install sharp && npm install && npx next build && npx next start', (error, stdout, stderr) => {
   if (error) {
-    console.error(`Error starting the application: ${error.message}`);
+    console.error(`Error: ${error.message}`);
     return;
   }
 
@@ -18,3 +18,4 @@ exec('npx next start', (error, stdout, stderr) => {
 
   console.log(`Application output: ${stdout}`);
 });
+
