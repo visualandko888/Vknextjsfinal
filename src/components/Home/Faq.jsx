@@ -4,7 +4,7 @@ import { faPlusCircle, faMinusCircle } from '@fortawesome/free-solid-svg-icons';
 import { useTranslation } from 'react-i18next';
 // import i18n from 'i18next';
 // import { instanceAxios } from '/helpers/axios'; // Assurez-vous que ce chemin est correct
-import styles from '/styles/faq.module.scss'; // Assurez-vous que le chemin est correct
+import styles from '/styles/Faq.module.scss'; // Assurez-vous que le chemin est correct
 
 export default function Faq() {
   const { t } = useTranslation(); // Importation de la traduction
