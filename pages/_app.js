@@ -10,7 +10,7 @@ import '/styles/modalCard.module.scss'; // Ajoutez vos importations CSS globales
 import '/styles/Partenaires.module.scss'; // Ajoutez vos importations CSS globales ici
 import '/styles/Rea.module.scss'; // Ajoutez vos importations CSS globales ici
 import '/styles/reviews.module.scss'; // Ajoutez vos importations CSS globales ici
-import '/styles/Faq.module.scss'; // Ajoutez vos importations CSS globales ici
+import '/styles/questions.module.scss'; // Ajoutez vos importations CSS globales ici
 import '/styles/contact2.module.scss'; // Ajoutez vos importations CSS globales ici
 import '/styles/blogsection.module.scss'; // Ajoutez vos importations CSS globales ici
 import '/styles/globals.scss';
