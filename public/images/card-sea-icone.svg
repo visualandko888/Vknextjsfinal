@@ -1,0 +1,19 @@
+<svg width="69" height="69" viewBox="0 0 69 69" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="SEA Icone">
+<circle id="Ellipse 2" cx="34.9086" cy="34.4792" r="33.9369" fill="#EDEDED"/>
+<path id="Vector 4" d="M16.915 28.5721V48.6735H52.8655L52.4789 28.5721" stroke="#474747" stroke-width="2"/>
+<g id="Group 8">
+<mask id="mask0_610_321" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="10" y="20" width="34" height="11">
+<rect id="Rectangle 26" x="10.6571" y="20.4543" width="32.9312" height="10.0507" fill="#D9D9D9" stroke="#474747" stroke-width="0.773128"/>
+</mask>
+<g mask="url(#mask0_610_321)">
+<rect id="Rectangle 25" x="13.6284" y="21.2274" width="37.2466" height="7.73128" rx="3.86564" stroke="#474747" stroke-width="2.31939"/>
+</g>
+</g>
+<g id="Lignes">
+<line id="Line 7" x1="21.5537" y1="33.0542" x2="47.8401" y2="33.0542" stroke="#579EB0" stroke-width="1.85956"/>
+<line id="Line 8" x1="21.5537" y1="36.6901" x2="47.8401" y2="36.6901" stroke="#474747" stroke-width="0.773128"/>
+<line id="Line 9" x1="21.5537" y1="39.7826" x2="47.8401" y2="39.7826" stroke="#474747" stroke-width="0.773128"/>
+</g>
+</g>
+</svg>

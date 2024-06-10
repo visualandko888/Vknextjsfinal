@@ -1,0 +1,21 @@
+@import "@assets/css/_base.scss";
+
+.map {
+  @extend ._baseSection;
+
+  @include media-min("base") {
+    width: 50vw;
+    margin: auto;
+  }
+
+  > .content {
+    width: 80vw;
+    margin: auto;
+    padding-right: 0.8rem;
+
+    @include media-min("base") {
+      width: clamp(30vw, 35vw, 40vw);
+      padding-right: 4.5rem;
+    }
+  }
+}

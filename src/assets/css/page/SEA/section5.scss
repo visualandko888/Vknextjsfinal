@@ -1,0 +1,120 @@
+@import "@assets/css/_base.scss";
+
+.section5 {
+  margin-top: 2rem;
+  position: relative;
+  padding-bottom: 8rem;
+  padding-top: 3rem;
+
+  @include media-min("base") {
+    margin-top: 5rem;
+  }
+
+  > .dot {
+    background-color: $primary-color;
+    width: 32px;
+    height: 32px;
+    border-radius: 100%;
+    margin: auto;
+    position: absolute;
+    top: 0rem;
+    // top: 29rem;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all ease 0.5s;
+  }
+
+  > .trait {
+    height: 136.004px;
+    width: 3px;
+    background-color: $primary-color;
+    margin: auto;
+    margin-top: 3rem;
+  }
+
+  > .trait2 {
+    height: 80.004px;
+    width: 3px;
+    background-color: $primary-color;
+    margin: auto;
+    margin-top: 3rem;
+  }
+
+  > p {
+    font-size: 1rem;
+    width: 90vw;
+    margin: auto;
+    text-align: center;
+    line-height: 160%;
+
+    @include media-min("base") {
+      font-size: 1.5rem;
+      width: 70vw;
+    }
+
+    &:first-of-type {
+      margin-top: 60px;
+
+      @include media-min("base") {
+        margin-top: 108px;
+      }
+    }
+
+    &:nth-of-type(2) {
+      width: 92vw;
+      margin-top: 60px;
+      margin-bottom: 60px;
+
+      @include media-min("base") {
+        margin-top: 108px;
+        margin-bottom: 108px;
+        width: 70vw;
+      }
+    }
+
+    > .blue {
+      color: $primary-color;
+      font-weight: bold;
+    }
+
+    > .font {
+      font-family: "Sedgwick Ave" !important;
+    }
+
+    > .bulle {
+      display: block;
+      position: relative;
+      width: fit-content;
+      margin: auto;
+      margin-top: 0.5rem;
+      background-color: #579eb0;
+      color: #fff;
+      padding: 0.5rem;
+      font-weight: bold;
+    }
+  }
+
+  > .faIcon {
+    color: $primary-color;
+    font-size: 4em;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: sec1 1s ease infinite;
+  }
+
+  @keyframes sec1 {
+    from {
+      bottom: 0;
+    }
+
+    50% {
+      bottom: 3rem;
+    }
+
+    to {
+      bottom: 0rem;
+    }
+  }
+}

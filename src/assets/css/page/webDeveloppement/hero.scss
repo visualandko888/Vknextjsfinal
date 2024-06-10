@@ -1,0 +1,81 @@
+@import "@assets/css/_base.scss";
+
+.webHero {
+  background: url("@assets/images/hero-bg-resp.jpg") no-repeat;
+  background-color: #fff;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-position-y: 3rem;
+  background-position-x: center;
+  position: relative;
+  min-height: 600px;
+  max-height: 100vh;
+  color: #fff;
+  padding-bottom: 0;
+  padding-left: 0rem;
+  padding-top: 202px;
+  box-sizing: border-box;
+  z-index: 2;
+  text-align: center;
+
+  @include media-min("phone-down") {
+    min-height: 500px;
+  }
+
+  @include media-min("custom1") {
+    background: url("@assets/images/webhero.svg") no-repeat;
+    background-size: cover;
+    background-position: bottom right;
+    padding-left: 15rem;
+    padding-top: 202px;
+    text-align: left;
+    min-height: 850px;
+  }
+
+  > h1 {
+    font-size: 2em;
+
+    @include media-min("custom1") {
+      font-size: 5em;
+    }
+  }
+
+  > p {
+    &:first-of-type {
+      font-style: italic;
+      font-size: 1.5em;
+
+      @include media-min("custom1") {
+        font-size: 2em;
+      }
+    }
+
+    &:nth-of-type(2) {
+      background-color: $primary-color;
+      padding: 1.5rem 0;
+      font-size: 1.5em;
+      line-height: 2.3rem;
+      font-weight: bold;
+      width: 100vw;
+      position: absolute;
+      right: 0;
+      text-align: center;
+      bottom: 0;
+      margin: 0;
+
+      @include media-min("custom1") {
+        width: 70vw;
+        padding: 2rem;
+        font-size: 2.25em;
+        bottom: 10vh;
+        margin: 36px 0;
+      }
+    }
+
+    > span {
+      font-family: "Sedgwick Ave" !important;
+    }
+  }
+}

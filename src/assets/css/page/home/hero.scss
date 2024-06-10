@@ -1,0 +1,310 @@
+@import "@assets/css/_base.scss";
+
+.hero {
+  background: url("@assets/images/hero-bg-resp.jpg") no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-position-y: 3rem;
+  background-position-x: center;
+  position: relative;
+  height: calc(100vh - $height_header_top);
+  max-height: 100vh;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding-bottom: 0;
+
+  @include media-min("custom1") {
+    background: url("@assets/images/hero-bg.png") no-repeat;
+    background-size: 80vw;
+    background-position: bottom right;
+  }
+
+  &.frame0 {
+    > .left {
+      > .circle-1 {
+        display: flex;
+        top: 30%;
+        left: 20%;
+        animation: sd1 2s ease-in-out;
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+          rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+          rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+
+        > .small {
+          font-size: 2em;
+        }
+      }
+
+      > .circle-2 {
+        animation: sl1 0.5s ease-in-out;
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+          rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+          rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+        top: 70%;
+        left: -30rem;
+
+        > .small {
+          font-size: 2em;
+        }
+      }
+    }
+
+    > .right {
+      > .content {
+        > h2 {
+          color: $primary-color;
+        }
+
+        > a {
+          > button {
+            background-color: $primary-color;
+          }
+        }
+      }
+    }
+  }
+
+  &.frame1 {
+    > .left {
+      > .circle-1 {
+        animation: sl2 0.5s ease-in-out;
+        top: 70%;
+        left: -30rem;
+
+        > .small {
+          font-size: 2em;
+        }
+      }
+
+      > .circle-2 {
+        display: flex;
+        top: 30%;
+        left: 20%;
+        animation: sd2 2s ease-in-out;
+
+        > .small {
+          font-size: 2em;
+        }
+      }
+    }
+
+    > .right {
+      > .content {
+        > h2 {
+          color: $primary-color;
+
+          @include media-min("custom1") {
+            color: darken($secondary-color, 5%);
+          }
+        }
+
+        > a {
+          > button {
+            background-color: $primary-color;
+
+            @include media-min("custom1") {
+              background-color: $secondary-color;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  > .left {
+    display: none;
+    height: 100%;
+    width: 70%;
+    position: relative;
+
+    @include media-min("custom1") {
+      display: block;
+    }
+
+    > .circle {
+      width: 229px;
+      height: 229px;
+      border-radius: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+
+      > p {
+        font-size: 3.06em;
+        font-weight: 700;
+        text-align: center;
+      }
+
+      &.circle-1 {
+        background-color: $primary-color;
+      }
+
+      &.circle-2 {
+        background-color: $secondary-color;
+      }
+    }
+  }
+
+  > .right {
+    display: flex;
+    align-items: center;
+    // background-color: rgba(0, 128, 0, 0.326);
+    height: 100%;
+    width: 100%;
+    padding-left: 0rem;
+    justify-content: center;
+
+    @include media-min("custom1") {
+      padding-left: 4rem;
+      justify-content: flex-start;
+    }
+
+    > .content {
+      > h1 {
+        font-size: 2em;
+        font-weight: bold;
+        text-align: center;
+        line-height: 2.5rem;
+
+        > span {
+          font-size: 0.66em;
+        }
+
+        @include media-min("custom1") {
+          font-size: 4em;
+          line-height: 5rem;
+          text-align: left;
+        }
+
+        @include media-min("widescreen-up") {
+          font-size: 6em;
+          line-height: 6rem;
+        }
+      }
+
+      > h2 {
+        color: $primary-color;
+        background-color: rgb(255 255 255 / 87%);
+        width: fit-content;
+        padding: 1rem 2rem;
+        font-size: 1em;
+        font-weight: bold;
+        margin: auto;
+        margin-top: 0.6rem;
+        margin-bottom: 21px;
+        transition: all 0.5s linear;
+        font-weight: 900;
+
+        @include media-min("custom1") {
+          font-size: 3.375em;
+          margin: 0.6rem 0 21px 0;
+        }
+      }
+
+      > div {
+        font-family: "Sedgwick Ave" !important;
+        font-size: 1.5em;
+        font-weight: 400;
+        display: block;
+        text-align: center;
+
+        @include media-min("custom1") {
+          display: flex;
+          gap: 3rem;
+          text-align: left;
+        }
+
+        > span {
+          display: block;
+        }
+      }
+
+      > a {
+        > button {
+          padding: 0.6rem clamp(1rem, 10vw, 3rem);
+          font-size: 1.5em;
+          background-color: #579eb0;
+          color: #fff;
+          display: block;
+          border: transparent;
+          border-radius: 0.5rem;
+          margin: 31px auto;
+          box-shadow: rgba(0, 0, 0, 0.355) -2px 7px 8px 0px;
+          transition: background 0.5s linear;
+          position: absolute;
+          bottom: 15px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: max-content;
+
+          @include media-min("custom1") {
+            float: right;
+            position: relative;
+            left: 0%;
+            transform: translateX(0);
+            margin-top: 31px;
+            padding: 0.6rem 4rem;
+          }
+
+          &:hover {
+            box-shadow: rgb(0 0 0 / 0%) 0px -3px 8px 0px;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+
+  > .fixButton {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0 1rem;
+    box-sizing: border-box;
+
+    @include media-min("custom1") {
+      display: flex;
+    }
+
+    > .left {
+      > ul {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+
+        > li {
+          list-style: none;
+
+          &:nth-of-type(1) {
+            > a {
+              > img {
+                width: 3rem;
+              }
+            }
+          }
+
+          &:last-of-type {
+            > a {
+              > img {
+                margin-left: 0.2rem;
+              }
+            }
+          }
+
+          > a {
+            > img {
+              width: 2.6rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

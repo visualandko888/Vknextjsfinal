@@ -1,0 +1,156 @@
+@import "@assets/css/_base.scss";
+
+.section4 {
+  margin-top: 5rem;
+  margin-left: 0;
+  display: block;
+  padding: 0.5rem;
+  margin-left: 0rem;
+
+  @include media-min("base") {
+    margin-left: 2rem;
+    margin-top: 10rem;
+    padding: 0;
+  }
+
+  @include media-min("desktop-up") {
+    margin-top: 5rem;
+    margin-left: 5rem;
+  }
+
+  @include media-min("widescreen-up") {
+    margin-top: 15rem;
+    margin-left: 10rem;
+  }
+
+  > .clear {
+    clear: both;
+  }
+
+  > .text_container {
+    > h2 {
+      font-size: 1.5rem;
+      color: #474747;
+      font-weight: 700;
+      line-height: 130%;
+      margin: 0;
+
+      @include media-min("desktop-up") {
+        font-size: 2.25rem;
+      }
+
+      > span {
+        background-color: $primary-color;
+        color: #fff;
+        padding: 0.3rem 0.6rem;
+        display: inline-block;
+
+        @include media-min("desktop-up") {
+          padding: 1rem 1.5rem;
+        }
+      }
+    }
+
+    > h3 {
+      color: #000;
+      font-family: Sedgwick Ave;
+      font-size: 1.25rem;
+      font-weight: 400;
+      line-height: 125%;
+
+      @include media-min("desktop-up") {
+        font-size: 2rem;
+        line-height: 175%;
+        margin-left: 4rem;
+      }
+    }
+
+    > p {
+      color: #000;
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 160%;
+
+      @include media-min("desktop-up") {
+        font-size: 1.5rem;
+      }
+
+      > span {
+        color: #579eb0;
+        font-weight: 700;
+      }
+    }
+
+    > .show_more {
+      display: flex;
+      justify-content: end;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      align-items: center;
+
+      > img {
+        background-color: $primary-color;
+        padding: 0.2rem;
+      }
+    }
+
+    > a {
+      text-decoration: none;
+
+      > button {
+        color: #579eb0;
+
+        font-size: 1rem;
+        font-weight: 700;
+        padding: 0.7rem 1.8rem;
+        border: 3px solid $primary-color;
+        transition: all 0.3s ease-in-out;
+        display: block;
+        margin: auto;
+        cursor: pointer;
+
+        &:hover {
+          border-radius: 0.3rem;
+          font-size: 1.1rem;
+          background-color: $primary-color;
+          color: #fff;
+        }
+
+        @include media-min("desktop-up") {
+          font-size: 1.25rem;
+          padding: 1rem 2.8rem;
+          margin-left: 0;
+
+          &:hover {
+            font-size: 1.3rem;
+          }
+        }
+      }
+    }
+  }
+
+  > .img_container {
+    float: right;
+    shape-outside: polygon(
+      100% 0%,
+      100% 98%,
+      80% 99%,
+      36% 95%,
+      10% 88%,
+      2% 82%,
+      0% 75%,
+      2% 64%,
+      8% 55%,
+      26% 45%,
+      32% 38%,
+      34% 19%,
+      39% 13%,
+      71% 2%
+    );
+
+    > img {
+      top: 10%;
+      position: relative;
+    }
+  }
+}

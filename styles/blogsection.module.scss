@@ -1,0 +1,11 @@
+@import "./base.module.scss";
+.blog {
+    @extend ._baseSection;
+    background: $primary-color;
+    background: linear-gradient(
+      0deg,
+      $primary-color 0%,
+      rgba(255, 255, 255, 1) 64%,
+      rgba(255, 255, 255, 1) 100%
+    );
+  }

@@ -1,0 +1,82 @@
+@import "@assets/css/_base.scss";
+
+.newsletter {
+  width: 80vw;
+  margin: 1rem;
+  padding: 1.5rem 1rem;
+  border-radius: 0.7rem;
+  text-align: center;
+  background-color: darken($primary-color, 10%);
+  color: #fff;
+  margin-bottom: 2rem;
+  z-index: 1;
+  position: relative;
+
+  @include media-min("base") {
+    margin: auto;
+    max-height: 4rem;
+    margin-bottom: 1rem;
+    margin-top: -3rem;
+    width: 60vw;
+  }
+
+  h3 {
+    margin: 0;
+    align-self: center;
+    font-size: 1.5em;
+    margin-right: 3rem;
+
+    span {
+      display: block;
+      font-size: 0.7em;
+      font-weight: normal;
+      color: red;
+      text-align: center;
+    }
+  }
+
+  > .form {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    margin: auto;
+    gap: 1rem;
+    text-align: left;
+    align-items: center;
+
+    @include media-min("base") {
+      align-items: end;
+      flex-direction: row;
+      margin: auto;
+    }
+
+    label {
+      display: block;
+      padding-left: 0.3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    input {
+      padding: 0.5rem;
+      border-radius: 0.4rem;
+      border: transparent;
+    }
+
+    button {
+      padding: 0.5rem;
+    }
+
+    h3 {
+      font-size: 1.1em;
+      width: fit-content;
+      margin: auto;
+      margin-bottom: 1rem;
+
+      @include media-min("base") {
+        font-size: 1.2em;
+        margin: 0;
+        margin-bottom: 0;
+      }
+    }
+  }
+}

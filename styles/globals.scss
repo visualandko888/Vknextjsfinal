@@ -1,0 +1,10 @@
+@import './base.module.scss';
+
+main {
+  padding-top: $height_header_top;
+  font-family: $primary-font;
+
+  @include media-min("base") {
+    // margin-left: $navLeft_size_min;
+  }
+}

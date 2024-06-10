@@ -1,0 +1,23 @@
+@import "@assets/css/_base.scss";
+
+.section1bis {
+  margin-top: 4rem;
+
+  @include media-min("base") {
+    margin-top: 8rem;
+  }
+
+  > p {
+    color: #000;
+    font-family: Sedgwick Ave;
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 125%;
+    text-align: center;
+
+    @include media-min("desktop-up") {
+      font-size: 2rem;
+      line-height: 140%;
+    }
+  }
+}

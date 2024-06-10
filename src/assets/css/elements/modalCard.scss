@@ -1,0 +1,68 @@
+@import "./base.module.scss";
+
+.modalCard {
+  z-index: 999;
+  background-color: transparent;
+  width: 100vw;
+  height: 100vh;
+  top: 200vw;
+  left: 0;
+  position: fixed;
+  opacity: 0;
+
+  &.show {
+    top: 0;
+    animation: show 0.5s ease-in-out;
+    background-color: #000000a8;
+    opacity: 1;
+
+    > .content {
+      animation: slideUp 0.5s ease-in-out;
+      top: 50%;
+
+      > .faIcon {
+        position: absolute;
+        top: -10vh;
+        right: 0rem;
+        color: #fff;
+        font-size: 3em;
+      }
+    }
+  }
+
+  &.unshow {
+    animation: unshow 0.5s ease-in-out;
+    background-color: #00000000;
+    opacity: 1;
+
+    > .content {
+      animation: slideDown 0.5s ease-in-out;
+      top: 200vh;
+
+      > .faIcon {
+        display: none;
+      }
+    }
+  }
+
+  > .content {
+    position: absolute;
+    width: 90vw;
+    height: 80vh;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    border-radius: 0.6rem;
+  }
+
+  &.type1 {
+    > .content {
+      background-color: #fff;
+    }
+  }
+
+  &.type2 {
+    > .content {
+      background-color: $primary-color;
+    }
+  }
+}

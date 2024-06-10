@@ -1,0 +1,161 @@
+@keyframes review1 {
+  from {
+    left: 200%;
+  }
+
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes review2 {
+  from {
+    left: 50%;
+  }
+
+  to {
+    left: -200%;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    top: 200vh;
+  }
+
+  to {
+    top: 50%;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    top: 50%;
+  }
+
+  to {
+    top: 200vh;
+  }
+}
+
+@keyframes show {
+  from {
+    background-color: rgba(0, 0, 0, 0);
+  }
+
+  to {
+    background-color: #000000a8;
+  }
+}
+
+@keyframes unshow {
+  from {
+    background-color: #000000a8;
+    top: 0;
+  }
+
+  99% {
+    background-color: rgba(0, 0, 0, 0);
+    top: 0;
+  }
+
+  to {
+    top: 200vw;
+  }
+}
+
+@keyframes rotate1 {
+  from {
+    transform: rotateY(20deg);
+  }
+
+  to {
+    transform: rotateY(90deg);
+  }
+}
+
+@keyframes rotate2 {
+  from {
+    transform: rotateY(90deg);
+  }
+
+  20% {
+    transform: rotateY(90deg);
+  }
+
+  21% {
+    transform: rotateY(80deg);
+  }
+
+  to {
+    transform: rotateY(0deg);
+  }
+}
+
+@keyframes sd2 {
+  from {
+    top: 1rem;
+    left: -10rem;
+  }
+
+  40% {
+    top: 45%;
+    left: 35%;
+  }
+
+  70% {
+    top: 28%;
+    left: 18%;
+  }
+
+  to {
+    top: 30%;
+    left: 20%;
+  }
+}
+
+@keyframes sl2 {
+  from {
+    top: 30%;
+    left: 20%;
+  }
+
+  to {
+    top: 70%;
+    left: -30rem;
+  }
+}
+
+@keyframes sd1 {
+  from {
+    top: -10rem;
+    left: 50%;
+  }
+
+  40% {
+    top: 45%;
+    left: 7%;
+  }
+
+  70% {
+    top: 28%;
+    left: 22%;
+  }
+
+  to {
+    top: 30%;
+    left: 20%;
+  }
+}
+
+@keyframes sl1 {
+  from {
+    top: 30%;
+    left: 20%;
+  }
+
+  to {
+    top: 70%;
+    left: -30rem;
+  }
+}

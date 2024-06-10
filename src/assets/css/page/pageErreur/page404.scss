@@ -1,0 +1,27 @@
+@import "@assets/css/_base.scss";
+
+$padding_hero: 1rem;
+
+.page404 {
+  font-family: "Montserrat";
+  padding-top: $height_header_top;
+  padding-bottom: 10rem;
+
+  .lottie {
+    height: 60vh;
+  }
+
+  > .text {
+    text-align: center;
+    width: 90vw;
+    margin: auto;
+    margin-top: -5rem;
+    position: relative;
+    z-index: 1;
+    color: $primary-font-color;
+
+    @include media-min("base") {
+      width: 50vw;
+    }
+  }
+}

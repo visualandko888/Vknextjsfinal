@@ -1,0 +1,92 @@
+@import "@assets/css/_base.scss";
+
+.footer-bottom {
+  .content {
+    min-height: 15rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff28;
+    backdrop-filter: blur(3px);
+    padding-bottom: 3rem;
+
+    @include media-min("base") {
+      min-height: 25rem;
+    }
+
+    > .nav-card {
+      background-color: #ffffffc0;
+      padding: 0 3rem;
+      width: fit-content;
+      border-radius: 1rem;
+      justify-content: space-around;
+      width: 60%;
+      color: $primary-font-color;
+      padding-bottom: 3rem;
+
+      @include media-min("base") {
+        padding: 0 4rem;
+        gap: 5rem;
+      }
+
+      > img {
+        width: 15rem;
+        z-index: 1;
+        display: block;
+        margin: 2rem auto;
+      }
+
+      > .group-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: space-around;
+
+        @include media-min("base") {
+          gap: 1rem;
+        }
+
+        .group {
+          text-align: center;
+
+          @include media-min("base") {
+            text-align: left;
+          }
+
+          &.contacts {
+            li {
+              margin-bottom: 0.5rem;
+            }
+          }
+
+          h3 {
+            font-size: 1.5em;
+
+            @include media-min("base") {
+              font-size: 1.3em;
+            }
+          }
+
+          ul {
+            margin-bottom: 0rem;
+
+            @include media-min("base") {
+              margin-bottom: 3rem;
+            }
+
+            li {
+              list-style: none;
+
+              a {
+                color: $primary-font-color;
+                text-decoration: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
