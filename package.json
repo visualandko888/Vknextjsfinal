@@ -7,17 +7,18 @@
         "start": "next start"
     },
     "dependencies": {
-        "@fortawesome/fontawesome-svg-core": "^6.5.2",
-        "@fortawesome/free-solid-svg-icons": "^6.5.2",
-        "@fortawesome/react-fontawesome": "^0.2.2",
-        "axios": "^1.7.2",
-        "i18next": "^23.11.5",
+        "@fortawesome/free-solid-svg-icons": "^5.15.4",
+        "@fortawesome/react-fontawesome": "^0.1.14",
+        "axios": "^0.27.2",
         "next": "^14.2.3",
-        "next-i18next": "^15.3.0",
-        "react": "^18.3.1",
-        "react-dom": "^18.3.1",
-        "react-helmet": "^6.1.0",
-        "react-i18next": "^14.1.2",
-        "sass": "^1.77.4"
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "react-i18next": "^11.15.0",
+        "sass": "^1.49.9",
+        "sharp": "^0.30.7"
+    },
+    "engines": {
+        "node": ">=18.0.0",
+        "npm": ">=8.0.0"
     }
 }
