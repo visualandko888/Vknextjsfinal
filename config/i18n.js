@@ -3,9 +3,9 @@ import { initReactI18next } from "react-i18next";
 
 // Importing translation files
 
-import translationFR from "./locales/fr.js";
-import translationEN from "./locales/en.js";
-import translationES from "./locales/es.js";
+import translationFR from "../src/locales/fr.js";
+import translationEN from "../src/locales/en.js";
+import translationES from "../src/locales/es.js";
 
 //Creating object with the variables of imported translation files
 const resources = {
