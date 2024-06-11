@@ -1,0 +1,109 @@
+[
+    {
+        "id": 14,
+        "imgFront": "/uploads/realisations/fregate-recto.jpg",
+        "imgBack": "/uploads/realisations/fregate-verso.jpg",
+        "title": "La Frégate",
+        "task": [
+            "Design personnalisé",
+            "Système de réservation",
+            "SEO"
+        ]
+    },
+    {
+        "id": 15,
+        "imgFront": "/uploads/realisations/phc-recto.jpg",
+        "imgBack": "/uploads/realisations/phc-verso.jpg",
+        "title": "Galerie PHC",
+        "task": [
+            "Back-office complet",
+            "Gestion des tableaux",
+            "Formulaires personnalisés",
+            "Newsletter"
+        ]
+    },
+    {
+        "id": 19,
+        "imgFront": "/uploads/realisations/cyria-recto.jpg",
+        "imgBack": "/uploads/realisations/cyria-verso.jpg",
+        "title": "Cyria",
+        "task": [
+            "Configurateur 3D three JS",
+            "Back-office personnalisé aux produits configurables",
+            "Système de réservation",
+            "Création d'un système de wishlist",
+            "Suivi et maintenance"
+        ]
+    },
+    {
+        "id": 19,
+        "imgFront": "/uploads/realisations/cyria-recto2.jpg",
+        "imgBack": "/uploads/realisations/cyria-verso2.jpg",
+        "title": "Cyria",
+        "task": [
+            "Gestion des blogs",
+            "Référencement naturel",
+            "Suivi et maintenance"
+        ]
+    },
+    {
+        "id": 21,
+        "imgFront": "/uploads/realisations/am-recto.jpg",
+        "imgBack": "/uploads/realisations/am-verso.jpg",
+        "title": "A&M Concept",
+        "task": [
+            "Formulaires personnalisés",
+            "Design personnalisé",
+            "Récolte de leads",
+            "Suivi et maintenance"
+        ]
+    },
+    {
+        "id": 18,
+        "imgFront": "/uploads/realisations/easyfoot-recto.jpg",
+        "imgBack": "/uploads/realisations/easyfoot-verso.jpg",
+        "title": "EasyFoot64",
+        "task": [
+            "Design personnalisé",
+            "Back-office complet",
+            "Système de réservation",
+            "Suivi et maintenance"
+        ]
+    },
+    {
+        "id": 20,
+        "imgFront": "/uploads/realisations/souffle-recto.jpg",
+        "imgBack": "/uploads/realisations/souffle-verso.jpg",
+        "title": "Souffle de sérénité",
+        "task": [
+            "Back-office complet",
+            "Système de réservation",
+            "Suivi et maintenance",
+            "offre carte cadeau"
+        ]
+    },
+    {
+        "id": 16,
+        "imgFront": "/uploads/realisations/bordevielle-recto.jpg",
+        "imgBack": "/uploads/realisations/bordevielle-verso.jpg",
+        "title": "Bordevielle",
+        "task": [
+            "Back-office complet",
+            "Gestion des produits",
+            "Système de paiement et livraison",
+            "Suivi et maintenance"
+        ]
+    },
+    {
+        "id": 17,
+        "imgFront": "/uploads/realisations/oskar-recto.jpg",
+        "imgBack": "/uploads/realisations/oskar-verso.jpg",
+        "title": "Oskar à la plage",
+        "task": [
+            "Design personnalisé",
+            "Photographies",
+            "Back-office complet",
+            "Suivi et maintenance"
+        ]
+    }
+]
