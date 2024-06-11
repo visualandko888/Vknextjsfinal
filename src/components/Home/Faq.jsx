@@ -1,25 +1,23 @@
 import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlusCircle, faMinusCircle } from '@fortawesome/free-solid-svg-icons';
-import { useTranslation } from 'react-i18next';
-// import i18n from 'i18next';
-// import { instanceAxios } from '/helpers/axios'; // Assurez-vous que ce chemin est correct
+import { instanceAxios } from '/helpers/axios'; // Assurez-vous que ce chemin est correct
 import styles from '/styles/questions.module.scss'; // Assurez-vous que le chemin est correct
 
 export default function Faq() {
   const { t } = useTranslation(); // Importation de la traduction
   const [fakeFaq, setFakeFaq] = useState([]);
   
-  // useEffect(() => {
-  //   instanceAxios
-  //     .get(`get_faq.php?lang=${i18n.language}`)
-  //     .then((res) => {
-  //       if (res.data.success) {
-  //         setFakeFaq(res.data.results);
-  //       }
-  //     })
-  //     .catch(() => {});
-  // }, [i18n.language]);
+  useEffect(() => {
+    instanceAxios
+      .get(`get_faq.php?lang=${i18n.language}`)
+      .then((res) => {
+        if (res.data.success) {
+          setFakeFaq(res.data.results);
+        }
+      })
+      .catch(() => {});
+  }, [i18n.language]);
 
   const showCard = (index) => {
     const updateFaq = { ...fakeFaq[index], show: !fakeFaq[index].show };
