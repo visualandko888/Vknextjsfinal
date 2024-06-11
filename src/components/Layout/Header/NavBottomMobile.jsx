@@ -5,7 +5,7 @@ import {
   faCalendarDay,
   faHouse,
 } from '@fortawesome/free-solid-svg-icons';
-import { NavHashLink } from 'react-router-hash-link';
+import Link from 'next/link';
 
 export default function NavBottomMobile() {
   const showCalendar = () => {
@@ -13,22 +13,22 @@ export default function NavBottomMobile() {
     Calendly.initPopupWidget({ url: 'https://calendly.com/visualandko/30min' });
     return false;
   };
+
   return (
     <div className="navBottomMobile">
       <div className="icoList">
-        <NavHashLink to="/#">
+        <Link href="/#">
           <FontAwesomeIcon className="faIcon" icon={faHouse} />
-        </NavHashLink>
-        <NavHashLink to="/#contact">
+        </Link>
+        <Link href="/#contact">
           <FontAwesomeIcon className="faIcon" icon={faPenToSquare} />
-        </NavHashLink>
-        <NavHashLink to="tel:+33767744343">
-          {' '}
+        </Link>
+        <Link href="tel:+33767744343">
           <FontAwesomeIcon className="faIcon" icon={faPhone} />
-        </NavHashLink>
-        <NavHashLink onClick={() => showCalendar()} to="#">
+        </Link>
+        <Link href="#" onClick={showCalendar}>
           <FontAwesomeIcon className="faIcon" icon={faCalendarDay} />
-        </NavHashLink>
+        </Link>
       </div>
     </div>
   );

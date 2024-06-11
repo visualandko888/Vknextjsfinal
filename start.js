@@ -1,29 +1,18 @@
-const { exec } = require('child_process');
+// start.js
+const next = require('next');
+const { createServer } = require('http');
+const { parse } = require('url');
 
-console.log('Starting setup...');
+const dev = process.env.NODE_ENV !== 'production';
+const app = next({ dev });
+const handle = app.getRequestHandler();
 
-// Set environment variables if needed
-process.env.PATH += `:${process.cwd()}/node_modules/.bin:${process.env.HOME}/.npm-global/bin`;
-process.env.PORT = process.env.PORT || 6000;
-process.env.NODE_ENV = process.env.NODE_ENV || 'production';
-
-console.log('Environment variables set.');
-console.log('Installing dependencies...');
-
-// Install dependencies, build and start the Next.js application
-const command = `npm install sharp --unsafe-perm && npm install && npx next build && PORT=6000 npx next start`;
-exec(command, (error, stdout, stderr) => {
-  if (error) {
-    console.error(`Error: ${error.message}`);
-    return;
-  }
-
-  if (stderr) {
-    console.error(`Error output: ${stderr}`);
-    return;
-  }
-
-  console.log(`Application output: ${stdout}`);
+app.prepare().then(() => {
+  createServer((req, res) => {
+    const parsedUrl = parse(req.url, true);
+    handle(req, res, parsedUrl);
+  }).listen(3000, (err) => {
+    if (err) throw err;
+    console.log('> Ready on http://localhost:3000');
+  });
 });
-
-console.log('Setup script executed.');

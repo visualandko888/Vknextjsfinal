@@ -1,18 +1,18 @@
-import logo from '@assets/images/logo_blue.svg';
+import logo from '/public/images/logo_blue.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/router';
 
 export default function NavTopMobile({ handleClickShowNavMobile }) {
-  const navigate = useNavigate();
+  const router = useRouter();
 
   return (
     <div className="navTop3">
       <img
         role="button"
         tabIndex={0}
-        onKeyDown={() => navigate('/')}
-        onClick={() => navigate('/')}
+        onKeyDown={() => router.push('/')}
+        onClick={() => router.push('/')}
         src={logo}
         alt="logo"
       />
@@ -24,3 +24,4 @@ export default function NavTopMobile({ handleClickShowNavMobile }) {
     </div>
   );
 }
+

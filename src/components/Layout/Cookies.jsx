@@ -1,31 +1,31 @@
-import { useState } from 'react';
-import '@assets/css/layout/cookies.scss';
+import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
 export default function Cookies() {
   const { t } = useTranslation(); // Importation de la traduction
-  const [acceptCookies, setAcceptCookie] = useState(
-    localStorage.getItem('cookiesAccepted') === 'true',
-  );
+  const [acceptCookies, setAcceptCookie] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setAcceptCookie(localStorage.getItem('cookiesAccepted') === 'true');
+    }
+  }, []);
+
   const handleClickAcceptCookies = () => {
     setAcceptCookie(true);
-    localStorage.setItem('cookiesAccepted', 'true');
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('cookiesAccepted', 'true');
+    }
   };
+
   return (
-    <div className={`cookies ${acceptCookies && 'accept'}`}>
-      <p>
-        {t('layout_cookies_t1', {
-          defaultValue:
-            'Nous utilisons des cookies pour améliorer votre expérience utilisateur. En continuant à utiliser notre site, vous acceptez notre utilisation des cookies.',
-        })}
-      </p>
-      <button
-        type="button"
-        onClick={() => handleClickAcceptCookies()}
-        className="btn primary"
-      >
-        {t('elements_accepter', { defaultValue: 'Accepter' })}
-      </button>
-    </div>
+    !acceptCookies && (
+      <div className="cookie-banner">
+        <p>{t('cookie_message', { defaultValue: 'We use cookies to improve your experience.' })}</p>
+        <button type="button" onClick={handleClickAcceptCookies}>
+          {t('cookie_accept_button', { defaultValue: 'Accept' })}
+        </button>
+      </div>
+    )
   );
 }

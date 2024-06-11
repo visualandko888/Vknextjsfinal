@@ -1,15 +1,17 @@
 import { useState } from 'react';
-import { instanceAxios } from '@helpers/axios';
-import { NavHashLink } from 'react-router-hash-link';
-import { Link } from 'react-router-dom';
-import logo from '@assets/images/logo-primary.svg';
-import '@assets/css/layout/header/footer.scss';
-import '@assets/css/page/home/newsletter.scss';
-import emailController from '@services/formController/emailController';
+import axios from 'axios';
+import Link from 'next/link';
+import logo from '/public/images/logo-primary.svg';
+import '/styles/headerfooter.module.scss';
+import '/styles/newsletter.module.scss';
+import emailController from '/src/services/formController/emailController';
 import { useTranslation } from 'react-i18next';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faPhone, faAt } from '@fortawesome/free-solid-svg-icons';
+
+const instanceAxios = axios.create({
+  baseURL: process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000/',
+});
 
 export default function Footer() {
   const { t } = useTranslation(); // Importation de la traduction
@@ -40,7 +42,7 @@ export default function Footer() {
       setSendNewsLettersMessage("L'adresse email est incorrect");
     } else {
       setSendProgress(1);
-      instanceAxios()
+      instanceAxios
         .post('post_newsletter.php', {
           fullname,
           mail,
@@ -72,9 +74,7 @@ export default function Footer() {
                 defaultValue: 'Inscription à la newsletter',
               })}
               <span>
-                {sendNewsLettersMessage
-                  && sendProgress !== 2
-                  && sendNewsLettersMessage}
+                {sendNewsLettersMessage && sendProgress !== 2 && sendNewsLettersMessage}
               </span>
             </h3>
             {sendProgress === 0 && (
@@ -86,7 +86,7 @@ export default function Footer() {
                   </label>
                   <input
                     onChange={handleChangeFullname}
-                    require
+                    required
                     type="text"
                     id="fullname"
                     name="fullname"
@@ -100,8 +100,8 @@ export default function Footer() {
                   </label>
                   <input
                     onChange={handleChangeMail}
-                    require
-                    type="mail"
+                    required
+                    type="email"
                     id="mail"
                     name="mail"
                     value={mail}
@@ -135,30 +135,38 @@ export default function Footer() {
               </h3>
               <ul>
                 <li>
-                  <NavHashLink to="/">
-                    {t('layout_navigation_accueil', {
-                      defaultValue: 'Accueil',
-                    })}
-                  </NavHashLink>
+                  <Link href="/" legacyBehavior>
+                    <a>
+                      {t('layout_navigation_accueil', {
+                        defaultValue: 'Accueil',
+                      })}
+                    </a>
+                  </Link>
                 </li>
                 <li>
-                  <NavHashLink to="/#services">
-                    {t('layout_navigation_nos-services', {
-                      defaultValue: 'Nos services',
-                    })}
-                  </NavHashLink>
+                  <Link href="/#services" legacyBehavior>
+                    <a>
+                      {t('layout_navigation_nos-services', {
+                        defaultValue: 'Nos services',
+                      })}
+                    </a>
+                  </Link>
                 </li>
                 <li>
-                  <NavHashLink to="/#projects">
-                    {t('layout_navigation_nos-projets', {
-                      defaultValue: 'Nos projets',
-                    })}
-                  </NavHashLink>
+                  <Link href="/#projects" legacyBehavior>
+                    <a>
+                      {t('layout_navigation_nos-projets', {
+                        defaultValue: 'Nos projets',
+                      })}
+                    </a>
+                  </Link>
                 </li>
                 <li>
-                  <NavHashLink to="/#contact">
-                    {t('elements_contact', { defaultValue: 'Contact' })}
-                  </NavHashLink>
+                  <Link href="/#contact" legacyBehavior>
+                    <a>
+                      {t('elements_contact', { defaultValue: 'Contact' })}
+                    </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -170,32 +178,40 @@ export default function Footer() {
               </h3>
               <ul>
                 <li>
-                  <NavHashLink to="/google-ads">
-                    {t('layout_navigation_google-ads', {
-                      defaultValue: 'Google ADS',
-                    })}
-                  </NavHashLink>
+                  <Link href="/google-ads" legacyBehavior>
+                    <a>
+                      {t('layout_navigation_google-ads', {
+                        defaultValue: 'Google ADS',
+                      })}
+                    </a>
+                  </Link>
                 </li>
                 <li>
-                  <NavHashLink to="/developpement-web">
-                    {t('layout_navigation_developpement-web', {
-                      defaultValue: 'Développement WEB',
-                    })}
-                  </NavHashLink>
+                  <Link href="/developpement-web" legacyBehavior>
+                    <a>
+                      {t('layout_navigation_developpement-web', {
+                        defaultValue: 'Développement WEB',
+                      })}
+                    </a>
+                  </Link>
                 </li>
                 <li>
-                  <NavHashLink to="/referencement-naturel">
-                    {t('layout_navigation_referencement-naturel', {
-                      defaultValue: 'Référencement Naturel',
-                    })}
-                  </NavHashLink>
+                  <Link href="/referencement-naturel" legacyBehavior>
+                    <a>
+                      {t('layout_navigation_referencement-naturel', {
+                        defaultValue: 'Référencement Naturel',
+                      })}
+                    </a>
+                  </Link>
                 </li>
                 <li>
-                  <NavHashLink to="/referencement-payant">
-                    {t('layout_navigation_referencement-payant', {
-                      defaultValue: 'Référencement Payant',
-                    })}
-                  </NavHashLink>
+                  <Link href="/referencement-payant" legacyBehavior>
+                    <a>
+                      {t('layout_navigation_referencement-payant', {
+                        defaultValue: 'Référencement Payant',
+                      })}
+                    </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -205,11 +221,13 @@ export default function Footer() {
               </h3>
               <ul>
                 <li>
-                  <NavHashLink to="/PrivacyPolicy">
-                    {t('layout_navigation_mentions-legales', {
-                      defaultValue: 'Mentions légales',
-                    })}
-                  </NavHashLink>
+                  <Link href="/PrivacyPolicy" legacyBehavior>
+                    <a>
+                      {t('layout_navigation_mentions-legales', {
+                        defaultValue: 'Mentions légales',
+                      })}
+                    </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -223,21 +241,24 @@ export default function Footer() {
                 <li>
                   <FontAwesomeIcon className="faIcon" icon={faHome} />
                   {' '}
-                  3 rue
-                  Keller, 75011 PARIS
+                  3 rue Keller, 75011 PARIS
                 </li>
                 <li>
-                  <Link to="tel:+33767744343">
-                    <FontAwesomeIcon className="faIcon" icon={faPhone} />
-                    {' '}
-                    07.67.74.43.43
+                  <Link href="tel:+33767744343" legacyBehavior>
+                    <a>
+                      <FontAwesomeIcon className="faIcon" icon={faPhone} />
+                      {' '}
+                      07.67.74.43.43
+                    </a>
                   </Link>
                 </li>
                 <li>
-                  <Link to="mailto:contact@visualandko.com">
-                    <FontAwesomeIcon className="faIcon" icon={faAt} />
-                    {' '}
-                    contact@visualandko.com
+                  <Link href="mailto:contact@visualandko.com" legacyBehavior>
+                    <a>
+                      <FontAwesomeIcon className="faIcon" icon={faAt} />
+                      {' '}
+                      contact@visualandko.com
+                    </a>
                   </Link>
                 </li>
               </ul>

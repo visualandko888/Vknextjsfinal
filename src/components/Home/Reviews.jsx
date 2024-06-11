@@ -1,12 +1,11 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { useTranslation } from 'react-i18next';
 import styles from '/styles/reviews.module.scss';
 import imgQuote from '/public/images/dubbleQuotes.png';
 import reviewList from '/public/datas/reviews.json';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 export default function Reviews() {
   const { t } = useTranslation(); // Importation de la traduction
 

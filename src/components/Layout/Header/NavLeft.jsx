@@ -1,15 +1,15 @@
 import { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
-import { NavHashLink } from 'react-router-hash-link';
-import icPlusCircle from '@assets/images/ic-plus-circle.svg';
-import icSocialAds from '@assets/images/ic-social-ads.svg';
+import { useRouter } from 'next/router';
+import Link from 'next/link';
+import icPlusCircle from '/public/images/ic-plus-circle.svg';
+import icSocialAds from '/public/images/ic-social-ads.svg';
 import { useTranslation } from 'react-i18next';
-import leftIcoDevWeb from '@assets/images/left-ico-dev-web.svg';
-import leftIcoGoogleAds from '@assets/images/left-ico-google-ads.svg';
-import leftIcoCalendar from '@assets/images/left-ico-calendar.svg';
+import leftIcoDevWeb from '/public/images/left-ico-dev-web.svg';
+import leftIcoGoogleAds from '/public/images/left-ico-google-ads.svg';
+import leftIcoCalendar from '/public/images/left-ico-calendar.svg';
 
 export default function NavLeft() {
-  const { t } = useTranslation(); // Importation de la traduction
+  const { t } = useTranslation();
   const navLeftElements = [
     {
       name: 'Développement WEB',
@@ -47,8 +47,8 @@ export default function NavLeft() {
 
   const [showHeaderTopNavProgress, setShowHeaderTopNavProgress] = useState(false);
   const [handleHoverShowNavLeft, setHandleHoverShowNavLeft] = useState(false);
-  const location = useLocation();
-  const [currentPage, setCurrentPage] = useState(location.pathname);
+  const router = useRouter();
+  const [currentPage, setCurrentPage] = useState(router.pathname);
 
   const handleHoverLeftNav = (bool) => {
     if (!showHeaderTopNavProgress) {
@@ -56,19 +56,21 @@ export default function NavLeft() {
       setHandleHoverShowNavLeft(bool);
       setTimeout(() => {
         setShowHeaderTopNavProgress(false);
-      }, '10');
+      }, 10);
     }
   };
+
   useEffect(() => {
-    setCurrentPage(location.pathname);
+    setCurrentPage(router.pathname);
     window.scrollTo(0, 0);
-  }, [location.pathname]);
+  }, [router.pathname]);
 
   const showCalendar = () => {
     // eslint-disable-next-line no-undef
     Calendly.initPopupWidget({ url: 'https://calendly.com/visualandko/30min' });
     return false;
   };
+
   return (
     <div
       onMouseLeave={() => handleHoverLeftNav(false)}
@@ -80,21 +82,22 @@ export default function NavLeft() {
             role="button"
             tabIndex={0}
             key={index}
-            onClick={e.isCalendar ? () => showCalendar(true) : null}
-            onKeyDown={e.isCalendar ? () => showCalendar(true) : null}
+            onClick={e.isCalendar ? showCalendar : null}
+            onKeyDown={e.isCalendar ? showCalendar : null}
             className={e.url === currentPage ? 'active' : null}
           >
-            <NavHashLink key={index} to={`${e.url}`}>
-              <img
-                onMouseEnter={() => handleHoverLeftNav(true)}
-                className={`faIcon br${index}`}
-                alt={e.name}
-                src={e.icon}
-              />
-              {t(`layout_navigation_${e.translate_var}`, {
-                defaultValue: e.name,
-              })}
-            </NavHashLink>
+            <Link href={e.url} passHref>
+              <div onMouseEnter={() => handleHoverLeftNav(true)}>
+                <img
+                  className={`faIcon br${index}`}
+                  alt={e.name}
+                  src={e.icon}
+                />
+                {t(`layout_navigation_${e.translate_var}`, {
+                  defaultValue: e.name,
+                })}
+              </div>
+            </Link>
           </li>
         ))}
       </ul>

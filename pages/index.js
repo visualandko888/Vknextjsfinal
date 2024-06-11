@@ -14,6 +14,7 @@ import BlogSection from '../src/components/Blog/BlogSection';
 
 
 export default function Home() {
+  console.log('Home page rendue');
   const { t } = useTranslation(); // Importation de la traduction
   const title = t('helmet_home_t1', {
     defaultValue:

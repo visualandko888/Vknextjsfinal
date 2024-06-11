@@ -1,17 +1,18 @@
 import { useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import logo from '@assets/images/logo_blue.svg';
-import { useTranslation } from 'react-i18next';
-import france from '@assets/images/country/france.png';
-import royaumeUni from '@assets/images/country/royaume-uni.png';
-import { NavHashLink } from 'react-router-hash-link';
-import leftIcoCalendar from '@assets/images/left-ico-calendar.svg';
+import { useRouter } from 'next/router';
+import Image from 'next/image';
+import logo from '/public/images/logo_blue.svg';
+import france from '/public/images/country/france.png';
+import royaumeUni from '/public/images/country/royaume-uni.png';
+import leftIcoCalendar from '/public/images/left-ico-calendar.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarDay } from '@fortawesome/free-solid-svg-icons';
+import { useTranslation } from 'react-i18next';
+import Link from 'next/link';
+
 
 export default function NavTop2({ handleHoverNav }) {
-  const { i18n } = useTranslation();
-  const { t } = useTranslation(); // Importation de la traduction
+  const { i18n, t } = useTranslation();
   const navTopElements = [
     {
       name: "L'agence",
@@ -21,19 +22,19 @@ export default function NavTop2({ handleHoverNav }) {
     },
     {
       name: 'Nos services',
-      url: '/home#services',
+      url: '/#services',
       translate_var: 'nos-services',
       isButton: false,
     },
     {
       name: 'Nos projets',
-      url: '/home#projects',
+      url: '/#projects',
       translate_var: 'nos-projets',
       isButton: false,
     },
     {
       name: 'Demander un devis',
-      url: '/home#contact',
+      url: '/#contact',
       translate_var: 'demander-un-devis',
       isButton: true,
     },
@@ -74,31 +75,35 @@ export default function NavTop2({ handleHoverNav }) {
     i18n.changeLanguage(countryList[index].tag);
   };
 
-  const location = useLocation();
-  const [currentPage, setCurrentPage] = useState(location.pathname);
+  const router = useRouter();
+  const [currentPage, setCurrentPage] = useState(router.pathname);
 
   useEffect(() => {
-    setCurrentPage(location.pathname);
+    setCurrentPage(router.pathname);
     window.scrollTo(0, 0);
-  }, [location.pathname]);
+  }, [router.pathname]);
 
   useEffect(() => {
     if (currentPage === '/') {
       window.scrollTo(0, 0);
     }
   }, [currentPage]);
+
   const showCalendar = () => {
     // eslint-disable-next-line no-undef
     Calendly.initPopupWidget({ url: 'https://calendly.com/visualandko/30min' });
     return false;
   };
+
   return (
-    <div className="navTop2">
-      <div className="left">
+    <div>
+      <div>
         <ul>
-          <Link to="/">
-            <img alt="logo" src={logo} />
-          </Link>
+          <li>
+            <Link href="/">
+              <Image alt="logo" src={logo} />
+            </Link>
+          </li>
           {navTopElements.map((e, index) => (
             <li
               role="button"
@@ -106,32 +111,20 @@ export default function NavTop2({ handleHoverNav }) {
               onClick={() => handleHoverNav(index)}
               onKeyDown={() => handleHoverNav(index)}
               key={index}
-              className={`${e.url === currentPage ? 'active' : null} ${
-                e.isButton ? 'button' : ''
-              }`}
+              className={e.url === currentPage ? 'active' : e.isButton ? 'button' : ''}
             >
-              <NavHashLink to={e.url}>
+              <Link href={e.url}>
                 {t(`layout_navigation_${e.translate_var}`, {
                   defaultValue: e.name,
                 })}
-              </NavHashLink>
+              </Link>
             </li>
           ))}
         </ul>
       </div>
 
-      <div className="right">
+      <div>
         <ul>
-          {/* <li>
-            <Link to="https://www.facebook.com/visulaandko">
-              <img alt="facebook logo" src={facebooksvg} />
-            </Link>
-          </li>
-          <li>
-            <Link to="https://www.instagram.com/visualandko/">
-              <img alt="instagram logo" src={instagramsvg} />
-            </Link>
-          </li> */}
           <li
             role="button"
             tabIndex={0}
@@ -139,8 +132,8 @@ export default function NavTop2({ handleHoverNav }) {
             onClick={() => showCalendar()}
             className="topCalendar"
           >
-            <Link to="/#">
-              <FontAwesomeIcon className="faIcon" icon={faCalendarDay} />
+            <Link href="/#">
+              <FontAwesomeIcon icon={faCalendarDay} />
               <span>
                 {t('layout_navigation_prendre-rendez-vous', {
                   defaultValue: 'Prendre rendez-vous',
@@ -156,16 +149,15 @@ export default function NavTop2({ handleHoverNav }) {
           onKeyDown={() => handleClickCountry()}
           onMouseEnter={() => handleHoverCountry()}
           onMouseLeave={() => handleHoverCountry()}
-          className="country"
         >
-          <img
+          <Image
             alt={`drapeau ${countryList[currentCountry].name}`}
             src={countryList[currentCountry].img}
           />
           {showCountry && (
-            <div className="subCountry">
+            <div>
               {countryList.map((e, index) => (
-                <img
+                <Image
                   role="button"
                   tabIndex={0}
                   onClick={() => handleClickChangeCountry(index)}
@@ -179,13 +171,13 @@ export default function NavTop2({ handleHoverNav }) {
         </div>
       </div>
       <div
-        className={` fixed ${showButtonRdv ? 'show' : 'unshow'}`}
+        className={showButtonRdv ? 'show' : 'unshow'}
         role="button"
         tabIndex={0}
         onKeyDown={() => showCalendar()}
         onClick={() => showCalendar()}
       >
-        <img src={leftIcoCalendar} alt="calendar" />
+        <Image src={leftIcoCalendar} alt="calendar" />
         Prendre
         <br />
         RDV

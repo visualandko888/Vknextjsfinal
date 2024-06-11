@@ -109,7 +109,7 @@ export default function RealisationsSlider() {
       <p>{t('home_projectSlider_t2', { defaultValue: 'Voici quelques-unes de nos missions' })}</p>
       <div onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd} className={styles.slider}>
         <div role="button" tabIndex={0} onKeyDown={() => changeSlide(2)} onClick={() => changeSlide(2)} className={styles.left}>
-          <Image src={chevron} alt="chevron" width={24} height={24} />
+          <Image src={chevron} alt="chevron" width={50} height={50} />
         </div>
         <div id="realisationSliderList" className={styles.content}>
           {myArray.map((e, index) => (
@@ -125,7 +125,7 @@ export default function RealisationsSlider() {
             >
               <div className={styles.cardInner}>
                 <div className={styles.recto}>
-                  <Image alt={`Réalisation ${index + 1}`} src={e.imgFront} width={300} height={200} />
+                  <Image alt={`Réalisation ${index + 1}`} src={e.imgFront} width={500} height={300} />
                 </div>
                 <div
                   role="button"
@@ -134,7 +134,7 @@ export default function RealisationsSlider() {
                   onClick={() => handleClickNavigate(e.id)}
                   className={styles.verso}
                 >
-                  <Image alt={`Réalisation ${index + 1}`} src={e.imgBack} width={300} height={200} />
+                  <Image alt={`Réalisation ${index + 1}`} src={e.imgBack} width={500} height={300} />
                   <div className={styles.text}>
                     <h2>{e.title}</h2>
                     {e.task.map((elem, i) => (
@@ -142,7 +142,7 @@ export default function RealisationsSlider() {
                     ))}
                     <Link href={`/realisation/${e.id}#`}>
                       <span>
-                        <Image src={arrow_right} alt="fleche" width={24} height={24} />
+                        <Image src={arrow_right} alt="fleche" width={50} height={50} />
                         {' '}
                         En savoir plus
                       </span>
@@ -155,10 +155,10 @@ export default function RealisationsSlider() {
           ))}
           {windowSize <= 900 && (
             <ModalCard handleClick={handleClick} classes={`${styles.type1} ${isClick ? styles.show : styles.unshow}`}>
-              <Image alt="réalisation" src={currentShow.imgBack} width={300} height={200} />
+              <Image alt="réalisation" src={currentShow.imgBack} width={500} height={300} />
               <Link onClick={() => handleClick(false, 0)} href={`/realisation/${currentShow.id}#`}>
                 <h2>
-                  <Image src={arrow_right} alt="fleche" width={24} height={24} />
+                  <Image src={arrow_right} alt="fleche" width={50} height={50} />
                   {' '}
                   Voir la réalisation
                 </h2>
@@ -170,7 +170,7 @@ export default function RealisationsSlider() {
           )}
         </div>
         <div role="button" tabIndex={0} onKeyDown={() => changeSlide(1)} onClick={() => changeSlide(1)} className={styles.right}>
-          <Image src={chevron} alt="chevron" width={24} height={24} />
+          <Image src={chevron} alt="chevron" width={50} height={50} />
         </div>
       </div>
     </section>

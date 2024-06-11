@@ -1,15 +1,16 @@
 import { useState, useEffect } from 'react';
-import '@assets/css/layout/header/header.scss';
-import NavTop2 from './Header/NavTop2';
-import NavLeft from './Header/NavLeft';
-import NavMobile from './Header/NavMobile';
-import NavTopMobile from './Header/NavTopMobile';
-import SubServices from './Header/SubServices';
-import NavBottomMobile from './Header/NavBottomMobile';
+import '/styles/headerheader.module.scss';
+import NavTop2 from '/src/components/Layout/Header/NavTop2';
+import NavLeft from '/src/components/Layout/Header/NavLeft';
+import NavMobile from '/src/components/Layout/Header/NavMobile';
+import NavTopMobile from '/src/components/Layout/Header/NavTopMobile';
+import SubServices from '/src/components/Layout/Header/SubServices';
+import NavBottomMobile from '/src/components/Layout/Header/NavBottomMobile';
 
 export default function Header() {
   // Affichage du menu mobile
   const [showNavMobile, setShowNavMobile] = useState(false);
+  const [windowSize, setWindowSize] = useState(0);
 
   const handleClickShowNavMobile = (bool) => {
     setShowNavMobile(bool);
@@ -21,8 +22,10 @@ export default function Header() {
     setCurrentNavHover(index);
   };
 
-  const [windowSize, setWindowSize] = useState(window.innerWidth);
   useEffect(() => {
+    // Code exécuté uniquement côté client
+    setWindowSize(window.innerWidth);
+
     function handleResize() {
       setWindowSize(window.innerWidth);
       if (window.innerWidth > 900) {
@@ -34,18 +37,13 @@ export default function Header() {
 
     return () => window.removeEventListener('resize', handleResize);
   }, []);
+
   return (
     <header>
       {windowSize > 1215 ? (
         <>
-          <NavTop2
-            handleHoverNav={handleHoverNav}
-            currentNavHover={currentNavHover}
-          />
-          <SubServices
-            currentNavHover={currentNavHover}
-            setCurrentNavHover={setCurrentNavHover}
-          />
+          <NavTop2 handleHoverNav={handleHoverNav} currentNavHover={currentNavHover} />
+          <SubServices currentNavHover={currentNavHover} setCurrentNavHover={setCurrentNavHover} />
           <NavLeft />
         </>
       ) : (
@@ -54,10 +52,7 @@ export default function Header() {
             setShowNavMobile={setShowNavMobile}
             handleClickShowNavMobile={handleClickShowNavMobile}
           />
-          <NavMobile
-            showNavMobile={showNavMobile}
-            setShowNavMobile={setShowNavMobile}
-          />
+          <NavMobile showNavMobile={showNavMobile} setShowNavMobile={setShowNavMobile} />
           <NavBottomMobile />
         </>
       )}

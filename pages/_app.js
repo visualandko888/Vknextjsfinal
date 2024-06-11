@@ -15,10 +15,14 @@ import '/styles/contact2.module.scss'; // Ajoutez vos importations CSS globales 
 import '/styles/blogsection.module.scss'; // Ajoutez vos importations CSS globales ici
 import '/styles/globals.scss';
 import '../config/i18n';
-
+import Layout from '/src/components/Layout';
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />;
+  return (
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
+  );
 }
 
 export default MyApp;

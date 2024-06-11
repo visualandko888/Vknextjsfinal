@@ -1,9 +1,8 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
-import { NavHashLink } from 'react-router-hash-link';
-import { Link } from 'react-router-dom';
-import facebook from '@assets/images/facebook-w.svg';
-import instagram from '@assets/images/instagram-w.svg';
+import Link from 'next/link';
+import facebook from '/public/images/facebook-w.svg';
+import instagram from '/public/images/instagram-w.svg';
 import { useTranslation } from 'react-i18next';
 
 export default function NavMobile({ showNavMobile, setShowNavMobile }) {
@@ -67,8 +66,9 @@ export default function NavMobile({ showNavMobile, setShowNavMobile }) {
         </div>
         <div className="middle">
           <ul>
-            {navArr.map((e) => (
+            {navArr.map((e, index) => (
               <li
+                key={index}
                 role="button"
                 tabIndex={0}
                 onKeyDown={() => {
@@ -85,21 +85,27 @@ export default function NavMobile({ showNavMobile, setShowNavMobile }) {
                 }}
                 className={e.classes}
               >
-                <NavHashLink to={e.href}>
-                  {t(`layout_navigation_${e.translate_var}`, {
-                    defaultValue: e.name,
-                  })}
-                </NavHashLink>
+                <Link href={e.href} passHref legacyBehavior>
+                  <a>
+                    {t(`layout_navigation_${e.translate_var}`, {
+                      defaultValue: e.name,
+                    })}
+                  </a>
+                </Link>
               </li>
             ))}
           </ul>
         </div>
         <div className="bottom">
-          <Link to="ttps://www.facebook.com/visulaandko">
-            <img src={facebook} alt="facebook" />
+          <Link href="https://www.facebook.com/visulaandko" passHref legacyBehavior>
+            <a>
+              <img src={facebook} alt="facebook" />
+            </a>
           </Link>
-          <Link to="ttps://www.instagram.com/visualandko/">
-            <img src={instagram} alt="instagram" />
+          <Link href="https://www.instagram.com/visualandko/" passHref legacyBehavior>
+            <a>
+              <img src={instagram} alt="instagram" />
+            </a>
           </Link>
         </div>
       </div>
