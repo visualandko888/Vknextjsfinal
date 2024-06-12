@@ -6,6 +6,14 @@ header {
   position: fixed;
   width: 100%;
   z-index: 10;
+  top: 0;
+    left: 0;
+}
+
+header a{
+  font-family: "Roboto", sans-serif!important;
+  font-weight: 500;
+  font-style: normal;
 }
 
 main {
@@ -23,3 +31,11 @@ input {
   font-weight: 500;
   font-style: normal;
 }
+
+li span{padding-top: var(--height-header-top);
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: normal;}
+
+
+  

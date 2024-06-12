@@ -1,0 +1,114 @@
+@import './base.module.scss';
+/* components/Sidebar.module.css */
+
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 60px;
+    height: 100%;
+    background-color: #579eb0;
+    transition: width 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .sidebar:hover {
+    width: auto;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+  
+  .navList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+  
+  .navItem {
+    margin-bottom: 10px;
+    width: 100%;
+  }
+  
+  .navLink {
+    display: flex;
+    align-items: center;
+    color: #ecf0f1;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 4px;
+    transition: background 0.3s, width 0.3s;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    justify-content: center!important;
+    list-style: none;
+  }
+  
+  .sidebar:hover .navLink {
+    justify-content: center;
+  }
+  
+  .icon {
+    margin-right: 0px;
+    flex-shrink: 0;
+  }
+
+  .sidebar:hover .icon {margin-right: 10px;
+    flex-shrink: 0;
+  }
+
+  .sidebar:hover a:hover {
+    background-color: #f7d1dc;
+    border-radius: 4px;
+    color:white
+  }
+
+  
+
+  
+  .navText {
+    display: none;
+  }
+  
+  .sidebar:hover .navText {
+    display: inline;
+  }
+  
+  .sublist {
+    margin-top: 5px;
+    margin-left: 20px;
+    display: none;
+  }
+  
+  .navItem:hover .sublist {
+    display: block;
+  }
+  
+  .subNavItem {
+    margin-bottom: 5px;
+  }
+  
+  .subNavLink {
+    color: #bdc3c7;
+    text-decoration: none;
+    padding: 5px;
+    display: block;
+    transition: background 0.3s;
+  }
+  
+  .subNavLink:hover {
+    background-color: #f7d1dc;
+    border-radius: 4px;
+    color:white;
+    text-decoration: none;
+    list-style: none;
+  }
+
+  
+  

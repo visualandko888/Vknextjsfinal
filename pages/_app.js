@@ -13,7 +13,13 @@ import '/styles/reviews.module.scss'; // Ajoutez vos importations CSS globales i
 import '/styles/questions.module.scss'; // Ajoutez vos importations CSS globales ici
 import '/styles/contact2.module.scss'; // Ajoutez vos importations CSS globales ici
 import '/styles/blogsection.module.scss'; // Ajoutez vos importations CSS globales ici
+import '/styles/headerfooter.module.scss'; // Ajoutez vos importations CSS globales ici
+import '/styles/headerheader.module.scss'; // Ajoutez vos importations CSS globales ici
+import '/styles/cookies.module.scss'; // Ajoutez vos importations CSS globales ici
+import '/styles/newsletter.module.scss'; // Ajoutez vos importations CSS globales ici
 import '/styles/globals.scss';
+import '/styles/navLeft.module.scss';
+import '/styles/navTop.module.scss';
 import '../config/i18n';
 import Layout from '/src/components/Layout';
 

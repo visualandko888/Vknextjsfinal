@@ -1,17 +1,17 @@
 import { useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
+import Link from 'next/link';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
+import { useTranslation } from 'react-i18next';
 import logo from '/public/images/logo_blue.svg';
 import france from '/public/images/country/france.png';
 import royaumeUni from '/public/images/country/royaume-uni.png';
 import leftIcoCalendar from '/public/images/left-ico-calendar.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCalendarDay } from '@fortawesome/free-solid-svg-icons';
-import { useTranslation } from 'react-i18next';
-import Link from 'next/link';
+import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
+import styles from '/styles/navTop.module.scss';
 
-
-export default function NavTop2({ handleHoverNav }) {
+export default function NavTop2({ handleHoverNav, handleHoverLeftNav }) {
   const { i18n, t } = useTranslation();
   const navTopElements = [
     {
@@ -49,6 +49,7 @@ export default function NavTop2({ handleHoverNav }) {
       setShowButtonRdv(true);
     }, 3000);
   }, []);
+
   const countryList = [
     {
       name: 'France',
@@ -96,49 +97,44 @@ export default function NavTop2({ handleHoverNav }) {
   };
 
   return (
-    <div>
-      <div>
+    <div className={styles.navTop2}>
+      <div className={styles.left}>
         <ul>
-          <li>
-            <Link href="/">
+          <Link href="/" passHref legacyBehavior>
+            <a>
               <Image alt="logo" src={logo} />
-            </Link>
-          </li>
+            </a>
+          </Link>
           {navTopElements.map((e, index) => (
             <li
               role="button"
               tabIndex={0}
-              onClick={() => handleHoverNav(index)}
+              onClick={() => index === 1 && handleHoverLeftNav(true)}
               onKeyDown={() => handleHoverNav(index)}
               key={index}
-              className={e.url === currentPage ? 'active' : e.isButton ? 'button' : ''}
+              className={`${e.url === currentPage ? styles.active : ''} ${
+                e.isButton ? styles.button : ''
+              }`}
             >
-              <Link href={e.url}>
-                {t(`layout_navigation_${e.translate_var}`, {
-                  defaultValue: e.name,
-                })}
+              <Link href={e.url} passHref legacyBehavior>
+                <a>
+                  {t(`layout_navigation_${e.translate_var}`, {
+                    defaultValue: e.name,
+                  })}
+                </a>
               </Link>
             </li>
           ))}
         </ul>
       </div>
 
-      <div>
+      <div className={styles.right}>
         <ul>
-          <li
-            role="button"
-            tabIndex={0}
-            onKeyDown={() => showCalendar()}
-            onClick={() => showCalendar()}
-            className="topCalendar"
-          >
-            <Link href="/#">
-              <FontAwesomeIcon icon={faCalendarDay} />
-              <span>
-                {t('layout_navigation_prendre-rendez-vous', {
-                  defaultValue: 'Prendre rendez-vous',
-                })}
-              </span>
+          <li>
+            <Link href="/espace-client/login" passHref legacyBehavior>
+              <a>
+                <FontAwesomeIcon className={styles.faIcon} icon={faUserCircle} />
+              </a>
             </Link>
           </li>
         </ul>
@@ -149,29 +145,31 @@ export default function NavTop2({ handleHoverNav }) {
           onKeyDown={() => handleClickCountry()}
           onMouseEnter={() => handleHoverCountry()}
           onMouseLeave={() => handleHoverCountry()}
+          className={styles.country}
         >
           <Image
             alt={`drapeau ${countryList[currentCountry].name}`}
             src={countryList[currentCountry].img}
           />
           {showCountry && (
-            <div>
+            <div className={styles.subCountry}>
               {countryList.map((e, index) => (
-                <Image
+                <div
+                  key={index}
                   role="button"
                   tabIndex={0}
                   onClick={() => handleClickChangeCountry(index)}
                   onKeyDown={() => handleClickChangeCountry(index)}
-                  alt={`drapeau ${e.name}`}
-                  src={e.img}
-                />
+                >
+                  <Image alt={`drapeau ${e.name}`} src={e.img} />
+                </div>
               ))}
             </div>
           )}
         </div>
       </div>
       <div
-        className={showButtonRdv ? 'show' : 'unshow'}
+        className={`${styles.fixed} ${showButtonRdv ? styles.show : styles.unshow}`}
         role="button"
         tabIndex={0}
         onKeyDown={() => showCalendar()}

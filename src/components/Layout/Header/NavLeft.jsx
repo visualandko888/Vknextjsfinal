@@ -1,21 +1,45 @@
-import { useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
+// components/Sidebar.js
+
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-import icPlusCircle from '/public/images/ic-plus-circle.svg';
-import icSocialAds from '/public/images/ic-social-ads.svg';
-import { useTranslation } from 'react-i18next';
+import Image from 'next/image';
 import leftIcoDevWeb from '/public/images/left-ico-dev-web.svg';
 import leftIcoGoogleAds from '/public/images/left-ico-google-ads.svg';
+import icSocialAds from '/public/images/ic-social-ads.svg';
 import leftIcoCalendar from '/public/images/left-ico-calendar.svg';
+import icPlusCircle from '/public/images/ic-plus-circle.svg';
+import styles from '/styles/navLeft.module.scss';
 
-export default function NavLeft() {
-  const { t } = useTranslation();
-  const navLeftElements = [
+const Sidebar = () => {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  const navItems = [
     {
       name: 'Développement WEB',
       url: '/developpement-web',
       icon: leftIcoDevWeb,
       translate_var: 'developpement-web',
+      // sublist: [
+      //   {
+      //     name: 'Création de site Internet',
+      //     translate_var: 'web-site',
+      //     url: '#',
+      //   },
+      //   {
+      //     name: 'UX/UI/Web Design',
+      //     translate_var: 'web-design',
+      //     url: '#uxui',
+      //   },
+      //   {
+      //     name: 'Maintenance sécurité',
+      //     translate_var: 'maintenance-securite',
+      //     url: '#maintenance',
+      //   },
+      // ],
     },
     {
       name: 'Google Ads',
@@ -45,62 +69,37 @@ export default function NavLeft() {
     },
   ];
 
-  const [showHeaderTopNavProgress, setShowHeaderTopNavProgress] = useState(false);
-  const [handleHoverShowNavLeft, setHandleHoverShowNavLeft] = useState(false);
-  const router = useRouter();
-  const [currentPage, setCurrentPage] = useState(router.pathname);
-
-  const handleHoverLeftNav = (bool) => {
-    if (!showHeaderTopNavProgress) {
-      setShowHeaderTopNavProgress(true);
-      setHandleHoverShowNavLeft(bool);
-      setTimeout(() => {
-        setShowHeaderTopNavProgress(false);
-      }, 10);
-    }
-  };
-
-  useEffect(() => {
-    setCurrentPage(router.pathname);
-    window.scrollTo(0, 0);
-  }, [router.pathname]);
-
-  const showCalendar = () => {
-    // eslint-disable-next-line no-undef
-    Calendly.initPopupWidget({ url: 'https://calendly.com/visualandko/30min' });
-    return false;
-  };
+  if (!isClient) {
+    return null;
+  }
 
   return (
-    <div
-      onMouseLeave={() => handleHoverLeftNav(false)}
-      className={`navLeft ${handleHoverShowNavLeft ? 'show' : 'unshow'}`}
-    >
-      <ul>
-        {navLeftElements.map((e, index) => (
-          <li
-            role="button"
-            tabIndex={0}
-            key={index}
-            onClick={e.isCalendar ? showCalendar : null}
-            onKeyDown={e.isCalendar ? showCalendar : null}
-            className={e.url === currentPage ? 'active' : null}
-          >
-            <Link href={e.url} passHref>
-              <div onMouseEnter={() => handleHoverLeftNav(true)}>
-                <img
-                  className={`faIcon br${index}`}
-                  alt={e.name}
-                  src={e.icon}
-                />
-                {t(`layout_navigation_${e.translate_var}`, {
-                  defaultValue: e.name,
-                })}
-              </div>
+    <div className={styles.sidebar}>
+      <ul className={styles.navList}>
+        {navItems.map((item, index) => (
+          <li key={index} className={styles.navItem}>
+            <Link href={item.url} legacyBehavior passHref>
+              <a className={styles.navLink}>
+                <Image src={item.icon} alt={item.name} className={styles.icon} width={24} height={24} />
+                <span className={styles.navText}>{item.name}</span>
+              </a>
             </Link>
+            {item.sublist && (
+              <ul className={styles.sublist}>
+                {item.sublist.map((subItem, subIndex) => (
+                  <li key={subIndex} className={styles.subNavItem}>
+                    <Link href={subItem.url} legacyBehavior passHref>
+                      <a className={styles.subNavLink}>{subItem.name}</a>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            )}
           </li>
         ))}
       </ul>
     </div>
   );
-}
+};
+
+export default Sidebar;

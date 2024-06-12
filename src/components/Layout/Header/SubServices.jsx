@@ -1,6 +1,7 @@
 import logo from '/public/images/logo.svg';
 import { useTranslation } from 'react-i18next';
 import Link from 'next/link';
+import styles from '/styles/headerheader.module.scss';  // Change to the correct path if necessary
 
 export default function SubServices({ currentNavHover, setCurrentNavHover }) {
   const handleBackClick = () => {
@@ -10,17 +11,17 @@ export default function SubServices({ currentNavHover, setCurrentNavHover }) {
   const { t } = useTranslation(); // Importation de la traduction
 
   return (
-    <div className={`${currentNavHover === 1 ? 'show' : 'unshow'} subServices`}>
+    <div className={`${currentNavHover === 1 ? styles.show : styles.unshow} ${styles.subServices}`}>
       <div
         role="button"
         onClick={handleBackClick}
         onKeyDown={handleBackClick}
         tabIndex={0}
-        className="back"
+        className={styles.back}
       >
         {' '}
       </div>
-      <div className="left">
+      <div className={styles.left}>
         <h1>
           <img src={logo} alt="logo" />
         </h1>

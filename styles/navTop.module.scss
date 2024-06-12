@@ -1,0 +1,200 @@
+
+@import "./base.module.scss";
+
+
+.navTop2 {
+    height: var(--height-header-top);
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px;
+  
+    .fixed {
+      position: fixed;
+      background-color: #579eb0;
+      color: #fff;
+      bottom: 1rem;
+      right: -10rem;
+      height: 90px;
+      width: 90px;
+      border-radius: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-weight: bold;
+      font-size: 0.7em;
+      gap: 0.5rem;
+      cursor: pointer;
+      transition: background linear 0.3s;
+      transition: right linear 1s;
+      box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+        rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+        rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  
+      &:hover {
+        background-color: #579eb0;
+      }
+  
+      &.show {
+        right: 1rem;
+      }
+  
+      &.unshow {
+        right: -10rem;
+      }
+    }
+  
+    .left {
+      ul {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        gap: clamp(1rem, 3vw, 3rem);
+        margin-top: 0;
+        margin-left: 50px;
+        width: fit-content;
+  
+        li {
+          list-style: none;
+          height: calc(var(--height-header-top) - 4px);
+          display: flex;
+          align-items: center;
+  
+          &.button {
+            background-color: #579eb0;
+            height: 45px;
+            padding: 12px 25px;
+            box-sizing: border-box;
+  
+            &:hover {
+              height: calc(var(--height-header-top) - 0px);
+             
+  
+              a {
+                color: #fff;
+              }
+            }
+  
+            a {
+              color: #fff;
+            }
+          }
+  
+          &.active {
+            border-bottom: 4px var(--primary-color) solid;
+  
+            a {
+              margin-bottom: -4px;
+              color: var(--primary-color);
+            }
+          }
+  
+          &:hover {
+            cursor: pointer;
+            border-bottom: 4px var(--primary-color) solid;
+  
+            a {
+              margin-bottom: -4px;
+              color: var(--primary-color);
+            }
+          }
+  
+          a {
+            display: block;
+            text-align: center;
+            font-weight: 700;
+            padding: 0.5rem;
+            font-size: 1em;
+            font-family: Montserrat;
+            color: #474747;
+            text-decoration: none;
+          }
+        }
+  
+        img {
+          display: block;
+          width: 11rem;
+        }
+  
+        .Icon {
+          width: 2rem;
+          cursor: pointer;
+        }
+      }
+    }
+  
+    .right {
+      position: relative;
+      display: flex;
+  
+      .country {
+        position: absolute;
+        right: 1rem;
+        color: #fff;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        padding: 0 0.7rem;
+        cursor: pointer;
+  
+        img {
+          width: 30px;
+        }
+  
+        .subCountry {
+          position: absolute;
+          top: 80px;
+          background-color: #fff;
+          right: 0px;
+          box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px;
+  
+          img {
+            width: 30px;
+            padding: 0 0.7rem;
+            background-color: #fff;
+  
+            &:hover {
+              background-color: var(--primary-color);
+            }
+          }
+        }
+      }
+  
+      ul {
+        display: flex;
+        margin: 0;
+        gap: 0.8rem;
+        margin-right: 2rem;
+  
+        li {
+          list-style: none;
+  
+          &:last-of-type {
+            margin-right: 0rem;
+          }
+  
+          a {
+            color: #474747;
+            text-decoration: none;
+            display: flex;
+            height: 100%;
+            align-items: center;
+            font-weight: bold;
+  
+            .faIcon {
+              font-size: 2.2rem;
+              color: var(--primary-color);
+            }
+  
+            img {
+              width: 30px;
+            }
+          }
+        }
+      }
+    }
+  }
+  

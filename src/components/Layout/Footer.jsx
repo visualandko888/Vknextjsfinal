@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import axios from 'axios';
 import Link from 'next/link';
+import Image from 'next/image';
 import logo from '/public/images/logo-primary.svg';
-import '/styles/headerfooter.module.scss';
-import '/styles/newsletter.module.scss';
+import styles from '/styles/headerfooter.module.scss';
+import stylesNewsletter from '/styles/newsletter.module.scss';
 import emailController from '/src/services/formController/emailController';
 import { useTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -52,12 +53,12 @@ export default function Footer() {
             setTimeout(() => {
               setSendNewsLettersMessage(res.data.message);
               setSendProgress(2);
-            }, '1500');
+            }, 1500);
           } else {
             setTimeout(() => {
               setSendNewsLettersMessage(res.data.message);
               setSendProgress(0);
-            }, '1500');
+            }, 1500);
           }
         })
         .catch(() => {});
@@ -65,10 +66,10 @@ export default function Footer() {
   };
 
   return (
-    <footer className="footer-bottom">
-      <div className="content">
-        <section className="newsletter">
-          <form method="post" onSubmit={handleSubmitForm} className="form">
+    <footer className={styles['footer-bottom']}>
+      <div className={styles.content}>
+        <section className={stylesNewsletter.newsletter}>
+          <form method="post" onSubmit={handleSubmitForm} className={stylesNewsletter.form}>
             <h3>
               {t('layout_footer_t1', {
                 defaultValue: 'Inscription à la newsletter',
@@ -79,7 +80,7 @@ export default function Footer() {
             </h3>
             {sendProgress === 0 && (
               <>
-                <div className="group">
+                <div className={stylesNewsletter.group}>
                   <label htmlFor="fullname">
                     {t('layout_footer_t2', { defaultValue: 'Nom complet' })}
                     :
@@ -93,7 +94,7 @@ export default function Footer() {
                     value={fullname}
                   />
                 </div>
-                <div className="group">
+                <div className={stylesNewsletter.group}>
                   <label htmlFor="mail">
                     {t('layout_footer_t2', { defaultValue: 'Adresse email' })}
                     :
@@ -107,7 +108,7 @@ export default function Footer() {
                     value={mail}
                   />
                 </div>
-                <div className="group">
+                <div className={stylesNewsletter.group}>
                   <button type="submit" className="btn primary">
                     {t('elements_inscription', { defaultValue: 'Inscription' })}
                   </button>
@@ -124,10 +125,10 @@ export default function Footer() {
             {sendProgress === 2 && <div>{sendNewsLettersMessage}</div>}
           </form>
         </section>
-        <div className="nav-card">
-          <img alt="logo" src={logo} />
-          <div className="group-content">
-            <div className="group">
+        <div className={styles['nav-card']}>
+          <Image alt="logo" src={logo} />
+          <div className={styles['group-content']}>
+            <div className={styles.group}>
               <h3>
                 {t('layout_navigation_navigation', {
                   defaultValue: 'Navigation',
@@ -170,7 +171,7 @@ export default function Footer() {
                 </li>
               </ul>
             </div>
-            <div className="group">
+            <div className={styles.group}>
               <h3>
                 {t('layout_navigation_nos-services', {
                   defaultValue: 'Nos services',
@@ -215,7 +216,7 @@ export default function Footer() {
                 </li>
               </ul>
             </div>
-            <div className="group">
+            <div className={styles.group}>
               <h3>
                 {t('elements_informations', { defaultValue: 'Informations' })}
               </h3>
@@ -231,7 +232,7 @@ export default function Footer() {
                 </li>
               </ul>
             </div>
-            <div className="group contacts">
+            <div className={`${styles.group} ${styles.contacts}`}>
               <h3>
                 {t('layout_navigation_retrouvez-nous', {
                   defaultValue: 'Retrouvez-nous',
@@ -239,14 +240,14 @@ export default function Footer() {
               </h3>
               <ul>
                 <li>
-                  <FontAwesomeIcon className="faIcon" icon={faHome} />
+                  <FontAwesomeIcon className={styles.faIcon} icon={faHome} />
                   {' '}
                   3 rue Keller, 75011 PARIS
                 </li>
                 <li>
                   <Link href="tel:+33767744343" legacyBehavior>
                     <a>
-                      <FontAwesomeIcon className="faIcon" icon={faPhone} />
+                      <FontAwesomeIcon className={styles.faIcon} icon={faPhone} />
                       {' '}
                       07.67.74.43.43
                     </a>
@@ -255,7 +256,7 @@ export default function Footer() {
                 <li>
                   <Link href="mailto:contact@visualandko.com" legacyBehavior>
                     <a>
-                      <FontAwesomeIcon className="faIcon" icon={faAt} />
+                      <FontAwesomeIcon className={styles.faIcon} icon={faAt} />
                       {' '}
                       contact@visualandko.com
                     </a>
@@ -269,3 +270,4 @@ export default function Footer() {
     </footer>
   );
 }
+
