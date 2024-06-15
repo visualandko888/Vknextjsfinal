@@ -1,0 +1,147 @@
+@import './base.module.scss';
+
+.navMobile {
+    display: none;
+  
+    height: 100vh;
+    width: 100vw;
+    z-index: 4;
+    top: 0;
+  
+    .back {
+      background-color: #000000c5;
+      width: 100vw;
+      height: 100vh;
+      position: relative;
+      opacity: 0;
+    }
+  
+    .right {
+      position: absolute;
+      background-color: $primary-color;
+      height: 100vh;
+      width: 100%;
+      top: 0rem;
+      z-index: 5;
+      padding: 30px;
+      box-sizing: border-box;
+      left:0;
+      .top {
+        display: flex;
+        justify-content: flex-end;
+  
+        .faIcon {
+          color: #fff;
+          font-size: 3em;
+        }
+      }
+  
+      .bottom {
+        position: absolute;
+        bottom: 2rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        justify-content: flex-end;
+        right: 2rem;
+        box-sizing: border-box;
+  
+        a {
+          img {
+            width: 3rem;
+          }
+        }
+      }
+  
+      .center {
+        margin-top: 46px;
+        text-align: center!important;
+        padding: 0px!important;
+        ul {
+            width: 100%;
+            padding:0px;
+         
+  
+          li {
+            list-style: none;
+            margin-bottom: 22px;
+  
+            a {
+                color: #fff;
+                text-decoration: none;
+                font-size: 1.5em;
+                text-align: center; // Assurez-vous que le texte dans les liens est centré
+                display: block;
+                font-weight: bold;
+            }
+  
+            &.small {
+              a {
+                font-size: 1.1em;
+                font-weight: normal;
+              }
+            }
+          }
+        }
+      }
+    }
+  
+    &.show {
+      display: block;
+      animation: fadeIn 0.5s ease-in-out;
+  
+      .back {
+        opacity: 1;
+        animation: fadeIn 0.5s ease-in-out;
+      }
+  
+      .right {
+        right: 0;
+        animation: slideInRight 0.5s ease-in-out;
+      }
+    }
+  
+    &.unshow {
+        animation: fadeIn 0.5s ease-in-out;
+  
+      .back {
+        opacity: 0;
+        animation: fadeIn 0.5s ease-in-out;
+      }
+  
+      .right {
+        right: -50rem;
+        animation: fadeIn 0.5s ease-in-out;
+      }
+    }
+  
+    @keyframes dpNone {
+      from {
+        display: block;
+      }
+  
+      to {
+        display: none;
+      }
+    }
+  
+    @keyframes slideInRight {
+      from {
+        right: -50rem;
+      }
+  
+      to {
+        right: 0;
+      }
+    }
+  
+    @keyframes slideOutRight {
+      from {
+        right: 0;
+      }
+  
+      to {
+        right: -50rem;
+      }
+    }
+  }

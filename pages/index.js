@@ -28,7 +28,7 @@ export default function Home() {
   return (
     <main>
       <HelmetMeta title={title} description={description} />
-      <Hero />
+      <Hero /> 
       <Bpi />
       <Team />
       <Services />
@@ -37,7 +37,7 @@ export default function Home() {
       <Reviews />
       <Faq />
       <Contact />
-      <BlogSection />
+      <BlogSection /> 
     </main>
   );
 }

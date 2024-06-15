@@ -1,5 +1,3 @@
-// components/Sidebar.js
-
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -23,23 +21,6 @@ const Sidebar = () => {
       url: '/developpement-web',
       icon: leftIcoDevWeb,
       translate_var: 'developpement-web',
-      // sublist: [
-      //   {
-      //     name: 'Création de site Internet',
-      //     translate_var: 'web-site',
-      //     url: '#',
-      //   },
-      //   {
-      //     name: 'UX/UI/Web Design',
-      //     translate_var: 'web-design',
-      //     url: '#uxui',
-      //   },
-      //   {
-      //     name: 'Maintenance sécurité',
-      //     translate_var: 'maintenance-securite',
-      //     url: '#maintenance',
-      //   },
-      // ],
     },
     {
       name: 'Google Ads',
@@ -78,17 +59,24 @@ const Sidebar = () => {
       <ul className={styles.navList}>
         {navItems.map((item, index) => (
           <li key={index} className={styles.navItem}>
-            <Link href={item.url} legacyBehavior passHref>
+            {item.url ? (
+              <Link href={item.url} legacyBehavior>
+                <a className={styles.navLink}>
+                  <Image src={item.icon} alt={item.name} className={styles.icon} width={24} height={24} />
+                  <span className={styles.navText}>{item.name}</span>
+                </a>
+              </Link>
+            ) : (
               <a className={styles.navLink}>
                 <Image src={item.icon} alt={item.name} className={styles.icon} width={24} height={24} />
                 <span className={styles.navText}>{item.name}</span>
               </a>
-            </Link>
+            )}
             {item.sublist && (
               <ul className={styles.sublist}>
                 {item.sublist.map((subItem, subIndex) => (
                   <li key={subIndex} className={styles.subNavItem}>
-                    <Link href={subItem.url} legacyBehavior passHref>
+                    <Link href={subItem.url} legacyBehavior>
                       <a className={styles.subNavLink}>{subItem.name}</a>
                     </Link>
                   </li>

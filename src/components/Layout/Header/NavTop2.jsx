@@ -147,10 +147,10 @@ export default function NavTop2({ handleHoverNav, handleHoverLeftNav }) {
           onMouseLeave={() => handleHoverCountry()}
           className={styles.country}
         >
-          <Image
+          {/* <Image
             alt={`drapeau ${countryList[currentCountry].name}`}
             src={countryList[currentCountry].img}
-          />
+          /> */}
           {showCountry && (
             <div className={styles.subCountry}>
               {countryList.map((e, index) => (

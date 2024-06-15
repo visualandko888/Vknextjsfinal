@@ -1,9 +1,11 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
+import Image from 'next/image';
 import facebook from '/public/images/facebook-w.svg';
 import instagram from '/public/images/instagram-w.svg';
 import { useTranslation } from 'react-i18next';
+import styles from '/styles/navmobile.module.scss';
 
 export default function NavMobile({ showNavMobile, setShowNavMobile }) {
   const { t } = useTranslation(); // Importation de la traduction
@@ -40,31 +42,33 @@ export default function NavMobile({ showNavMobile, setShowNavMobile }) {
       translate_var: 'prendre-rendez-vous',
     },
   ];
+
   const showCalendar = () => {
     // eslint-disable-next-line no-undef
     Calendly.initPopupWidget({ url: 'https://calendly.com/visualandko/30min' });
     return false;
   };
+
   return (
-    <div className={`navMobile ${showNavMobile ? 'show' : 'unshow'}`}>
+    <div className={`${styles.navMobile} ${showNavMobile ? styles.show : styles.unshow}`}>
       <div
         role="button"
         tabIndex={0}
         onKeyDown={() => setShowNavMobile(false)}
         onClick={() => setShowNavMobile(false)}
-        className="back"
+        className={styles.back}
       >
         {' '}
       </div>
-      <div className="right">
-        <div className="top">
+      <div className={styles.right}>
+        <div className={styles.top}>
           <FontAwesomeIcon
             onClick={() => setShowNavMobile(false)}
-            className="faIcon"
+            className={styles.faIcon}
             icon={faTimes}
           />
         </div>
-        <div className="middle">
+        <div className={styles.center}>
           <ul>
             {navArr.map((e, index) => (
               <li
@@ -83,7 +87,7 @@ export default function NavMobile({ showNavMobile, setShowNavMobile }) {
                     showCalendar();
                   }
                 }}
-                className={e.classes}
+                className={styles[e.classes]}
               >
                 <Link href={e.href} passHref legacyBehavior>
                   <a>
@@ -96,15 +100,15 @@ export default function NavMobile({ showNavMobile, setShowNavMobile }) {
             ))}
           </ul>
         </div>
-        <div className="bottom">
+        <div className={styles.bottom}>
           <Link href="https://www.facebook.com/visulaandko" passHref legacyBehavior>
             <a>
-              <img src={facebook} alt="facebook" />
+              <Image src={facebook} alt="facebook" width={30} height={30} />
             </a>
           </Link>
           <Link href="https://www.instagram.com/visualandko/" passHref legacyBehavior>
             <a>
-              <img src={instagram} alt="instagram" />
+              <Image src={instagram} alt="instagram" width={30} height={30} />
             </a>
           </Link>
         </div>

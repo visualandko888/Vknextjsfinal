@@ -55,16 +55,7 @@
           }
         }
 
-        &.show {
-        }
-
-        &.unshow {
-          .content {
-            .faIcon {
-              display: none;
-            }
-          }
-        }
+        
       }
 
       .card {
@@ -199,7 +190,8 @@
                   gap: 0.5rem;
 
                   img {
-                    width: 2.5rem;
+                    width: 100%;
+                    height: auto;
                   }
                 }
               }
@@ -258,3 +250,26 @@
     }
   }
 }
+
+.show2 {
+  display: block;
+  /* autres styles pour montrer l'élément */
+}
+
+.unshow2 {
+  display: none;
+  /* autres styles pour cacher l'élément */
+}
+
+.imgrea{padding: 0.6rem clamp(1rem, 10vw, 3rem);
+  font-size: 1.5em;
+  background-color: #579eb0;
+  color: #fff;
+  display: block;
+  border: transparent;
+  border-radius: 0.5rem;
+  margin: 31px auto;
+  box-shadow: rgba(0, 0, 0, 0.355) -2px 7px 8px 0px;
+  transition: background 0.5s linear;
+  text-decoration: none;
+cursor: pointer;}

@@ -1,6 +1,6 @@
+import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import Link from 'next/link';
 import Image from 'next/image';
 import styles from '/styles/hero.module.scss'; // Assurez-vous que ce chemin est correct
 
@@ -88,12 +88,12 @@ export default function Hero() {
             </span>
           </div>
 
-          <Link href="/#contact" passHref>
-            <button type="button">
+          <Link href="/#contact" legacyBehavior>
+            <a  type="button">
               {t('home_hero_t7', {
                 defaultValue: 'Contactez-nous !',
               })}
-            </button>
+            </a>
           </Link>
         </div>
       </div>
@@ -101,18 +101,18 @@ export default function Hero() {
         <div className={styles.left}>
           <ul>
             <li>
-              <Link href="https://www.facebook.com/visulaandko" passHref>
-                <Image alt="facebook logo" src="public/images/facebook.svg" width={24} height={24} />
+              <Link href="https://www.facebook.com/visulaandko" legacyBehavior>
+                <Image alt="facebook logo" src="/public/images/facebook.svg" width={24} height={24} />
               </Link>
             </li>
             <li>
-              <Link href="https://www.instagram.com/visualandko/" passHref>
-                <Image alt="instagram logo" src="public/images/instagram.svg" width={24} height={24} />
+              <Link href="https://www.instagram.com/visualandko/" legacyBehavior>
+                <Image alt="instagram logo" src="/public/images/instagram.svg" width={24} height={24} />
               </Link>
             </li>
             <li>
-              <Link href="https://www.linkedin.com/company/19092513/admin/feed/posts/?feedType=following" passHref>
-                <Image alt="linkedin logo" src="public/images/linkedin.svg" width={24} height={24} />
+              <Link href="https://www.linkedin.com/company/19092513/admin/feed/posts/?feedType=following" legacyBehavior>
+                <Image alt="linkedin logo" src="/public/images/linkedin.svg" width={24} height={24} />
               </Link>
             </li>
           </ul>

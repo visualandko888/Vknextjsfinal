@@ -1,85 +1,71 @@
 @import "./base.module.scss";
 
 .services {
-  @extend ._baseSection ;
+  @extend ._baseSection;
   width: 85vw;
   margin: auto;
   padding: 0;
 
   .modalCard {
-    &.type2 {
-      .content {
-        h3,
-        h4,
-        span {
-          color: #fff;
-        }
+    z-index: 999;
+    background-color: transparent;
+    width: 100vw;
+    height: 100vh;
+    top: 200vh; // Initial position off-screen
+    left: 0;
+    position: fixed;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
 
-        p {
-          background-color: #fff;
-          color: var(--primary-color);
+    &.modalShow {
+      top: 0;
+      background-color: rgba(0, 0, 0, 0.8); // Semi-transparent background
+      opacity: 1;
+      width: 100%;
+      height: 100%;
+
+      .content {
+        top: 50%;
+        transition: all 0.5s ease-in-out;
+
+        .faIcon {
+          position: absolute;
+          top: -10vh;
+          right: 0;
+          color: #fff;
+          font-size: 3em;
         }
       }
     }
 
-    &.type1 {
-      .content {
-        h3,
-        h4,
-        span {
-          color: #474747;
-        }
+    &.modalUnshow {
+      background-color: transparent;
+      opacity: 0;
 
-        p {
-          background-color: var(--primary-color);
-          color: #fff;
+      .content {
+        top: 200vh;
+
+        .faIcon {
+          display: none;
         }
       }
     }
 
     .content {
-      position: relative;
-      padding: 0 1rem;
-      box-sizing: border-box;
+      position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+      border-radius: 0.6rem;
+      background-color: #fff; // Default background color
+    }
 
-      img {
-        margin: 1vh;
-        width: 27vw;
-      }
+    &.type1 .content {
+      background-color: #fff;
+    }
 
-      h3 {
-        font-size: 8vw;
-        margin-top: 0rem;
-        font-weight: bold;
-        margin-bottom: 0rem;
-      }
-
-      h4 {
-        font-size: 7vw;
-        margin: 3vh;
-      }
-
-      p {
-        padding: 1rem 1rem;
-        margin: 0rem;
-        line-height: 140%;
-        font-size: 1.1em;
-        font-weight: bold;
-      }
-
-      a {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-decoration: none;
-        color: #000;
-        font-size: 1.1em;
-        margin-top: 2vh;
-
-        img {
-          width: 3rem;
-        }
-      }
+    &.type2 .content {
+      background-color: var(--primary-color);
     }
   }
 
@@ -168,6 +154,8 @@
             rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
             rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
           border-radius: 15px;
+
+          
 
           &.bg-blue {
             .cardBack span img {
@@ -263,13 +251,9 @@
 
             p {
               font-size: 1.2rem;
-              position: absolute;
-              top: 50%;
-              left: 50%;
-              transform: translate(-50%, -50%);
-              text-align: left;
-              width: 75%;
+              padding: 30px;
               margin: 0;
+              margin-top: 20px;
             }
 
             span {
@@ -281,7 +265,8 @@
               gap: 1rem;
 
               img {
-                width: 3rem;
+                width: 40px;
+                height: auto;
               }
             }
           }
@@ -417,7 +402,7 @@
       }
 
       .arrowButton {
-        position: absolute;
+        
         display: flex;
         left: 0;
         align-items: center;
@@ -524,3 +509,42 @@
     }
   }
 }
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes unshow {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.cardBack span img {
+ width: 20px;
+
+
+}
+
+.learnMore{padding: 0.6rem clamp(1rem, 10vw, 3rem);
+  font-size: 1.5em;
+  background-color: #579eb0;
+  color: #fff;
+  display: block;
+  border: transparent;
+  border-radius: 0.5rem;
+  margin: auto;
+  box-shadow: rgba(0, 0, 0, 0.355) -2px 7px 8px 0px;
+  transition: background 0.5s linear;
+  text-decoration: none;
+cursor: pointer;
+
+max-width: 200px;}

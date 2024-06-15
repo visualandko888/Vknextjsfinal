@@ -1,6 +1,5 @@
-import { useEffect, useState } from 'react';
 import Image from 'next/image';
-import styles from '/styles/services.module.scss';
+import React, { useEffect, useState } from 'react';
 import SeoIcon from '/public/images/card-seo-icone.svg';
 import SeaIcon from '/public/images/card-sea-icone.svg';
 import GoogleIcon from '/public/images/card-google-icone.png';
@@ -9,16 +8,17 @@ import UxDesignIcon from '/public/images/card-uxdesign-icone.svg';
 import SecurityIcon from '/public/images/card-security-icone.png';
 import SpinningArrow from '/public/images/vector-spinning-arrow.png';
 import ButtonForm from '/public/images/bouton-services-form.png';
-import arrow_right from '/public/images/arrow_right.png';
+import styles from '/styles/services.module.scss'; // Importer les styles comme un module
 import { useTranslation } from 'react-i18next';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import ModalCard from '/src/components/Elements/ModalCard';
+import arrow_right from '/public/images/arrow_right.png';
 
 export default function Services() {
   const router = useRouter();
-  const { t } = useTranslation(); // Importation de la traduction
-  const [windowSize, setWindowSize] = useState(null);
+  const { t } = useTranslation();
+  const [windowSize, setWindowSize] = useState(null); // (1) Initialiser à null pour indiquer qu'il n'a pas encore été défini
   const [isClick, setIsClick] = useState(false);
   const [currentShow, setCurrentShow] = useState({});
   const [currentType, setCurrentType] = useState(1);
@@ -31,8 +31,6 @@ export default function Services() {
       url: '/developpement-web#creation',
       img: WebsiteIcon,
       id: 4,
-      width: 50, // ajustez la largeur selon vos besoins
-      height: 50, // ajustez la hauteur selon vos besoins
     },
     {
       title: 'UX/UI/Web Design',
@@ -41,8 +39,6 @@ export default function Services() {
       url: '/developpement-web#uxui',
       img: UxDesignIcon,
       id: 5,
-      width: 50,
-      height: 50,
     },
     {
       title: 'Google Ads',
@@ -51,8 +47,6 @@ export default function Services() {
       url: '/google-ads',
       img: GoogleIcon,
       id: 3,
-      width: 50,
-      height: 50,
     },
     {
       title: 'SEA',
@@ -61,8 +55,6 @@ export default function Services() {
       url: '/referencement-payant',
       img: SeaIcon,
       id: 2,
-      width: 50,
-      height: 50,
     },
     {
       title: 'SEO',
@@ -71,8 +63,6 @@ export default function Services() {
       url: '/referencement-naturel',
       img: SeoIcon,
       id: 1,
-      width: 50,
-      height: 50,
     },
     {
       title: 'Maintenance sécurité',
@@ -81,25 +71,27 @@ export default function Services() {
       url: '/developpement-web#maintenance',
       img: SecurityIcon,
       id: 6,
-      width: 50,
-      height: 50,
     },
   ];
 
   const handleClick = (type, index) => {
     setIsClick(type);
-    if (index >= 0) {
-      setCurrentShow(serviceList[index]);
-      setCurrentType([0, 3, 4].includes(index) ? 1 : 2);
+    if (index > 0) {
+      setCurrentShow(serviceList[index - 1]);
+      setCurrentType(index - 1 === 0 || index - 1 === 3 || index - 1 === 4 ? 1 : 2);
     }
   };
 
   useEffect(() => {
-    const handleResize = () => setWindowSize(window.innerWidth);
-    handleResize(); // set the initial value
-    window.addEventListener('resize', handleResize);
+    // (2) Utiliser une fonction asynchrone pour définir la taille de la fenêtre après le montage du composant
+    const updateWindowSize = () => {
+      setWindowSize(window.innerWidth);
+    };
 
-    return () => window.removeEventListener('resize', handleResize);
+    updateWindowSize(); // Initialiser lors du montage
+    window.addEventListener('resize', updateWindowSize);
+
+    return () => window.removeEventListener('resize', updateWindowSize);
   }, []);
 
   const goTo = (url) => {
@@ -107,22 +99,17 @@ export default function Services() {
   };
 
   const serviceListBg = [
-    'bg-white',
-    'bg-blue',
-    'bg-blue',
-    'bg-white',
-    'bg-white imgcenter',
-    'bg-blue imgcenter',
+    styles.bgWhite,
+    styles.bgBlue,
+    styles.bgBlue,
+    styles.bgWhite,
+    `${styles.bgWhite} ${styles.imgcenter}`,
+    `${styles.bgBlue} ${styles.imgcenter}`,
   ];
-
-  if (windowSize === null) {
-    // Render a loader or nothing until windowSize is available
-    return null;
-  }
 
   return (
     <section id="services" className={styles.services}>
-      <h2>
+      <h2 className={styles.servicesTitle}>
         {t('home_services_t1', { defaultValue: 'Nos offres et services' })}
       </h2>
 
@@ -133,13 +120,13 @@ export default function Services() {
               role="button"
               tabIndex={0}
               onKeyDown={() => {
-                handleClick(true, index);
+                handleClick(true, index + 1);
                 if (windowSize > 768) {
                   goTo(e.url);
                 }
               }}
               onClick={() => {
-                handleClick(true, index);
+                handleClick(true, index + 1);
                 if (windowSize > 768) {
                   goTo(e.url);
                 }
@@ -147,16 +134,16 @@ export default function Services() {
               key={index}
               className={styles.card}
             >
-              <div className={`${styles.flipCardInner} ${styles[serviceListBg[index]]}`}>
+              <div className={`${styles.flipCardInner} ${serviceListBg[index]}`}>
                 <div className={styles.cardFront}>
-                  <Image className={styles.serviceImg} src={e.img} alt="serviceImg" width={e.width} height={e.height} />
+                  <Image className={styles.serviceImg} src={e.img} alt="serviceImg" />
                   <div className={styles.serviceTitles}>
-                    <h3>
+                    <h3 className={styles.serviceTitle}>
                       {t(`home_services_card_title${index + 1}`, {
                         defaultValue: e.title,
                       })}
                     </h3>
-                    <p>
+                    <p className={styles.serviceSubtitle}>
                       {windowSize > 768 && (
                         <>
                           {t(`home_services_card_subtitle${index + 1}`, {
@@ -168,23 +155,25 @@ export default function Services() {
                   </div>
                 </div>
                 <div className={styles.cardBack}>
-                  <p>
+                  <p className={styles.serviceDesc}>
                     {t(`home_services_card_desc${index + 1}`, {
                       defaultValue: e.desc,
                     })}
                   </p>
-                  <span>
-                    <Image src={arrow_right} alt="fleche" width={24} height={24} />
-                    {' '}
-                    {t('home_services_en-savoir-plus', 'En savoir plus')}
-                  </span>
+                  {e.url && (
+                    <Link className={styles.learnMore} href={e.url} legacyBehavior>
+                      <a className={styles.learnMore}>
+                        {t('home_services_en-savoir-plus', 'En savoir plus')}
+                      </a>
+                    </Link>
+                  )}
                 </div>
               </div>
             </div>
           ))}
         </div>
         <div className={styles.income}>
-          <h3>
+          <h3 className={styles.incomeTitle}>
             <span className={styles.firstLine}>
               {t('home_services_t2', { defaultValue: 'Comment nous générons' })}
             </span>
@@ -193,21 +182,21 @@ export default function Services() {
             </span>
           </h3>
           <ul className={styles.activities}>
-            <li>
+            <li className={styles.activity}>
               <span>
                 {t('home_services_t4', {
                   defaultValue: 'Création de sites optimisés',
                 })}
               </span>
             </li>
-            <li>
+            <li className={styles.activity}>
               <span>
                 {t('home_services_t5', {
                   defaultValue: 'Génération de traffic sur votre site',
                 })}
               </span>
             </li>
-            <li>
+            <li className={styles.activity}>
               <span>
                 {t('home_services_t6', {
                   defaultValue:
@@ -215,7 +204,7 @@ export default function Services() {
                 })}
               </span>
             </li>
-            <li>
+            <li className={styles.activity}>
               <span>
                 {t('home_services_t7', {
                   defaultValue:
@@ -223,7 +212,7 @@ export default function Services() {
                 })}
               </span>
             </li>
-            <li>
+            <li className={styles.activity}>
               <span>
                 {t('home_services_t8', {
                   defaultValue:
@@ -233,17 +222,17 @@ export default function Services() {
             </li>
           </ul>
           <ul className={styles.questions}>
-            <li>
+            <li className={styles.question}>
               {t('home_services_t9', {
                 defaultValue: "Envie d'améliorer vos performances ?",
               })}
             </li>
-            <li className={styles.specificQuestion}>
+            <li className={`${styles.question} ${styles.specificQuestion}`}>
               {t('home_services_t10', {
                 defaultValue: 'Une idée de projet web ?',
               })}
             </li>
-            <li>
+            <li className={styles.question}>
               {t('home_services_t11', {
                 defaultValue: "Besoin d'un conseil ?",
               })}
@@ -251,42 +240,41 @@ export default function Services() {
           </ul>
           <div className={styles.arrowButton}>
             <Link href="/#contact" legacyBehavior>
-              <a>
+              <a className={styles.arrowButtonLink}>
                 <Image
                   src={SpinningArrow}
                   className={styles.spinningArrow}
                   alt="flèche"
-                  width={24}
-                  height={24}
                 />
                 <Image
                   src={ButtonForm}
                   className={styles.serviceToForm}
                   alt="bouton vers le formulaire"
-                  width={24}
-                  height={24}
                 />
               </a>
             </Link>
           </div>
         </div>
       </div>
-      {windowSize <= 768 && (
+      {windowSize && windowSize <= 768 && (
         <ModalCard
           handleClick={handleClick}
-          classes={`${styles.type}${currentType} ${isClick ? styles.show : styles.unshow}`}
+          classes={`${styles.modalCard} type${currentType} ${isClick ? styles.modalShow : styles.modalUnshow}`}
         >
-          <Image className={styles.serviceImg} src={currentShow.img} alt="serviceImg" width={currentShow.width} height={currentShow.height} />
-          <h3>{currentShow.title}</h3>
-          <h4>{currentShow.subtitle}</h4>
-          <p>{currentShow.desc}</p>
-          <Link href={currentShow.url} legacyBehavior>
-            <a>
-              <Image src={arrow_right} alt="fleche" width={24} height={24} />
-              {' '}
-              {t('home_services_en-savoir-plus', 'En savoir plus')}
-            </a>
-          </Link>
+          <div className={styles.modalContent}>
+            {currentShow.img && <Image className={styles.serviceImg} src={currentShow.img} alt="serviceImg" />}
+            <h3 className={styles.modalTitle}>{currentShow.title}</h3>
+            <h4 className={styles.modalSubtitle}>{currentShow.subtitle}</h4>
+            <p className={styles.modalDesc}>{currentShow.desc}</p>
+            {currentShow.url && (
+              <Link href={currentShow.url} legacyBehavior>
+                <a className={styles.modalLink}>
+                 
+                  {t('home_services_en-savoir-plus', 'En savoir plus')}
+                </a>
+              </Link>
+            )}
+          </div>
         </ModalCard>
       )}
     </section>

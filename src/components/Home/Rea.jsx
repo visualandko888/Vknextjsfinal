@@ -7,7 +7,7 @@ import styles from '/styles/Rea.module.scss';
 import { useRouter } from 'next/router';
 import chevron from '/public/images/chevron.png';
 import arrow_right from '/public/images/arrow_right.png';
-import ModalCard from '/src/components/Elements/ModalCard';
+import ModalCard from '/src/components/Elements/ModalCardrea';
 
 export default function RealisationsSlider() {
   const { t } = useTranslation(); // Importation de la traduction
@@ -140,9 +140,9 @@ export default function RealisationsSlider() {
                     {e.task.map((elem, i) => (
                       <p key={i}>{elem}</p>
                     ))}
-                    <Link href={`/realisation/${e.id}#`}>
-                      <span>
-                        <Image src={arrow_right} alt="fleche" width={50} height={50} />
+                    <Link href={`/realisation/${e.id}#`} legacyBehavior>
+                      <span className={styles.imgrea}>
+                       
                         {' '}
                         En savoir plus
                       </span>
@@ -154,9 +154,9 @@ export default function RealisationsSlider() {
             </div>
           ))}
           {windowSize <= 900 && (
-            <ModalCard handleClick={handleClick} classes={`${styles.type1} ${isClick ? styles.show : styles.unshow}`}>
-              <Image alt="réalisation" src={currentShow.imgBack} width={500} height={300} />
-              <Link onClick={() => handleClick(false, 0)} href={`/realisation/${currentShow.id}#`}>
+            <ModalCard handleClick={handleClick} classes={`${styles.type1} ${isClick ? styles.show2 : styles.unshow2}`}>
+              <Image classes={styles.type1} alt="réalisation" src={currentShow.imgBack} width={500} height={300} />
+              <Link onClick={() => handleClick(false, 0)} href={`/realisation/${currentShow.id}#`} legacyBehavior>
                 <h2>
                   <Image src={arrow_right} alt="fleche" width={50} height={50} />
                   {' '}

@@ -1,4 +1,4 @@
-@import './base.module.scss';
+@import "./base.module.scss";
 
 .team {
   @extend ._baseSection;
@@ -11,7 +11,7 @@
     width: 90vw;
   }
 
-  h2 {
+  .teamTitle {
     color: #102d4a;
     font-size: 1.5rem;
     font-weight: 700;
@@ -136,7 +136,7 @@
     }
   }
 
-  .about_us {
+  .aboutUs {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
@@ -155,7 +155,7 @@
       }
     }
 
-    .description_1 {
+    .description1 {
       color: #000;
       font-size: 1.125rem;
       font-weight: 600;
@@ -168,19 +168,19 @@
         font-size: 2rem;
       }
 
-      .span_1 {
+      .span1 {
         background: #579eb0;
         color: white;
         display: inline-block;
         padding: 0.5rem;
       }
 
-      .span_2 {
+      .span2 {
         color: #579eb0;
       }
     }
 
-    .description_2 {
+    .description2 {
       display: block;
       color: #000;
       font-weight: 400;
@@ -194,7 +194,7 @@
       }
     }
 
-    .description_3 {
+    .description3 {
       color: #000;
       font-size: 1rem;
       font-weight: 400;
@@ -214,7 +214,7 @@
         }
       }
 
-      .span_3 {
+      .span3 {
         font-weight: bold;
         position: relative;
 
@@ -227,14 +227,14 @@
             width: 100%;
             height: 1rem;
             background-repeat: no-repeat;
-            background-image: url('/images/Vector_1.png');
+            background-image: url('/public/images/Vector_1.png');
           }
         }
       }
     }
   }
 
-  button {
+  .teamButton {
     border-radius: 1.8rem;
     padding: 0.8rem 2rem;
     background: #474747;
@@ -260,5 +260,19 @@
   100% {
     margin-left: -200px;
     display: none;
+  }
+}
+
+@keyframes zoom {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
   }
 }

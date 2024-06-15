@@ -23,6 +23,7 @@
 
     img {
       width: 6rem;
+      height: 100%;
 
       @include media-min("base") {
         width: 10rem;

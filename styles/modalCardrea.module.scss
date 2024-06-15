@@ -1,0 +1,58 @@
+@import "./base.module.scss";
+
+
+
+.modalCardrea {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 0.6rem;
+  background-color: #fff; // Default background color
+  width: 90%;
+  height: 100%;
+  padding: 20px;
+  z-index: 1000;
+  position: fixed;
+  display: none;
+
+  img {
+    width: 100% !important;
+    height: 100%;
+  }
+  h2 img {
+    width: 10% !important;
+    height: 10%;
+  }
+  svg {
+    display: var(--fa-display, inline-block);
+    height: 2em!important;
+    overflow: visible;
+    vertical-align: -0.125em;
+    float: right!important;
+  }
+}
+
+
+
+
+
+    
+
+  
+  
+  .show2 {
+    display: block;
+    /* autres styles pour montrer l'élément */
+  }
+  
+  .unshow2 {
+    display: none;
+    /* autres styles pour cacher l'élément */
+  }
+
+ 
+
+ 
+
+
+

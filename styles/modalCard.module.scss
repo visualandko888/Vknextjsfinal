@@ -1,68 +1,53 @@
 @import "./base.module.scss";
 
-.modalCard {
-  z-index: 999;
-  background-color: transparent;
-  width: 100vw;
-  height: 100vh;
-  top: 200vw;
-  left: 0;
-  position: fixed;
-  opacity: 0;
-
-  &.show {
-    top: 0;
-    animation: show 0.5s ease-in-out;
-    background-color: #000000a8;
-    opacity: 1;
-
-    > .content {
-      animation: slideUp 0.5s ease-in-out;
-      top: 50%;
-
-      > .faIcon {
-        position: absolute;
-        top: -10vh;
-        right: 0rem;
-        color: #fff;
-        font-size: 3em;
+  .modalCard{opacity: 1;
+    width: 100%;
+    height: 100%;
+    a{padding: 0.6rem clamp(1rem, 10vw, 3rem);
+      font-size: 1.5em;
+      background-color: #579eb0;
+      color: #fff;
+      display: block;
+      border: transparent;
+      border-radius: 0.5rem;
+      margin: 31px auto;
+      box-shadow: rgba(0, 0, 0, 0.355) -2px 7px 8px 0px;
+      transition: background 0.5s linear;
+      text-decoration: none;
+    cursor: pointer;
       }
-    }
+    
+    h3{margin: 0;}
+    h4{margin: 0;
+      }
+    p{margin: 0;
+      margin-bottom: 20px;}
   }
 
-  &.unshow {
-    animation: unshow 0.5s ease-in-out;
-    background-color: #00000000;
-    opacity: 1;
-
-    > .content {
-      animation: slideDown 0.5s ease-in-out;
-      top: 200vh;
-
-      > .faIcon {
-        display: none;
-      }
-    }
-  }
-
-  > .content {
+  .content {
     position: absolute;
-    width: 90vw;
-    height: 80vh;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    border-radius: 0.6rem;
-  }
-
-  &.type1 {
-    > .content {
-      background-color: #fff;
+    transform: translate(-50%,-50%);
+      border-radius: 0.6rem;
+      background-color: #fff; // Default background color
+      width: 90%;
+      height: auto;
+      padding:10px!important;
+  
+    h2 img {
+      width: 10% !important;
+      height: 10%;
+    }
+    svg {
+      display: var(--fa-display, inline-block);
+      height: 2em!important;
+      overflow: visible;
+      vertical-align: -0.125em;
+      float: right!important;
     }
   }
+ 
 
-  &.type2 {
-    > .content {
-      background-color: $primary-color;
-    }
-  }
-}
+
+

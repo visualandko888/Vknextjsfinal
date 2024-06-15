@@ -1,12 +1,10 @@
 import { useState, useEffect } from 'react';
-import dynamic from 'next/dynamic';
 import '/styles/headerheader.module.scss';
 import NavLeft from '/src/components/Layout/Header/NavLeft';
 import NavTop2 from '/src/components/Layout/Header/NavTop2';
+import NavTopMobile from '/src/components/Layout/Header/NavTopMobile';
+import NavMobile from '/src/components/Layout/Header/NavMobile';
 
-const NavMobile = dynamic(() => import('/src/components/Layout/Header/NavMobile'), { ssr: false });
-const NavTopMobile = dynamic(() => import('/src/components/Layout/Header/NavTopMobile'), { ssr: false });
-const NavBottomMobile = dynamic(() => import('/src/components/Layout/Header/NavBottomMobile'), { ssr: false });
 
 export default function Header() {
   const [showHeaderTopNavProgress, setShowHeaderTopNavProgress] = useState(false);
@@ -72,7 +70,7 @@ export default function Header() {
             showNavMobile={showNavMobile}
             setShowNavMobile={setShowNavMobile}
           />
-          <NavBottomMobile />
+          {/* <NavBottomMobile /> */}
         </>
       )}
     </header>

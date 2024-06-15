@@ -59,10 +59,9 @@
         }
 
         > a {
-          > button {
             background-color: $primary-color;
           }
-        }
+        
       }
     }
   }
@@ -91,25 +90,25 @@
       }
     }
 
-    > .right {
-      > .content {
-        > h2 {
+    .right {
+      .content {
+        h2 {
           color: $primary-color;
-
+    
           @include media-min("custom1") {
             color: darken($secondary-color, 5%);
           }
         }
-
-        > a {
-          > button {
-            background-color: $primary-color;
-
+    
+        a {
+          
+            background-color: $primary-color ;
+    
             @include media-min("custom1") {
               background-color: $secondary-color;
             }
-          }
         }
+        
       }
     }
   }
@@ -169,6 +168,8 @@
         font-weight: bold;
         text-align: center;
         line-height: 2.5rem;
+        
+
 
         > span {
           font-size: 0.66em;
@@ -206,7 +207,7 @@
       }
 
       > div {
-        font-family: "Sedgwick Ave" !important;
+        
         font-size: 1.5em;
         font-weight: 400;
         display: block;
@@ -224,22 +225,22 @@
       }
 
       > a {
-        > button {
-          padding: 0.6rem clamp(1rem, 10vw, 3rem);
-          font-size: 1.5em;
-          background-color: #579eb0;
-          color: #fff;
-          display: block;
-          border: transparent;
-          border-radius: 0.5rem;
-          margin: 31px auto;
-          box-shadow: rgba(0, 0, 0, 0.355) -2px 7px 8px 0px;
-          transition: background 0.5s linear;
-          position: absolute;
-          bottom: 15px;
-          left: 50%;
-          transform: translateX(-50%);
-          width: max-content;
+        padding: 0.6rem clamp(1rem, 10vw, 3rem);
+        font-size: 1.5em;
+        background-color: #579eb0;
+        color: #fff;
+        display: block;
+        border: transparent;
+        border-radius: 0.5rem;
+        margin: 31px auto;
+        box-shadow: rgba(0, 0, 0, 0.355) -2px 7px 8px 0px;
+        transition: background 0.5s linear;
+        position: absolute;
+        bottom: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: max-content;
+        text-decoration: none;
 
           @include media-min("custom1") {
             float: right;
@@ -255,7 +256,7 @@
             cursor: pointer;
           }
         }
-      }
+      
     }
   }
 
@@ -308,3 +309,35 @@
     }
   }
 }
+
+// .buttonhero {
+//   padding: 0.6rem clamp(1rem, 10vw, 3rem)!important;
+//   font-size: 1.5em!important;
+//   background-color: #579eb0!important;
+//   color: #fff!important;
+//   display: block!important;
+ 
+//   border-radius: 0.5rem!important;
+//   margin: 31px auto!important;
+//   box-shadow: rgba(0, 0, 0, 0.355) -2px 7px 8px 0px!important;
+//   transition: background 0.5s linear;
+//   position: absolute;
+//   bottom: 15px;
+//   left: 50%;
+//   transform: translateX(-50%);
+//   width: max-content;
+
+//   @include media-min("custom1") {
+//     float: right;
+//     position: relative;
+//     left: 0%;
+//     transform: translateX(0);
+//     margin-top: 31px;
+//     padding: 0.6rem 4rem;
+//   }
+
+//   &:hover {
+//     box-shadow: rgb(0 0 0 / 0%) 0px -3px 8px 0px;
+//     cursor: pointer;
+//   }
+// }
