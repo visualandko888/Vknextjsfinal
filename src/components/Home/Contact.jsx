@@ -1,16 +1,19 @@
 import Image from 'next/image';
-import logoPrimary from '/public/images/logo-primary.svg'; // Assurez-vous que le chemin est correct
-import styles from'/styles/contact2.module.scss';
+import logo3 from '/public/images/logo-blue.svg';
+import styles from '/styles/contact2.module.scss';
 import ContactForm from '/src/components/Elements/ContactForm2';
 import { useTranslation } from 'react-i18next';
 
 export default function Contact() {
   const { t } = useTranslation(); // Importation de la traduction
+
+  console.log(logo3); // Ajoutez ceci pour vérifier l'importation
+
   return (
     <section id="contact" className={styles.contact}>
       <h2>
         {t('home_contact_t1', { defaultValue: 'Contacter' })}{' '}
-        <Image alt="logo" src={logoPrimary} />
+        <Image src={logo3} alt="fleche" width={50} height={50} />
       </h2>
       <p>
         {t('home_contact_t2', { defaultValue: 'Demandez un devis' })}{' '}

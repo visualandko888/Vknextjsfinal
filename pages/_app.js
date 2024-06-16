@@ -23,6 +23,7 @@ import '/styles/navLeft.module.scss';
 import '/styles/navTop.module.scss';
 import '../config/i18n';
 import Layout from '/src/components/Layout';
+import '/styles/faq.module.scss';
 
 
 

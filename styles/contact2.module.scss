@@ -1,6 +1,5 @@
 @import './base.module.scss';
 
-
 .contact {
   @extend ._baseSection;
   padding: 0rem;
@@ -8,45 +7,6 @@
 
   @include media-min("base") {
     margin: 3rem;
-  }
-
-  &.spec1 {
-    > h2 {
-      font-size: 1.5rem;
-      color: #474747;
-      font-weight: bold;
-
-      @include media-min("base") {
-        font-size: 2.25em;
-      }
-    }
-
-    > h3 {
-      font-family: Montserrat;
-      font-size: 1.25rem;
-      font-weight: 700;
-      font-style: italic;
-      color: #000;
-
-      @include media-min("base") {
-        font-size: 2em;
-      }
-    }
-
-    > p {
-      font-size: 1.25rem;
-      width: 95vw;
-      margin: auto;
-      margin-top: 3rem;
-
-      @include media-min("base") {
-        font-size: 1.5em;
-      }
-
-      @include media-min("desktop-down") {
-        width: 80vw;
-      }
-    }
   }
 
   > h2 {
@@ -57,8 +17,10 @@
     gap: 0.5rem;
     margin-bottom: 1rem;
 
+    // Assurez-vous que ces styles n'affectent pas négativement les images
     > img {
-      width: 9rem;
+      width: 50px; // Ajustez la taille selon vos besoins
+      height: auto; // Assurez-vous que l'image garde ses proportions
     }
   }
 
@@ -73,13 +35,13 @@
     }
   }
 
-  > .bottom {
+  .bottom {
     > p {
-      font-family: "Montserrat" !important;
+   
       font-size: 1.5em;
     }
 
-    > .contactInfos {
+    .contactInfos {
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -101,8 +63,11 @@
           text-decoration: underline;
         }
 
+        // Assurez-vous que ces styles n'affectent pas négativement les images
         > img {
-          width: 30px;
+          width: 30px; // Ajustez la taille selon vos besoins
+          height: auto; // Assurez-vous que l'image garde ses proportions
+          border:none;
 
           @include media-min("base") {
             width: 78px;
@@ -121,7 +86,7 @@
     }
   }
 
-  > .content {
+  .content {
     margin: 2rem auto;
     padding: 1rem;
     gap: 3rem;
@@ -144,7 +109,7 @@
       width: fit-content;
     }
 
-    > .left {
+    .left {
       width: 20rem;
       color: #fff;
       display: none;
@@ -153,8 +118,10 @@
         display: block;
       }
 
+      // Assurez-vous que ces styles n'affectent pas négativement les images
       > img {
         width: 15rem;
+        height: auto;
 
         &:nth-of-type(2) {
           filter: invert(1);
@@ -167,7 +134,7 @@
       }
     }
 
-    > .right {
+    .right {
       height: 100%;
       width: 100%;
       min-height: 30rem;
@@ -179,7 +146,7 @@
       align-items: center;
       justify-content: center;
 
-      > .sendStep {
+      .sendStep {
         max-width: 30rem;
 
         > h3 {

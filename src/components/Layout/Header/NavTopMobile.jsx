@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { useRouter } from 'next/router';
-import logo from '/public/images/logo_blue.svg';
+import logo from '/public/images/logo-blue.svg';
 import styles from '/styles/headerheader.module.scss';
 
 export default function NavTopMobile({ handleClickShowNavMobile }) {

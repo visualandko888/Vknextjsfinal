@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
-// import instanceAxios from '/helpers/axios';
+import instanceAxios from '/helpers/axios';
 import { useTranslation } from 'react-i18next';
 import '/styles/blogArticlesList.module.scss';
 
@@ -15,20 +15,20 @@ export default function BlogArticlesList({ categoryid }) {
     router.push(`/blog/${id}`);
   };
 
-  // useEffect(() => {
-  //   instanceAxios()
-  //     .get(
-  //       `get_blog_article.php?${
-  //         categoryid > 0 ? `categoryid=${categoryid}` : ''
-  //       }&lang=${i18n.language}`,
-  //     )
-  //     .then((res) => {
-  //       if (res.data.success && res.data.type === 'list') {
-  //         setArticlesList(res.data.results);
-  //       }
-  //     })
-  //     .catch(() => {});
-  // }, [i18n.language]);
+  useEffect(() => {
+    instanceAxios()
+      .get(
+        `get_blog_article.php?${
+          categoryid > 0 ? `categoryid=${categoryid}` : ''
+        }&lang=${i18n.language}`,
+      )
+      .then((res) => {
+        if (res.data.success && res.data.type === 'list') {
+          setArticlesList(res.data.results);
+        }
+      })
+      .catch(() => {});
+  }, [i18n.language]);
 
   return (
     <div className="articlesList">

@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'react-i18next';
-import logo from '/public/images/logo_blue.svg';
+import logo from '/public/images/logo-blue.svg';
 import france from '/public/images/country/france.png';
 import royaumeUni from '/public/images/country/royaume-uni.png';
 import leftIcoCalendar from '/public/images/left-ico-calendar.svg';

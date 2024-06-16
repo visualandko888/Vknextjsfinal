@@ -35,7 +35,7 @@ export default function Services() {
     {
       title: 'UX/UI/Web Design',
       subtitle: 'Amélioration interfaces',
-      desc: 'Se distinguer avec des interfaces attrayantes, performantes et fonctionnelles',
+      desc: 'Se distinguer avec des interfaces optimisés',
       url: '/developpement-web#uxui',
       img: UxDesignIcon,
       id: 5,
@@ -43,7 +43,7 @@ export default function Services() {
     {
       title: 'Google Ads',
       subtitle: 'Plateforme publicitaire',
-      desc: 'Diffuser vos publicités sur le réseau Display de Google et autres sites associés',
+      desc: 'Diffuser vos publicités pour passer en top position grâce à Google ads',
       url: '/google-ads',
       img: GoogleIcon,
       id: 3,
@@ -51,7 +51,7 @@ export default function Services() {
     {
       title: 'SEA',
       subtitle: 'Référencement payant',
-      desc: 'Augmentez rapidement la notoriété et visibilité de votre marque',
+      desc: 'Augmentez rapidement la notoriété et visibilité de votre marque grâce au SEA',
       url: '/referencement-payant',
       img: SeaIcon,
       id: 2,

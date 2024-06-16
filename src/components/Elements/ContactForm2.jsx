@@ -11,10 +11,11 @@ import { useTranslation } from 'react-i18next';
 import phoneImg from '/public/images/phone.svg';
 import share from '/public/images/share.svg';
 import Link from 'next/link';
-import logoPrimary from '/public/images/logo.svg';
+import logoPrimary2 from '/public/images/logo.svg';
 import flecheDroite from '/public/images/fleche.svg';
 import { useRouter } from 'next/router';
 import styles from '/styles/contact2.module.scss';
+import Image from 'next/image';
 
 export default function ContactForm2() {
   const { t } = useTranslation(); // Importation de la traduction
@@ -136,14 +137,14 @@ export default function ContactForm2() {
     <>
       <div className={styles.content}>
         <div className={styles.left}>
-          <img src={logoPrimary} alt="logo" />
+          <Image src={logoPrimary2} alt="logo" />
           <p>
             {t('contact_form_t6', {
               defaultValue:
                 'Décrivez nous votre projet afin que nous puissions répondre au mieux à votre demande et ce, dans les plus brefs délais',
             })}
           </p>
-          <img src={flecheDroite} alt="fleche" />
+          <Image src={flecheDroite} alt="fleche" />
         </div>
         <div className={styles.right}>
           {sendStep === 1 && (
@@ -278,30 +279,30 @@ export default function ContactForm2() {
           )}
         </div>
       </div>
-      <div className={styles.bottom}>
+      {/* <div className={styles.bottom}>
         <p>
           {t('contact_form_t5', {
             defaultValue:
               'Pour toutes demandes vous pouvez joindre un de nos agents via :',
           })}
-        </p>
-        <div className={styles.contactInfos}>
+        </p> */}
+        {/* <div className={styles.contactInfos}>
           <div>
-            <img src={phoneImg} alt="téléphone" />
+            <Image src={phoneImg} alt="téléphone" />
             <span>
               <Link href="tel:+33767744343">07 67 74 43 43</Link>
             </span>
           </div>
           <div>
-            <img src={share} alt="téléphone" />
+            <Image src={share} alt="téléphone" />
             <span>
               <Link href="mailto:contact@visualandko.com">
                 contact@visualandko.com
               </Link>
             </span>
           </div>
-        </div>
-      </div>
+        </div> */}
+      {/* </div> */}
     </>
   );
 }
