@@ -49,6 +49,7 @@ export default function BlogArticlesList({ categoryid }) {
           onClick={() => handleClickNavigate(e.id)}
           onKeyDown={() => handleClickNavigate(e.id)}
           className={`${styles.card} ${styles[`article${index + 1}`]}`}
+          read_duration={`${e.read_duration} min`}
         >
           <img
             alt={`blog ${index}`}
