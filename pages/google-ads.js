@@ -7,20 +7,23 @@ import Contact from '../src/components/Home/Contact';
 // import HelmetMeta from '../src/components/Helmet/HelmetMeta';
 
 export async function getStaticProps() {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
-  try {
-    const res = await fetch(`${baseUrl}/datas/forfaits.json`);
-    const forfaits = await res.json();
-    return {
-      props: { forfaits },
-    };
-  } catch (error) {
-    console.error('Error fetching data:', error);
-    return {
-      props: { forfaits: [] },
-    };
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
+    try {
+      const res = await fetch(`${baseUrl}/datas/forfaits.json`);
+      if (!res.ok) {
+        throw new Error('Failed to fetch');
+      }
+      const forfaits = await res.json();
+      return {
+        props: { forfaits },
+      };
+    } catch (error) {
+      console.error('Error fetching data:', error);
+      return {
+        props: { forfaits: [] },
+      };
+    }
   }
-}
 
 const GoogleAds = ({ forfaits }) => {
   const [showModal, setShowModal] = useState(false);
