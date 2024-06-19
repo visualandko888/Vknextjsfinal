@@ -21,6 +21,9 @@ import '/styles/newsletter.module.scss'; // Ajoutez vos importations CSS globale
 import '/styles/globals.scss';
 import '/styles/navLeft.module.scss';
 import '/styles/navTop.module.scss';
+import '/styles/gahero.module.scss';
+import '/styles/GoogleAds.module.scss';
+import '/styles/realisation.module.scss'; // Ajoutez vos importations CSS globales ici
 import '../config/i18n';
 import Layout from '/src/components/Layout';
 import '/styles/faq.module.scss';

@@ -1,0 +1,207 @@
+
+@import './base.module.scss';
+
+.sectionServices{max-width: 1200px; margin: auto;}
+.container {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .forfaits {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .forfait {
+    border: none;
+    border-radius:15px;
+    padding: 20px;
+    margin: 10px;
+    width: 27%;
+    box-shadow: 2px 2px 12px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+  
+  .forfait button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #0070f3;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .forfait button:hover {
+    background-color: #005bb5;
+  }
+  
+  .modal {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .modalContent {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 500px;
+    animation: slideIn 0.3s ease-in-out;
+  }
+  
+  @keyframes slideIn {
+    from {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 40px;
+    cursor: pointer;
+    color: #ffffff;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form label {
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #555;
+  }
+  
+  .form input {
+    padding: 12px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: border-color 0.3s;
+  }
+  
+  .form input:focus {
+    border-color: #0070f3;
+    outline: none;
+  }
+  
+  .form button {
+    padding: 12px 20px;
+    background-color: #0070f3;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .form button:hover {
+    background-color: #005bb5;
+  }
+  
+  .form button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  
+  .presentation {
+    margin-top: 10px;
+    padding: 40px 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 10px;
+  
+    h2 {
+      font-size: 2.5em;
+      color: #333;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+  
+    p {
+      font-size: 1.2em;
+      line-height: 1.6;
+      color: #555;
+      margin-bottom: 20px;
+      text-align: justify;
+    }
+  
+    .servicesList {
+      list-style-type: disc;
+      margin-left: 20px;
+  
+      li {
+        margin-bottom: 10px;
+        font-size: 1.2em;
+        color: #555;
+        line-height: 1.6;
+  
+        strong {
+          color: #333;
+        }
+      }
+    }
+  
+    @media (min-width: 768px) {
+      padding: 60px 40px;
+  
+      h2 {
+        font-size: 3em;
+      }
+  
+      p,
+      .servicesList li {
+        font-size: 1.4em;
+      }
+    }
+  
+    @media (min-width: 1200px) {
+      padding: 80px 60px;
+  
+      h2 {
+        font-size: 3.5em;
+      }
+  
+      p,
+      .servicesList li {
+        font-size: 1.6em;
+      }
+    }
+  }
+  

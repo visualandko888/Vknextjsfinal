@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "titre": "Forfait Basique",
+    "description": "Ce forfait inclut la gestion de campagnes Google Ads pour les petites entreprises ou les débutants dans la publicité en ligne. Idéal pour ceux qui ont un budget limité et souhaitent commencer à attirer des clients en ligne.",
+    "elements": [
+      "Configuration initiale de la campagne",
+      "Recherche de mots-clés de base",
+      "Création d'annonces textuelles",
+      "Suivi des performances de la campagne",
+      "Rapport mensuel de base"
+    ],
+    "prix": "100€"
+  },
+  {
+    "id": 2,
+    "titre": "Forfait Standard",
+    "description": "Ce forfait convient aux entreprises de taille moyenne qui souhaitent augmenter leur visibilité en ligne et optimiser leurs campagnes pour un meilleur retour sur investissement.",
+    "elements": [
+      "Tout ce qui est inclus dans le Forfait Basique",
+      "Recherche de mots-clés avancée",
+      "Création d'annonces graphiques et textuelles",
+      "Optimisation hebdomadaire des campagnes",
+      "Suivi des conversions",
+      "Rapport bihebdomadaire détaillé"
+    ],
+    "prix": "200€"
+  },
+  {
+    "id": 3,
+    "titre": "Forfait Premium",
+    "description": "Conçu pour les grandes entreprises ou celles ayant des besoins publicitaires importants, ce forfait offre une gestion complète et personnalisée des campagnes Google Ads pour maximiser les résultats.",
+    "elements": [
+      "Tout ce qui est inclus dans le Forfait Standard",
+      "Analyse concurrentielle",
+      "Stratégies de remarketing",
+      "Création de vidéos publicitaires",
+      "A/B testing des annonces",
+      "Consultation stratégique mensuelle",
+      "Rapport hebdomadaire complet"
+    ],
+    "prix": "500€"
+  }
+]
