@@ -90,7 +90,7 @@ const GoogleAds = () => {
     <main className={styles.mainga} >
       {/* <HelmetMeta title={title} description={description} /> */}
       <section className={`${styles.presentation} ${styles.appear}`}>
-        <h2>Pourquoi Investir dans Google Ads ?<img className={styles.fusee} src="/images/fusée.gif" alt="Croissance des clients" /></h2>
+        <h2>Pourquoi Investir dans Google Ads ?<img className={styles.fusee} src="/images/fusee.gif" alt="Croissance des clients" /></h2>
         <div className={`${styles.section} ${styles.appear}`}>
           <div className={styles.text}>
             <h3>Attirer de Nouveaux Clients et Booster Vos Ventes</h3>
@@ -126,7 +126,7 @@ const GoogleAds = () => {
         </div>
       </section>
       <section className={`${styles.presentation} ${styles.appear}`}>
-        <h2>L'Expertise d'une Agence Google Ads <img className={styles.fusee} src="/images/fusée.gif" alt="Croissance des clients" /></h2>
+        <h2>L'Expertise d'une Agence Google Ads <img className={styles.fusee} src="/images/fusee.gif" alt="Croissance des clients" /></h2>
         <div className={styles.section}>
           <div className={styles.text}>
             <h3>Maximiser Votre Retour sur Investissement (ROI)</h3>
@@ -157,7 +157,7 @@ const GoogleAds = () => {
         </div>
       </section>
       <section className={`${styles.presentation} ${styles.appear}`}>
-        <h2>Comment Travaille une Agence Google Ads ? <img className={styles.fusee} src="/images/fusée.gif" alt="Croissance des clients" /></h2>
+        <h2>Comment Travaille une Agence Google Ads ? <img className={styles.fusee} src="/images/fusee.gif" alt="Croissance des clients" /></h2>
         <div className={styles.section}>
           <div className={styles.text}>
             <h3>Cadrage et Stratégie</h3>
@@ -186,7 +186,7 @@ const GoogleAds = () => {
       </main>
 
       <div className={`${styles.container} ${styles.appear}`}> 
-        <h1>Nos Forfaits Google Ads <img className={styles.fusee2} src="/images/fusée.gif" alt="Croissance des clients" /></h1>
+        <h1>Nos Forfaits Google Ads <img className={styles.fusee2} src="/images/fusee.gif" alt="Croissance des clients" /></h1>
         <p>Découvrez nos différents forfaits pour la gestion de vos campagnes Google Ads.</p>
         <div className={styles.forfaits}>
           {forfaits.map((forfait) => (
@@ -209,7 +209,7 @@ const GoogleAds = () => {
         <div className={styles.modal}>
           <div className={styles.modalContent}>
             <span className={styles.close} onClick={() => setShowModal(false)}>&times;</span>
-            <h2>Demande de Forfait: {selectedForfait.titre}<img className={styles.fusee3} src="/images/fusée.gif" alt="Croissance des clients" /></h2>
+            <h2>Demande de Forfait: {selectedForfait.titre}<img className={styles.fusee3} src="/images/fusee.gif" alt="Croissance des clients" /></h2>
             <h4>Merci de compléter vos informations, notre service commercial prendra un rendez-vous avec vous pour confirmer vos informations et démarrer votre campagne google ads !</h4>
             <form className={styles.form} onSubmit={handleSubmit}>
               <label>
