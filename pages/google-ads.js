@@ -1,31 +1,13 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 import styles from '../styles/GoogleAds.module.scss';
-import Hero from '../src/components/GAds/Hero'; // Correction de l'importation
+import Hero from '../src/components/GAds/Hero';
 import Reviews from '../src/components/Home/Reviews';
 import Faq from '../src/components/Home/Faq';
 import Contact from '../src/components/Home/Contact';
-// import HelmetMeta from '../src/components/Helmet/HelmetMeta';
 
-export async function getStaticProps() {
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
-    try {
-      const res = await fetch(`${baseUrl}/datas/forfaits.json`);
-      if (!res.ok) {
-        throw new Error('Failed to fetch');
-      }
-      const forfaits = await res.json();
-      return {
-        props: { forfaits },
-      };
-    } catch (error) {
-      console.error('Error fetching data:', error);
-      return {
-        props: { forfaits: [] },
-      };
-    }
-  }
-
-const GoogleAds = ({ forfaits }) => {
+const GoogleAds = () => {
+  const [forfaits, setForfaits] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [selectedForfait, setSelectedForfait] = useState(null);
   const [formData, setFormData] = useState({
@@ -33,6 +15,16 @@ const GoogleAds = ({ forfaits }) => {
     email: '',
     telephone: '',
   });
+
+  useEffect(() => {
+    axios.get('/datas/forfaits.json')
+      .then((res) => {
+        setForfaits(res.data);
+      })
+      .catch((error) => {
+        console.error('Error fetching data:', error);
+      });
+  }, []);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
