@@ -81,8 +81,8 @@ export default function Home() {
       <div ref={el => sectionsRef.current[1] = el}><Bpi /></div>
       <div ref={el => sectionsRef.current[2] = el}><Team /></div>
       <div ref={el => sectionsRef.current[3] = el}><Services /></div>
-      {/* <div ref={el => sectionsRef.current[4] = el}><Partenaires /></div> */}
-      <div ref={el => sectionsRef.current[5] = el}><Rea /></div>
+      <div ref={el => sectionsRef.current[4] = el}><Partenaires /></div>
+      {/* <div ref={el => sectionsRef.current[5] = el}><Rea /></div> */}
       <div ref={el => sectionsRef.current[6] = el}><Reviews /></div>
       <div ref={el => sectionsRef.current[7] = el}><Faq /></div>
       <div ref={el => sectionsRef.current[8] = el}><Contact /></div>
