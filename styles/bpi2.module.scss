@@ -3,13 +3,11 @@
 .infoNavSection {
   bottom: 0px;
   width: 100%;
-  background-color: $primary-color;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   font-size: 16px;
   display: flex;
   flex-wrap: wrap;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+   
 
   @include media-min("base") {
     flex-wrap: unset;
@@ -21,17 +19,15 @@
     padding: 0;
     height: auto;
     position: relative;
-    border: 1px #2b7487 solid;
+    border: 1px #ffffff solid;
     text-align: center;
     cursor: pointer;
-    background-color: $primary-color;
+   
 
     @include media-min("base") {
       width: 25%;
       padding-left: 20px;
       padding-right: 20px;
-      border-top: 0px;
-      border-bottom: 0px;
     }
 
     .backJ {
@@ -62,8 +58,8 @@
         height: 50px;
 
         @include media-min("base") {
-          width: 1.8rem;
-          height: 20px;
+          width: 35px;
+          // height: 20px;
         }
       }
 
@@ -79,10 +75,7 @@
 
     &:hover {
       @include media-min("base") {
-        border: 1px #2b7487 solid;
-        border-top: 0px;
-        border-bottom: 0px;
-        background-color: #2b7487;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
         position: relative;
 
         .backJ {

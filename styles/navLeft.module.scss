@@ -8,19 +8,23 @@
     top: 0;
     width: 60px;
     height: 100%;
-    background-color: #579eb0;
-    transition: width 0.3s;
+    background-color: #579eb0 ;
+    transition-duration: 1s!important;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-top: 20px;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+   
+
   }
   
   .sidebar:hover {
     width: auto;
     padding-right: 20px;
     padding-left: 20px;
+    transition-duration: 1s!important;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
   }
   
   .navList {
@@ -110,5 +114,11 @@
     list-style: none;
   }
 
-  
+  .menunavleft{color:white; 
+  text-align: center;
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+margin-bottom: 10px;
+}
+
+
   

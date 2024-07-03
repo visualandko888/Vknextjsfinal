@@ -3,12 +3,17 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'react-i18next';
-import logo from '/public/images/logo-blue.svg';
+import logo from '/public/images/logo.svg';
 import france from '/public/images/country/france.png';
 import royaumeUni from '/public/images/country/royaume-uni.png';
 import leftIcoCalendar from '/public/images/left-ico-calendar.svg';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
+import { faPen } from '@fortawesome/free-solid-svg-icons';
+
+
+
+import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import styles from '/styles/navTop.module.scss';
 
 export default function NavTop2({ handleHoverNav, handleHoverLeftNav }) {
@@ -33,11 +38,24 @@ export default function NavTop2({ handleHoverNav, handleHoverLeftNav }) {
       isButton: false,
     },
     {
-      name: 'Demander un devis',
-      url: '/#contact',
-      translate_var: 'demander-un-devis',
-      isButton: true,
+      name: 'Tarifs',
+      url: '/tarifs',
+      // translate_var: 'demander-un-devis',
+      isButton: false,
     },
+    {
+      name: (
+        <>
+          <FontAwesomeIcon className={styles.faIcontel2} icon={faPen} />
+          <span className={styles.auditText}>Audit gratuit</span>
+        </>
+      ),
+      url: '/contact',
+      // translate_var: 'Audit',
+      isButton: true,
+      
+    },
+    
   ];
 
   const [showCountry, setShowCountry] = useState(false);
@@ -131,6 +149,13 @@ export default function NavTop2({ handleHoverNav, handleHoverLeftNav }) {
       <div className={styles.right}>
         <ul>
           <li>
+            <Link   href="/contactez-nous" passHref legacyBehavior>
+              <a className={styles.navTopbutton}>
+              <FontAwesomeIcon className={styles.faIcontel} icon={faPhone} style={{color: "#ffffff",}} />Contactez-nous
+              </a>
+            </Link>
+          </li>
+          <li>
             <Link href="/espace-client/login" passHref legacyBehavior>
               <a>
                 <FontAwesomeIcon className={styles.faIcon} icon={faUserCircle} />
@@ -151,7 +176,7 @@ export default function NavTop2({ handleHoverNav, handleHoverLeftNav }) {
             alt={`drapeau ${countryList[currentCountry].name}`}
             src={countryList[currentCountry].img}
           /> */}
-          {showCountry && (
+          {/* {showCountry && (
             <div className={styles.subCountry}>
               {countryList.map((e, index) => (
                 <div
@@ -165,7 +190,7 @@ export default function NavTop2({ handleHoverNav, handleHoverLeftNav }) {
                 </div>
               ))}
             </div>
-          )}
+          )} */}
         </div>
       </div>
       <div

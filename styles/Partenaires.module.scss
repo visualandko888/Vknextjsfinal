@@ -4,6 +4,8 @@
   position: relative;
   width: 100%;
   overflow: hidden;
+  
+  margin-top: 50px;
 
   .nosOutils {
     display: flex;
@@ -12,13 +14,11 @@
     width: max-content;
     margin: auto;
     overflow: hidden;
-    margin-bottom: 3rem;
-    margin-top: 3rem;
+   
 
     @include media-min("base") {
       width: max-content;
-      margin-bottom: 5rem;
-      margin-top: 5rem;
+    
     }
 
     img {

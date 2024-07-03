@@ -2,7 +2,7 @@ import { useState } from 'react';
 import axios from 'axios';
 import Link from 'next/link';
 import Image from 'next/image';
-import logo from '/public/images/logo-primary.svg';
+import logo from '/public/images/logo.svg';
 import styles from '/styles/headerfooter.module.scss';
 import stylesNewsletter from '/styles/newsletter.module.scss';
 import emailController from '/src/services/formController/emailController';

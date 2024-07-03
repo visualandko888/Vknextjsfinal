@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import logo3 from '/public/images/logo-blue.svg';
+import logo3 from '/public/images/logo.svg';
 import styles from '/styles/contact2.module.scss';
 import ContactForm from '/src/components/Elements/ContactForm2';
 import { useTranslation } from 'react-i18next';
@@ -13,7 +13,7 @@ export default function Contact() {
     <section id="contact" className={styles.contact}>
       <h2>
         {t('home_contact_t1', { defaultValue: 'Contacter' })}{' '}
-        <Image src={logo3} alt="fleche" width={50} height={50} />
+        <Image src={logo3} alt="fleche" width={150} height={150} />
       </h2>
       <p>
         {t('home_contact_t2', { defaultValue: 'Demandez un devis' })}{' '}

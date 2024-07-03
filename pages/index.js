@@ -1,21 +1,70 @@
+import { useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
-import Hero from '../src/components/Home/Hero';
+import Hero from '../src/components/Home/Hero2';
 import HelmetMeta from '../src/components/Helmet/HelmetMeta';
 import Bpi from '../src/components/Home/bpi';
 import Team from '../src/components/Home/Team';
-import Services from '../src/components/Home/Services'; // Utilisez le chemin relatif correct
+import Services from '../src/components/Home/Services';
 import Partenaires from '../src/components/Home/Partenaires';
 import Rea from '../src/components/Home/Rea';
 import Reviews from '../src/components/Home/Reviews';
 import Faq from '../src/components/Home/Faq';
 import Contact from '../src/components/Home/Contact';
 import BlogSection from '../src/components/Blog/BlogSection';
-
-
+import styles from '../styles/animation.module.scss'; // Importation du module SCSS
 
 export default function Home() {
   console.log('Home page rendue');
   const { t } = useTranslation(); // Importation de la traduction
+
+  const sectionsRef = useRef([]);
+
+  useEffect(() => {
+    const options = {
+      threshold: 0.1
+    };
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add(styles['animate-fadeIn']);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, options);
+
+    sectionsRef.current.forEach(section => {
+      if (section) {
+        observer.observe(section);
+      }
+    });
+
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const maxScroll = document.body.scrollHeight - window.innerHeight;
+      const scrollFraction = scrollPosition / maxScroll;
+
+      const startColor = [87, 158, 176];
+      const endColor = [147,163,201]; // Change this to your desired end color
+
+      const newColor = startColor.map((start, index) => {
+        const end = endColor[index];
+        return Math.round(start + (end - start) * scrollFraction);
+      });
+
+      const newGradient = `linear-gradient(90deg, rgba(${newColor.join(',')},1) 0%, rgba(${newColor.join(',')},0.7) 30%, rgba(${newColor.join(',')},1) 100%)`;
+
+      document.documentElement.style.setProperty('--gradient-start', `rgba(${newColor.join(',')}, 1)`);
+      document.documentElement.style.setProperty('--gradient-middle', `rgba(${newColor.join(',')}, 0.7)`);
+      document.documentElement.style.setProperty('--gradient-end', `rgba(${newColor.join(',')}, 1)`);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   const title = t('helmet_home_t1', {
     defaultValue:
       'Accueil | Visual & Ko - Votre partenaire de confiance pour la création de sites web et la génération de leads',
@@ -26,19 +75,18 @@ export default function Home() {
   });
 
   return (
-    <main>
+    <main className={styles.main}>
       <HelmetMeta title={title} description={description} />
-      <Hero /> 
-      <Bpi />
-      <Team />
-      <Services />
-      <Partenaires />
-      <Rea />
-      <Reviews />
-      <Faq />
-      <Contact />
-      <BlogSection /> 
+      <div ref={el => sectionsRef.current[0] = el}><Hero /></div>
+      <div ref={el => sectionsRef.current[1] = el}><Bpi /></div>
+      <div ref={el => sectionsRef.current[2] = el}><Team /></div>
+      <div ref={el => sectionsRef.current[3] = el}><Services /></div>
+      {/* <div ref={el => sectionsRef.current[4] = el}><Partenaires /></div> */}
+      <div ref={el => sectionsRef.current[5] = el}><Rea /></div>
+      <div ref={el => sectionsRef.current[6] = el}><Reviews /></div>
+      <div ref={el => sectionsRef.current[7] = el}><Faq /></div>
+      <div ref={el => sectionsRef.current[8] = el}><Contact /></div>
+      <div ref={el => sectionsRef.current[9] = el}><BlogSection /></div>
     </main>
   );
 }
-

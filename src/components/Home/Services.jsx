@@ -33,12 +33,12 @@ export default function Services() {
       id: 4,
     },
     {
-      title: 'UX/UI/Web Design',
-      subtitle: 'Amélioration interfaces',
-      desc: 'Se distinguer avec des interfaces optimisés',
-      url: '/developpement-web#uxui',
-      img: UxDesignIcon,
-      id: 5,
+      title: 'Référencement naturel',
+      subtitle: 'Seo',
+      desc: 'Augmentez la visibilité de votre site en optimisant votre contenu',
+      url: '/referencement-naturel',
+      img: SeoIcon,
+      id: 1,
     },
     {
       title: 'Google Ads',
@@ -49,20 +49,12 @@ export default function Services() {
       id: 3,
     },
     {
-      title: 'SEA',
-      subtitle: 'Référencement payant',
-      desc: 'Augmentez rapidement la notoriété et visibilité de votre marque grâce au SEA',
-      url: '/referencement-payant',
+      title: 'Gestions de vos réseaux sociaux',
+      subtitle: 'Gestions de vos réseaux sociaux',
+      desc: 'Nous créons du contenu pour instagram et autres médias pour booster votre visibilité',
+      url: '/gestion-des-reseaux',
       img: SeaIcon,
       id: 2,
-    },
-    {
-      title: 'SEO',
-      subtitle: 'Référencement naturel',
-      desc: 'Augmentez la visibilité de votre site en optimisant votre contenu',
-      url: '/referencement-naturel',
-      img: SeoIcon,
-      id: 1,
     },
     {
       title: 'Maintenance sécurité',
@@ -72,6 +64,15 @@ export default function Services() {
       img: SecurityIcon,
       id: 6,
     },
+    {
+      title: 'Audit gratuit',
+      subtitle: 'Analyse de votre projet',
+      desc: "Nous analysons votre projet et proposons des recommandations",
+      url: '/contactez-nous',
+      img: SeoIcon,
+      id: 1,
+    },
+    
   ];
 
   const handleClick = (type, index) => {
@@ -110,75 +111,75 @@ export default function Services() {
   return (
     <section id="services" className={styles.services}>
       <h2 className={styles.servicesTitle}>
-        {t('home_services_t1', { defaultValue: 'Nos offres et services' })}
+        {t('home_services_t1', { defaultValue: 'Nos services' })}
       </h2>
 
       <div className={styles.columns}>
-        <div className={styles.servicesList}>
-          {serviceList.map((e, index) => (
-            <div
-              role="button"
-              tabIndex={0}
-              onKeyDown={() => {
-                handleClick(true, index + 1);
-                if (windowSize > 768) {
-                  goTo(e.url);
-                }
-              }}
-              onClick={() => {
-                handleClick(true, index + 1);
-                if (windowSize > 768) {
-                  goTo(e.url);
-                }
-              }}
-              key={index}
-              className={styles.card}
-            >
-              <div className={`${styles.flipCardInner} ${serviceListBg[index]}`}>
-                <div className={styles.cardFront}>
-                  <Image className={styles.serviceImg} src={e.img} alt="serviceImg" />
-                  <div className={styles.serviceTitles}>
-                    <h3 className={styles.serviceTitle}>
-                      {t(`home_services_card_title${index + 1}`, {
-                        defaultValue: e.title,
+      <div className={styles.servicesList}>
+      {serviceList.map((e, index) => (
+        <div
+          role="button"
+          tabIndex={0}
+          onKeyDown={() => {
+            handleClick(true, index + 1);
+            if (windowSize > 768) {
+              goTo(e.url);
+            }
+          }}
+          onClick={() => {
+            handleClick(true, index + 1);
+            if (windowSize > 768) {
+              goTo(e.url);
+            }
+          }}
+          key={index}
+          className={styles.card}
+        >
+          <div className={`${styles.flipCardInner} ${serviceListBg[index]}`}>
+            <div className={styles.cardFront}>
+              <Image className={styles.serviceImg} src={e.img} alt="serviceImg" />
+              <div className={styles.serviceTitles}>
+                <h3 className={styles.serviceTitle}>
+                  {t(`home_services_card_title${index + 1}`, {
+                    defaultValue: e.title,
+                  })}
+                </h3>
+                <p className={styles.serviceSubtitle}>
+                  {windowSize > 768 && (
+                    <>
+                      {t(`home_services_card_subtitle${index + 1}`, {
+                        defaultValue: e.subtitle,
                       })}
-                    </h3>
-                    <p className={styles.serviceSubtitle}>
-                      {windowSize > 768 && (
-                        <>
-                          {t(`home_services_card_subtitle${index + 1}`, {
-                            defaultValue: e.subtitle,
-                          })}
-                        </>
-                      )}
-                    </p>
-                  </div>
-                </div>
-                <div className={styles.cardBack}>
-                  <p className={styles.serviceDesc}>
-                    {t(`home_services_card_desc${index + 1}`, {
-                      defaultValue: e.desc,
-                    })}
-                  </p>
-                  {e.url && (
-                    <Link className={styles.learnMore} href={e.url} legacyBehavior>
-                      <a className={styles.learnMore}>
-                        {t('home_services_en-savoir-plus', 'En savoir plus')}
-                      </a>
-                    </Link>
+                    </>
                   )}
-                </div>
+                </p>
               </div>
             </div>
-          ))}
+            <div className={styles.cardBack}>
+              <p className={styles.serviceDesc}>
+                {t(`home_services_card_desc${index + 1}`, {
+                  defaultValue: e.desc,
+                })}
+              </p>
+              {e.url && (
+                <Link href={e.url} legacyBehavior>
+                  <a className={styles.learnMore}>
+                    {t('home_services_en-savoir-plus', 'En savoir plus')}
+                  </a>
+                </Link>
+              )}
+            </div>
+          </div>
         </div>
+      ))}
+    </div>
         <div className={styles.income}>
           <h3 className={styles.incomeTitle}>
             <span className={styles.firstLine}>
               {t('home_services_t2', { defaultValue: 'Comment nous générons' })}
             </span>
             <span className={styles.secondLine}>
-              {t('home_services_t3', { defaultValue: 'des revenus' })}
+              {t('home_services_t3', { defaultValue: 'des revenus pour nos clients ?' })}
             </span>
           </h3>
           <ul className={styles.activities}>

@@ -1,0 +1,108 @@
+[
+    {
+      "id": 1,
+      "titre": "Forfait Basique (Landing Page)",
+      "description": "Ce forfait inclut la création d'une landing page simple et professionnelle adaptée aux petites entreprises ou aux débutants. Idéal pour ceux qui souhaitent avoir une présence en ligne rapidement et à moindre coût.",
+      "elements": [
+        "-Conception personnalisée : Design unique adapté à votre marque",
+        "-Responsive design : Site optimisé pour les mobiles et tablettes",
+        "-Section standard : Accueil, À propos, Services, Contact",
+        "-Formulaire de contact : Simple et efficace",
+        "-Optimisation SEO de base : Balises méta, titres et descriptions",
+        "-Support : 1 mois de support technique après livraison"
+      ],
+      "prix": "à partir de 500€"
+    },
+    {
+      "id": 2,
+      "titre": "Forfait Avancé (Landing Page)",
+      "description": "Ce forfait inclut des fonctionnalités supplémentaires pour améliorer la présence en ligne, idéal pour les entreprises de taille moyenne.",
+      "elements": [
+        "-Tout ce qui est inclus dans le Forfait Basique",
+        "-Sections supplémentaires : Blog, Témoignages, Galerie photo/vidéo",
+        "-Intégration des réseaux sociaux : Liens vers vos profils sociaux",
+        "-Newsletter : Intégration d'un formulaire d'inscription",
+        "-SEO avancé : Analyse des mots-clés, optimisation des contenus",
+        "-Formation : Initiation à la gestion de votre site (1h)",
+        "-Support : 3 mois de support technique après livraison"
+      ],
+      "prix": "à partir de 800€"
+    },
+    {
+      "id": 3,
+      "titre": "Forfait Premium (Landing Page)",
+      "description": "Ce forfait offre une solution complète pour la création de sites web avancés avec des fonctionnalités personnalisées, adapté aux grandes entreprises.",
+      "elements": [
+        "-Tout ce qui est inclus dans le Forfait Avancé",
+        "-Multilingue : Mise en place du site en deux langues",
+        "-Analyse et rapports : Google Analytics configuré et rapports mensuels pendant 3 mois",
+        "-Sécurité avancée : Certificat SSL, protection contre les spams",
+        "-Formation : Formation complète à la gestion de votre site (2h)",
+        "-Support : 6 mois de support technique après livraison",
+        "-Intégration de fonctionnalités : Google Maps, Calendly ..."
+      ],
+      "prix": "à partir de 1000€"
+    },
+    {
+      "id": 4,
+      "titre": "Forfait Basique (Site Vitrine)",
+      "description": "Ce forfait inclut la création d'un site vitrine simple et professionnel adapté aux petites entreprises ou aux débutants.",
+      "elements": [
+        "-Conception personnalisée : Design unique adapté à votre marque et charte graphique",
+        "-Nombre de pages : Jusqu'à 5 pages (Accueil, À propos, Services, Blog, Contact)",
+        "-Responsive design : Site optimisé pour les mobiles et tablettes",
+        "-Intégration de contenu : Texte et images libres de droits et/ou du client",
+        "-Indexation : de la page pour les moteurs de recherche via Google Search Console",
+        "-Création du pop-up concernant les cookies et autres informations sensibles",
+        "-Intégration des réseaux sociaux : Liens vers vos profils sociaux",
+        "-Intégration d’une carte via Google Maps",
+        "-Formulaire de contact : Simple et efficace",
+        "-Optimisation SEO de base : Balises méta, titres et descriptions",
+        "-Création des pages politique de confidentialité, mentions légales et CGV (à remplir par le client)",
+        "-Formation : Initiation à la gestion de votre site (1h)",
+        "-Support : 1 mois de support technique après livraison"
+      ],
+      "prix": "à partir de 1200€"
+    },
+    {
+      "id": 5,
+      "titre": "Forfait Avancé (Site Vitrine)",
+      "description": "Ce forfait convient aux entreprises de taille moyenne souhaitant un site web plus complet avec des fonctionnalités supplémentaires pour améliorer leur présence en ligne.",
+      "elements": [
+        "-Tout ce qui est inclus dans le Forfait Basique",
+        "-Nombre de pages : Jusqu'à 10 pages",
+        "-Blog : Configuration et mise en place d'un blog",
+        "-Galerie photo/vidéo : Intégration de galeries interactives",
+        "-Newsletter : Intégration d'un formulaire d'inscription",
+        "-SEO avancé : Analyse des mots-clés, optimisation des contenus",
+        "-Formation : Formation à la gestion de votre site (2h)",
+        "-Support : 3 mois de support technique après livraison"
+      ],
+      "prix": "à partir de 1800€"
+    },
+    {
+      "id": 6,
+      "titre": "Forfait E-Commerce",
+      "description": "Ce forfait est idéal pour les entreprises souhaitant vendre des produits en ligne avec un système de gestion complet et sécurisé.",
+      "elements": [
+        "-Tout ce qui est inclus dans le Forfait Avancé",
+        "-Nombre de pages : Jusqu'à 30 pages",
+        "-Système de gestion de contenu (CMS) : Gestion facile des produits, catégories, et contenus",
+        "-Panier d'achat : Fonctionnalité de panier avec gestion des quantités",
+        "-Paiement sécurisé : Intégration de méthodes de paiement (carte de crédit, PayPal, etc.)",
+        "-Notifications par e-mail : Confirmation de commande et de livraison",
+        "-Gestion des stocks : Suivi des niveaux de stock et notifications de réapprovisionnement",
+        "-Options de livraison : Calcul automatique des frais de livraison et choix des options",
+        "-Multilingue : Mise en place du site en deux langues",
+        "-Analyse et rapports : Google Analytics configuré et rapports mensuels pendant 3 mois",
+        "-Sécurité avancée : Certificat SSL, protection contre les spams",
+        "-Formation : Formation complète à la gestion de votre site (3h)",
+        "-Support : 6 mois de support technique après livraison",
+        "-Marketing automatisé : E-mails automatiques pour les paniers abandonnés, promotions, etc."
+      ],
+      "prix": "à partir de 3000€"
+    }
+    
+    
+  ]
+  

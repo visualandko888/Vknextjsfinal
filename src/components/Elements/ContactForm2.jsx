@@ -11,7 +11,7 @@ import { useTranslation } from 'react-i18next';
 import phoneImg from '/public/images/phone.svg';
 import share from '/public/images/share.svg';
 import Link from 'next/link';
-import logoPrimary2 from '/public/images/logo.svg';
+import logo from '/public/images/logo.svg';
 import flecheDroite from '/public/images/fleche.svg';
 import { useRouter } from 'next/router';
 import styles from '/styles/contact2.module.scss';
@@ -137,7 +137,7 @@ export default function ContactForm2() {
     <>
       <div className={styles.content}>
         <div className={styles.left}>
-          <Image src={logoPrimary2} alt="logo" />
+          <Image src={logo} alt="logo" />
           <p>
             {t('contact_form_t6', {
               defaultValue:

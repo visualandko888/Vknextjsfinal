@@ -1,0 +1,47 @@
+[
+  {
+    "id": 8,
+    "titre": "Forfait Basique (Maintenance & Sécurité)",
+    "description": "Ce forfait offre un support et une sécurité de base pour votre site.",
+    "elements": [
+      "-Support : 0,5h/mois",
+      "-Sécurité : 99%",
+      "-Mises à jour : en temps réel",
+      "-Sauvegardes : mensuelles",
+      "-Nettoyage BDD : semestriel",
+      "-Délais d’intervention : 72h max - 5j/7"
+    ],
+    "prix": "60€/mois"
+  },
+  {
+    "id": 9,
+    "titre": "Forfait Avancé (Maintenance & Sécurité)",
+    "description": "Ce forfait offre un support et une sécurité avancés pour votre site.",
+    "elements": [
+      "-Support : 1h/mois",
+      "-Sécurité : 99%",
+      "-Mises à jour : en temps réel",
+      "-Sauvegardes : quotidiennes",
+      "-Nettoyage BDD : mensuel",
+      "-Délais d’intervention : 24h max - 7j/7",
+      "-Rapport : semestriel"
+    ],
+    "prix": "120€/mois"
+  },
+  {
+    "id": 10,
+    "titre": "Forfait Premium (Maintenance & Sécurité)",
+    "description": "Ce forfait offre un support et une sécurité premium pour votre site.",
+    "elements": [
+      "-Support : 2h/mois",
+      "-Sécurité : 99%",
+      "-Mises à jour : en temps réel",
+      "-Sauvegardes : quotidiennes",
+      "-Nettoyage BDD : hebdomadaire",
+      "-Délais d’intervention : 12h max - 7j/7",
+      "-Rapport : sur demande"
+    ],
+    "prix": "190€/mois"
+  }
+]
+  

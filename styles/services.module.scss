@@ -70,14 +70,13 @@
   }
 
   h2 {
-    color: #102d4a;
-    font-size: 1.5rem;
+    color: #ffffff;
+    font-size:48px;
     font-weight: 700;
     margin-bottom: 2rem;
 
     @include media-min("base") {
-      font-size: 2.25rem;
-      margin-bottom: 3rem;
+    
     }
   }
 
@@ -139,6 +138,7 @@
           @include media-min("tablet-up") {
             .flipCardInner {
               transform: rotateY(180deg);
+              box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
             }
           }
         }
@@ -150,10 +150,10 @@
           text-align: center;
           transition: transform 0.8s;
           transform-style: preserve-3d;
-          box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
-            rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
-            rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+        
           border-radius: 15px;
+          background-color: rgba(255, 255, 255, 0.2);
+          color: white;
 
           
 
@@ -168,7 +168,7 @@
             color: #474747;
 
             @include media-min("tablet-up") {
-              color: #000;
+              color: #ffffff;
             }
           }
 
@@ -250,10 +250,10 @@
             transform: rotateY(180deg);
 
             p {
-              font-size: 15px;
-              padding: 30px;
-              margin: 0;
-              margin-top: 20px;
+              position: absolute;
+              transform: translate(-50%,-50%);
+              left:50%;
+              top:50%
             }
 
             span {
@@ -278,6 +278,8 @@
       width: 100%;
       margin-top: 2.5rem;
       position: relative;
+      font-size: 48px;
+      text-align: left;
 
       @include media-min("custom2") {
         width: 45%;
@@ -285,24 +287,24 @@
       }
 
       h3 {
-        color: #474747;
-        text-align: center;
-        font-size: 1.25rem;
+        color: #ffffff;
         font-weight: 700;
         display: flex;
         flex-direction: column;
-        align-items: center;
+        padding-left: 40px;
+        
 
         @include media-min("phone-down") {
           font-size: 1.7rem;
         }
 
         @include media-min("widescreen-up") {
-          font-size: 2rem;
+       font-size: 48px;
         }
 
         .firstLine {
           position: relative;
+          text-align: left;
 
           &:after {
             content: "";
@@ -313,6 +315,8 @@
             height: 1rem;
             background-repeat: no-repeat;
             background-image: url("/images/vector-1-income.png");
+            font-size: 48px;
+           color:white 
           }
         }
 
@@ -320,6 +324,8 @@
           display: inline-block;
           margin-top: 0.25rem;
           position: relative;
+          font-size: 48px;
+           color:white 
 
           &:after {
             content: "";
@@ -349,6 +355,7 @@
           display: flex;
           align-items: center;
           margin-bottom: 0.6rem;
+          color:white;
 
           @include media-min("phone-down") {
             margin-bottom: 2rem;
@@ -366,6 +373,7 @@
             background: url("/images/income-list-puce.png") no-repeat;
             background-size: contain;
             margin-right: 2rem;
+            filter: brightness(0) saturate(100%) invert(83%) sepia(81%) saturate(1%) hue-rotate(220deg) brightness(114%) contrast(102%);
           }
         }
       }
@@ -386,6 +394,7 @@
 
         li {
           margin-bottom: 0.5rem;
+          color:white;
 
           @include media-min("custom2") {
             margin-bottom: 1.25rem;
@@ -534,32 +543,16 @@
 
 }
 
-.learnMore{padding: 0.6rem clamp(1rem, 10vw, 3rem);
-  font-size: 16px;
-  background-color: #579eb0;
+.learnMore{
+  font-size: 16px; 
   color: #fff;
-  display: block;
-  border: transparent;
-  border-radius: 0.5rem;
-  margin: auto;
+  cursor: pointer; 
+   max-width: 100px; 
+  position: absolute;
+  transform: translate(-50%, -50%);
+  bottom: 5px;
+  right: 0;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
- 
-  text-decoration: none;
-cursor: pointer;
+}
 
-max-width: 100px;}
 
-.learnMore:hover{padding: 0.6rem clamp(1rem, 10vw, 3rem);
-  font-size: 16px;
-  background: rgb(87,158,176);
-background: linear-gradient(90deg, rgba(87,158,176,0.6068802521008403) 0%, rgba(87,158,176,0.9822303921568627) 35%, rgba(87,158,176,0.68531162464986) 100%);
-  display: block;
-  border: transparent;
-  border-radius: 0.5rem;
-  margin: auto;
-  
-  text-decoration: none;
-cursor: pointer;
-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-
-max-width: 100px;}

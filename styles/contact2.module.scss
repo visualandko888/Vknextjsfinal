@@ -2,11 +2,11 @@
 
 .contact {
   @extend ._baseSection;
-  padding: 0rem;
-  margin: 3rem 0rem;
+  // padding: 0rem;
+  // margin: 3rem 0rem;
 
   @include media-min("base") {
-    margin: 3rem;
+    // margin: 3rem;
   }
 
   > h2 {
@@ -19,7 +19,7 @@
 
     // Assurez-vous que ces styles n'affectent pas négativement les images
     > img {
-      width: 50px; // Ajustez la taille selon vos besoins
+      width: 150px; // Ajustez la taille selon vos besoins
       height: auto; // Assurez-vous que l'image garde ses proportions
     }
   }
@@ -93,13 +93,7 @@
     border-radius: 1rem;
     width: 90%;
     height: auto;
-    background: rgb(2, 0, 36);
-    background: linear-gradient(
-      90deg,
-      rgba($primary-color, 100%) 0%,
-      rgba($primary-color, 75%) 50%,
-      rgba($primary-color, 50%) 100%
-    );
+    background:rgba(255, 255, 255, 0.2);
     display: flex;
     justify-content: space-between;
     align-items: center;

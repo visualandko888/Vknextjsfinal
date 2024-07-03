@@ -6,6 +6,7 @@ import leftIcoGoogleAds from '/public/images/left-ico-google-ads.svg';
 import icSocialAds from '/public/images/ic-social-ads.svg';
 import leftIcoCalendar from '/public/images/left-ico-calendar.svg';
 import icPlusCircle from '/public/images/ic-plus-circle.svg';
+import hamb from '/public/images/hamb.svg';
 import styles from '/styles/navLeft.module.scss';
 
 const Sidebar = () => {
@@ -57,6 +58,7 @@ const Sidebar = () => {
   return (
     <div className={styles.sidebar}>
       <ul className={styles.navList}>
+      <div className={styles.menunavleft}><Image src={hamb}  className={styles.iconmenu} width={30} height={30} /></div>
         {navItems.map((item, index) => (
           <li key={index} className={styles.navItem}>
             {item.url ? (

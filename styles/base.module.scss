@@ -46,14 +46,15 @@ $breakpoints: (
   color: $primary-font-color;
   margin: 0;
   font-weight: bold;
-  font-size: 1.7em;
+  font-size: 48px;
+  color: white!important
 }
 
 // Base p title
 ._basePTitle {
   margin: 0;
   margin-top: 0.3rem;
-  color: #000;
+  color: #ffffff;
 }
 
 // Base section

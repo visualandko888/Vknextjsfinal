@@ -1,10 +1,13 @@
+import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import Fus from '/public/images//fusee.gif';
 import styles from '../styles/GoogleAds.module.scss';
 import Hero from '../src/components/GAds/Hero';
 import Reviews from '../src/components/Home/Reviews';
 import Faq from '../src/components/Home/Faq';
 import Contact from '../src/components/Home/Contact';
+
 
 const GoogleAds = () => {
   const [forfaits, setForfaits] = useState([]);
@@ -19,7 +22,7 @@ const GoogleAds = () => {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
 
   useEffect(() => {
-    axios.get('/datas/forfaits.json')
+    axios.get('/datas/forfaitsga.json')
       .then((res) => {
         setForfaits(res.data);
       })
@@ -78,27 +81,73 @@ const GoogleAds = () => {
 
     setShowModal(false);
   };
+
+  const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const maxScroll = document.body.scrollHeight - window.innerHeight;
+      const scrollFraction = scrollPosition / maxScroll;
+
+      const startColor = [87, 158, 176];
+      const endColor = [147,163,201]; // Change this to your desired end color
+
+      const newColor = startColor.map((start, index) => {
+        const end = endColor[index];
+        return Math.round(start + (end - start) * scrollFraction);
+      });
+
+      const newGradient = `linear-gradient(90deg, rgba(${newColor.join(',')},1) 0%, rgba(${newColor.join(',')},0.7) 30%, rgba(${newColor.join(',')},1) 100%)`;
+
+      document.documentElement.style.setProperty('--gradient-start', `rgba(${newColor.join(',')}, 1)`);
+      document.documentElement.style.setProperty('--gradient-middle', `rgba(${newColor.join(',')}, 0.7)`);
+      document.documentElement.style.setProperty('--gradient-end', `rgba(${newColor.join(',')}, 1)`);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+  
   
     
 
   return (
-    <main>
+    <main className={styles.mainga}>
     <Hero />
+    <div className={`${styles.container} ${styles.appear}`}> 
+        <h1>Nos Forfaits Google Ads <Image className={styles.fusee2} src={Fus} alt="Croissance des clients" width={90} height={90}/></h1>
+        <p>Découvrez nos différents forfaits pour la gestion de vos campagnes Google Ads.</p>
+        <div className={styles.forfaits}>
+          {forfaits.map((forfait) => (
+            <div key={forfait.id} className={styles.forfait}>
+              <h2>{forfait.titre} {forfait.prix}</h2>
+              <p>{forfait.description}</p>
+              <ul>
+                {forfait.elements.map((element, index) => (
+                  <li key={index}>{element}</li>
+                ))}
+              </ul>
+              
+              <button onClick={() => { setSelectedForfait(forfait); setShowModal(true); }}>Lancer ma compagne</button>
+            </div>
+          ))}
+        </div>
+      </div>
     <div className={styles.section}>
     <h1>Propulser votre entreprise grâce à Google ads</h1>
     </div>
-    <main className={styles.mainga} >
+    <section className={styles.pres}> 
       {/* <HelmetMeta title={title} description={description} /> */}
       <section className={`${styles.presentation} ${styles.appear}`}>
-        <h2>Pourquoi Investir dans Google Ads ?<img className={styles.fusee} src="/images/fusee.gif" alt="Croissance des clients" /></h2>
+        <h2>Pourquoi Investir dans Google Ads ?</h2>
+        <div className={styles.image}>
+            <Image  src="/images/adsgif.gif" alt="Croissance des clients" width={200} height={200}/>
+          </div>
         <div className={`${styles.section} ${styles.appear}`}>
           <div className={styles.text}>
             <h3>Attirer de Nouveaux Clients et Booster Vos Ventes</h3>
             <p>Les Google Ads sont un outil incontournable pour attirer de nouveaux clients et augmenter vos ventes en ligne. Ils permettent de générer des leads, de convertir des prospects en clients, et d’améliorer votre visibilité sur le web.</p>
+            
           </div>
-          <div className={styles.image}>
-            <img src="/images/adsgif.gif" alt="Croissance des clients" />
-          </div>
+          {/* <div className={styles.image}>
+            <Image  src="/images/adsgif.gif" alt="Croissance des clients" width={500} height={500}/>
+          </div> */}
         </div>
         <div className={styles.section}>
           <div className={styles.text}>
@@ -126,15 +175,18 @@ const GoogleAds = () => {
         </div>
       </section>
       <section className={`${styles.presentation} ${styles.appear}`}>
-        <h2>L'Expertise d'une Agence Google Ads <img className={styles.fusee} src="/images/fusee.gif" alt="Croissance des clients" /></h2>
+        <h2>L'Expertise d'une Agence Google Ads </h2>
+        <div className={styles.image}>
+            <Image  src="/images/adsgif3.gif" alt="Croissance des clients" width={200} height={200}/>
+          </div>
         <div className={styles.section}>
           <div className={styles.text}>
             <h3>Maximiser Votre Retour sur Investissement (ROI)</h3>
             <p>L'expertise d'une agence Google Ads est essentielle pour optimiser votre ROI. Elle maîtrise les outils nécessaires pour créer des campagnes efficaces et attirer un trafic qualifié sur votre site.</p>
             </div>
-            <div className={styles.image}>
-            <img src="/images/adsgif.gif" alt="Croissance des clients" />
-          </div>
+            {/* <div className={styles.image}>
+            <Image  src="/images/adsgif3.gif" alt="Croissance des clients" width={500} height={500}/>
+          </div> */}
         </div>
         <div className={styles.section}>
           <div className={styles.text}>
@@ -157,16 +209,19 @@ const GoogleAds = () => {
         </div>
       </section>
       <section className={`${styles.presentation} ${styles.appear}`}>
-        <h2>Comment Travaille une Agence Google Ads ? <img className={styles.fusee} src="/images/fusee.gif" alt="Croissance des clients" /></h2>
+        <h2>Comment Travaille une Agence Google Ads ? </h2>
+        <div className={styles.image}>
+            <Image  src="/images/adsgif2.gif" alt="Croissance des clients" width={200} height={200}/>
+          </div>
         <div className={styles.section}>
           <div className={styles.text}>
             <h3>Cadrage et Stratégie</h3>
             <p>Un expert Google Ads analyse votre marché, vos objectifs et votre public cible pour établir une stratégie sur mesure, axée sur des mots-clés et segments d’audience pertinents afin d’optimiser votre ROI.</p>
           
           </div>
-          <div className={styles.image}>
-            <img src="/images/adsgif.gif" alt="Croissance des clients" />
-          </div>
+          {/* <div className={styles.image}>
+            <Image  src="/images/adsgif2.gif" alt="Croissance des clients" width={500} height={500}/>
+          </div> */}
 
         </div>
         <div className={styles.section}>
@@ -183,33 +238,15 @@ const GoogleAds = () => {
           </div>
         </div>
       </section>
-      </main>
+      </section>
 
-      <div className={`${styles.container} ${styles.appear}`}> 
-        <h1>Nos Forfaits Google Ads <img className={styles.fusee2} src="/images/fusee.gif" alt="Croissance des clients" /></h1>
-        <p>Découvrez nos différents forfaits pour la gestion de vos campagnes Google Ads.</p>
-        <div className={styles.forfaits}>
-          {forfaits.map((forfait) => (
-            <div key={forfait.id} className={styles.forfait}>
-              <h2>{forfait.titre} {forfait.prix}</h2>
-              <p>{forfait.description}</p>
-              <ul>
-                {forfait.elements.map((element, index) => (
-                  <li key={index}>{element}</li>
-                ))}
-              </ul>
-              
-              <button onClick={() => { setSelectedForfait(forfait); setShowModal(true); }}>Lancer ma compagne</button>
-            </div>
-          ))}
-        </div>
-      </div>
+      
 
       {showModal && (
         <div className={styles.modal}>
           <div className={styles.modalContent}>
             <span className={styles.close} onClick={() => setShowModal(false)}>&times;</span>
-            <h2>Demande de Forfait: {selectedForfait.titre}<img className={styles.fusee3} src="/images/fusee.gif" alt="Croissance des clients" /></h2>
+            <h2>Demande de Forfait : {selectedForfait.titre}</h2>
             <h4>Merci de compléter vos informations, notre service commercial prendra un rendez-vous avec vous pour confirmer vos informations et démarrer votre campagne google ads !</h4>
             <form className={styles.form} onSubmit={handleSubmit}>
               <label>

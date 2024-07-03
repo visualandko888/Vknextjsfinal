@@ -3,14 +3,7 @@
 .realisationSlider {
   @extend ._baseSection;
   padding: 3rem 0;
-  background: $primary-color;
-  background: linear-gradient(
-    90deg,
-    $primary-color,
-    rgba(255, 255, 255, 1) 45%,
-    rgba(255, 255, 255, 1) 55%,
-    $primary-color
-  );
+  
   min-height: clamp(200px, 80vw, 680px);
   box-sizing: border-box;
 
@@ -41,12 +34,12 @@
             text-decoration: none;
 
             h2 {
-              margin-top: 1rem;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              color: #000;
-              gap: 0.5rem;
+              // margin-top: 1rem;
+              // display: flex;
+              // justify-content: center;
+              // align-items: center;
+              // color: #000;
+              // gap: 0.5rem;
 
               img {
                 width: 2.5rem;
@@ -273,3 +266,8 @@
   transition: background 0.5s linear;
   text-decoration: none;
 cursor: pointer;}
+
+#projects h2{font-size: 48px!important;
+color: white!important}
+
+

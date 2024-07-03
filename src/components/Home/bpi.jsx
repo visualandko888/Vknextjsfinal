@@ -30,21 +30,6 @@ export default function Bpi() {
       <div
         tabIndex="0"
         role="button"
-        onKeyDown={() => goto('/google-ads')}
-        onClick={() => goto('/google-ads')}
-        className={styles.boxPj}
-        style={{ '--chevron-url': `url(${chevronUrl})` }}
-      >
-        <div className={styles.backJ}>
-          <Image src={icGoogleAds} className={styles.faIcon} alt="google ads" />
-          <span>{t('home_bpi_t1', { defaultValue: 'Google' })}</span>
-          <span>{t('home_bpi_t2', { defaultValue: 'ADS' })}</span>
-        </div>
-      </div>
-
-      <div
-        tabIndex="0"
-        role="button"
         onKeyDown={() => goto('/developpement-web')}
         onClick={() => goto('/developpement-web')}
         className={styles.boxPj}
@@ -60,15 +45,32 @@ export default function Bpi() {
       <div
         tabIndex="0"
         role="button"
-        onKeyDown={() => goto('/developpement-web#maintenance')}
-        onClick={() => goto('/developpement-web#maintenance')}
+        onKeyDown={() => goto('/referencement')}
+        onClick={() => goto('/referencement')}
         className={styles.boxPj}
         style={{ '--chevron-url': `url(${chevronUrl})` }}
       >
-        <div className={styles.backJ}>
+      <div className={styles.backJ}>
           <Image src={icWebUnivers} className={styles.faIcon} alt="maintenance" />
-          <span>{t('home_bpi_t5', { defaultValue: 'Maintenance' })}</span>
-          <span>{t('home_bpi_t6', { defaultValue: 'Sécurité' })}</span>
+          <span>{t('home_bpi_t5', { defaultValue: 'Référencement' })}</span>
+          <span>{t('home_bpi_t6', { defaultValue: 'naturel' })}</span>
+        </div>
+        
+      </div>
+
+      <div
+        tabIndex="0"
+        role="button"
+        onKeyDown={() => goto('/google-ads')}
+        onClick={() => goto('/google-ads')}
+        className={styles.boxPj}
+        style={{ '--chevron-url': `url(${chevronUrl})` }}
+      >
+        
+        <div className={styles.backJ}>
+          <Image src={icGoogleAds} className={styles.faIcon} alt="google ads" />
+          <span>{t('home_bpi_t1', { defaultValue: 'Google' })}</span>
+          <span>{t('home_bpi_t2', { defaultValue: 'ADS' })}</span>
         </div>
       </div>
 

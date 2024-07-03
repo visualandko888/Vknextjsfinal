@@ -78,8 +78,8 @@ export default function Team() {
 
   return (
     <section id="team" className={styles.team}>
-      <h2 className={styles.teamTitle}>{t('home_team_t1', { defaultValue: 'Notre équipe qualifiée' })}</h2>
-      <div className={styles.teamPictures}>
+      <h2 className={styles.teamTitle}>{t('home_team_t1', { defaultValue: 'Ne vous prenez plus la tête, nous avons la solution à vos problèmes 🎯' })}</h2>
+      {/* <div className={styles.teamPictures}>
         {teamMembers.map((e, index) => (
           <Image
             key={index}
@@ -90,31 +90,31 @@ export default function Team() {
             height={300}
           />
         ))}
-      </div>
+      </div> */}
 
       <div className={styles.aboutUs}>
         <p className={styles.description1}>
-          {t('home_team_t2', { defaultValue: "Visual & Ko est constituée d'une" })}{' '}
-          <span className={styles.span1}>
+          {t('home_team_t2', { defaultValue: "Visual & Ko est constituée d'une équipe de plusieurs développeurs expérimentés et d'experts en Marketing" })}{' '}
+          {/* <span className={styles.span1}>
             {t('home_team_t3', { defaultValue: 'équipe de plusieurs développeurs expérimentés' })}
           </span>{' '}
           {t('home_team_t4', { defaultValue: "et d'" })}
-          <span className={styles.span2}>{t('home_team_t5', { defaultValue: 'experts en marketing' })}</span>.
+          <span className={styles.span2}>{t('home_team_t5', { defaultValue: 'experts en marketing' })}</span>. */}
         </p>
 
         <p className={styles.description2}>
           {windowSize >= 900 && (
             <>
-              {t('home_team_t6', { defaultValue: 'Les projets sur lesquels nous travaillons sont' })}{' '}
-              <strong>{t('home_team_t7', { defaultValue: 'complexes et ambitieux.' })}</strong>
+              {/* {t('home_team_t6', { defaultValue: 'Les projets sur lesquels nous travaillons sont' })}{' '}
+              <strong>{t('home_team_t7', { defaultValue: 'complexes et ambitieux.' })}</strong> */}
             </>
           )}
-          {t('home_team_t8', { defaultValue: 'Nous utilisons les technologies' })}{' '}
-          <strong>{t('home_team_t9', { defaultValue: 'les plus modernes' })}</strong>{' '}
-          {t('home_team_t10', { defaultValue: 'pour répondre aux besoins actuels de nos clients.' })}
+          {t('home_team_t8', { defaultValue: 'Découvrez comment notre expertise en marketing digital peut propulser votre entreprise vers de nouveaux sommets grâce à des stratégies personnalisées et innovantes.' })}{' '}
+          {/* <strong>{t('home_team_t9', { defaultValue: 'les plus modernes' })}</strong>{' '}
+          {t('home_team_t10', { defaultValue: 'pour répondre aux besoins actuels de nos clients.' })} */}
         </p>
 
-        <p className={styles.description3}>
+        {/* <p className={styles.description3}>
           {t('home_team_t11', { defaultValue: "Notre engagement envers l'excellence nous pousse à nous dépasser constamment et à chercher" })}{' '}
           <br />
           <span className={styles.span3}>
@@ -124,7 +124,7 @@ export default function Team() {
           {t('home_team_t13', { defaultValue: 'pour offrir à nos clients les' })}
           <strong>{t('home_team_t14', { defaultValue: 'meilleurs résultats' })}</strong>{' '}
           {t('home_team_t15', { defaultValue: 'possibles.' })}
-        </p>
+        </p> */}
       </div>
 
       <button className={styles.teamButton} onClick={showCalendar} type="button">

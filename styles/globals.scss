@@ -16,11 +16,19 @@ header a{
   font-style: normal;
 }
 
+:root {
+  --gradient-start: rgba(87, 158, 176, 1);
+  --gradient-middle: rgba(87, 158, 176, 0.7);
+  --gradient-end: rgba(87, 158, 176, 1);
+}
+
 main {
   padding-top: var(--height-header-top);
   font-family: "Roboto", sans-serif;
   font-weight: 500;
   font-style: normal;
+  background: linear-gradient(90deg, var(--gradient-start) 0%, var(--gradient-middle) 35%, var(--gradient-end) 100%);
+  transition: background 0.5s ease;
 }
 
 form select,

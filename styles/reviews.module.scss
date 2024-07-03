@@ -1,145 +1,127 @@
 @import "./base.module.scss";
 .reviews {
-  padding-top: 80px;
-  position: relative;
-  min-height: 35rem;
+  
+  color: #fff;
+  padding: 20px;
+  border-radius: 0px;
+  text-align: center;
+  padding-bottom: 60px;
 
   h2 {
-    color: #102d4a;
-    text-align: center;
-    font-size: 36px;
-    font-weight: 700;
-    margin: 0;
+    font-size: 48px;
+    margin-bottom: 10px;
   }
 
   p {
-    color: #102d4a;
-    text-align: center;
-    font-size: 16px;
-    font-weight: 400;
-    margin: 0;
+    font-size: 1.2em;
+    margin-bottom: 20px;
   }
 
   .reviewsRating {
-    margin: 1rem auto;
-    width: fit-content;
+    margin-bottom: 20px;
+    font-size: 1.2em;
 
     .faIcon {
-      color: rgb(212, 212, 212);
+      color: #ffd700;
 
       &.active {
-        color: rgb(255, 140, 0);
+        color: #ffd700;
       }
     }
   }
 
-  .reviewContent {
-    width: 100%;
+  .carousel {
     position: relative;
-    overflow: hidden;
-    height: 33rem;
+    display: flex;
+    align-items: center;
 
-    .reviewsList {
-      width: 80vw;
-      margin: 5rem auto;
-      display: flex;
-      gap: 5rem;
-      justify-content: center;
+    .prev,
+    .next {
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 2em;
+      cursor: pointer;
       position: absolute;
-      transform: translateX(-50%);
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 1;
+    }
 
-      &.show {
-        left: 50%;
-        animation: review1 1s ease-in-out;
-      }
+    .prev {
+      left: 10px;
+    }
 
-      &.unshow {
-        left: -200%;
-        animation: review2 1s ease-in-out;
-      }
+    .next {
+      right: 10px;
+    }
+
+    .reviewContent {
+      display: flex;
+      overflow: hidden;
+      width: 100%;
+      justify-content: center;
 
       .reviewsCard {
-        box-shadow: #00000040 -6px 9px 15px;
-        width: 23rem;
-        position: relative;
-        height: 17rem;
+        min-width: 300px;
+        max-width: 300px;
+        flex: 0 0 auto;
+        background: #ffffff33;
+        border-radius: 10px;
+        padding: 20px;
+        margin: 10px;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 310px;
+
+      
+      
 
         .reviewsBody {
-          position: absolute;
-          padding-top: 1rem;
-          padding-left: 1.5rem;
-          padding-right: 1.5rem;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
 
           .reviewsCircle {
-            width: 9rem;
-            min-width: 9rem;
-            height: 9rem;
-            min-height: 9rem;
-            border-radius: 100%;
-            box-shadow: inset #00000014 4px -4px 7px;
-            background-color: #fff;
-            float: right;
-            margin: 0 0 0 15px;
-            position: relative;
-            margin-right: -3.5rem;
-            margin-top: -4rem;
-
-            img {
-              position: absolute;
-              z-index: 2;
-              width: 9rem;
-              top: 0rem;
-              left: 1rem;
-            }
+            background: #ffffff;
+            border-radius: 50%;
+            padding: 10px;
+            margin-bottom: 10px;
           }
 
           p {
-            box-sizing: border-box;
-            font-style: italic;
-            margin: 0;
+            font-size: 1em;
+            line-height: 1.5em;
+            color: #fff;
 
             &.min {
-              font-size: 0.8em;
+              font-size: 0.9em;
             }
           }
         }
 
         .reviewsBottom {
-          position: absolute;
           display: flex;
-          align-items: center;
-          justify-content: space-between;
-          gap: 8px;
-          padding: 0 1rem;
-          bottom: 12px;
-          width: 100%;
-          box-sizing: border-box;
+          flex-direction: column;
+          align-items: flex-start;
 
-          span {
-            font-size: 16px;
+          .reviewsRate {
+            margin-bottom: 10px;
+
+            svg {
+              color: #ffd700;
+            }
           }
-        }
 
-        .reviewsCache1 {
-          width: 7rem;
-          right: 0;
-          height: 5rem;
-          background-color: #fff;
-          position: absolute;
-          top: -5rem;
-          z-index: 1;
-        }
-
-        .reviewsCache2 {
-          width: 3rem;
-          height: 11.7rem;
-          background-color: #fff;
-          position: absolute;
-          top: -5rem;
-          right: -3rem;
-          z-index: 1;
+          .reviewsAuthor {
+            font-weight: bold;
+          }
         }
       }
     }
   }
 }
+
+.reviewsCard:hover {box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;}
