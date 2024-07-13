@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import Hero from '../src/components/Home/Hero2';
 import HelmetMeta from '../src/components/Helmet/HelmetMeta';
@@ -12,6 +12,7 @@ import Faq from '../src/components/Home/Faq';
 import Contact from '../src/components/Home/Contact';
 import BlogSection from '../src/components/Blog/BlogSection';
 import styles from '../styles/animation.module.scss'; // Importation du module SCSS
+import RegionMap from '../src/components/Home/RegionMap';
 
 export default function Home() {
   console.log('Home page rendue');
@@ -44,7 +45,7 @@ export default function Home() {
       const scrollFraction = scrollPosition / maxScroll;
 
       const startColor = [87, 158, 176];
-      const endColor = [147,163,201]; // Change this to your desired end color
+      const endColor = [148,187,197]; // Change this to your desired end color
 
       const newColor = startColor.map((start, index) => {
         const end = endColor[index];
@@ -75,17 +76,20 @@ export default function Home() {
   });
 
   return (
-    <main className={styles.main}>
+    <main className={styles.test}>
       <HelmetMeta title={title} description={description} />
       <div ref={el => sectionsRef.current[0] = el}><Hero /></div>
       <div ref={el => sectionsRef.current[1] = el}><Bpi /></div>
-      <div ref={el => sectionsRef.current[2] = el}><Team /></div>
-      <div ref={el => sectionsRef.current[3] = el}><Services /></div>
-      <div ref={el => sectionsRef.current[4] = el}><Partenaires /></div>
-      {/* <div ref={el => sectionsRef.current[5] = el}><Rea /></div> */}
-      <div ref={el => sectionsRef.current[6] = el}><Reviews /></div>
-      <div ref={el => sectionsRef.current[7] = el}><Faq /></div>
-      <div ref={el => sectionsRef.current[8] = el}><Contact /></div>
+      <div ref={el => sectionsRef.current[1] = el}><Team /></div>
+      <div ref={el => sectionsRef.current[2] = el}><Services /></div>
+      
+      <div ref={el => sectionsRef.current[3] = el}><Rea /></div>
+      <div ref={el => sectionsRef.current[4] = el}><RegionMap /></div>
+   
+      <div ref={el => sectionsRef.current[5] = el}><Reviews /></div>
+      <div ref={el => sectionsRef.current[6] = el}><Faq /></div>
+      <div ref={el => sectionsRef.current[7] = el}><Contact /></div>
+      <div ref={el => sectionsRef.current[8] = el}><Partenaires /></div>
       <div ref={el => sectionsRef.current[9] = el}><BlogSection /></div>
     </main>
   );

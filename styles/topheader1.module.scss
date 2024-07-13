@@ -10,7 +10,7 @@
     justify-content: space-between;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px;
     color:white;
-    justify-content: center;
+    justify-content: right;
   
     .fixed {
       position: fixed;
@@ -18,7 +18,7 @@
       color: #579daf;
       bottom: 1rem;
       right: -10rem;
-      height: 90px;
+      height: 50px;
       width: 90px;
       border-radius: 100%;
       display: flex;
@@ -137,14 +137,13 @@
     }
   
     .right {
-      position: absolute;
+      position: relative;
       display: flex;
-      right: 0px;
   
       .country {
         position: absolute;
         right: 1rem;
-        color: #fff;
+        color: #579daf;
         height: 100%;
         display: flex;
         align-items: center;
@@ -175,12 +174,11 @@
       }
   
       ul {
-        height: 61px;
-    display: flex;
-    margin: 0;
-    gap: 0.8rem;
-    margin-right: 2rem;
-    align-items: center;
+        display: flex;
+        margin: 0;
+        gap: 0.8rem;
+        margin-right: 2rem;
+        align-items: center;
   
         li {
           list-style: none;
@@ -190,13 +188,12 @@
           }
   
           a {
-            color: white;
+            color: #579daf;
             text-decoration: none;
             display: flex;
             height: 100%;
             align-items: center;
             font-weight: bold;
-            background: #579eb0;
   
             .faIcon {
               font-size: 2.2rem;
@@ -248,12 +245,6 @@ font-size: 20px;}
       border-radius: 10px;
       box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     }
-
-  .login{border-radius: 50%;
-    border-radius: 50%;
-    border-width: 1px;
-    border-style: solid;
-    border-color: #579eb0;}
 
   
   

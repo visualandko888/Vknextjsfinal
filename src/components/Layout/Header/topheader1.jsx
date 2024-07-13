@@ -14,7 +14,7 @@ import { faPen } from '@fortawesome/free-solid-svg-icons';
 
 
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
-import styles from '/styles/navTop.module.scss';
+import styles from '/styles/topheader1.module.scss';
 
 export default function NavTop2({ handleHoverNav, handleHoverLeftNav }) {
   const { i18n, t } = useTranslation();
@@ -129,33 +129,9 @@ export default function NavTop2({ handleHoverNav, handleHoverLeftNav }) {
 
   return (
     <div className={styles.navTop2}>
-      <div className={styles.left}>
-        <ul>
-          
-          {navTopElements.map((e, index) => (
-            <li
-              role="button"
-              tabIndex={0}
-              onClick={() => index === 1 && handleHoverLeftNav(true)}
-              onKeyDown={() => handleHoverNav(index)}
-              key={index}
-              className={`${e.url === currentPage ? styles.active : ''} ${
-                e.isButton ? styles.button : ''
-              }`}
-            >
-              <Link href={e.url} passHref legacyBehavior>
-                <a>
-                  {t(`layout_navigation_${e.translate_var}`, {
-                    defaultValue: e.name,
-                  })}
-                </a>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
+      
 
-      <div className={styles.right}>
+      {/* <div className={styles.right}>
         <ul>
           <li>
             <Link   href="/contactez-nous" passHref legacyBehavior>
@@ -166,7 +142,7 @@ export default function NavTop2({ handleHoverNav, handleHoverLeftNav }) {
           </li>
           <li>
             <Link href="/espace-client/login" passHref legacyBehavior>
-              <a className={styles.login}>
+              <a>
                 <FontAwesomeIcon className={styles.faIcon} icon={faUserCircle} />
               </a>
             </Link>
@@ -180,7 +156,7 @@ export default function NavTop2({ handleHoverNav, handleHoverLeftNav }) {
           onMouseEnter={() => handleHoverCountry()}
           onMouseLeave={() => handleHoverCountry()}
           className={styles.country}
-        >
+        > */}
           {/* <Image
             alt={`drapeau ${countryList[currentCountry].name}`}
             src={countryList[currentCountry].img}
@@ -200,8 +176,8 @@ export default function NavTop2({ handleHoverNav, handleHoverLeftNav }) {
               ))}
             </div>
           )} */}
-        </div>
-      </div>
+        {/* </div>
+      </div> */}
       <div
         className={`${styles.fixed} ${showButtonRdv ? styles.show : styles.unshow}`}
         role="button"

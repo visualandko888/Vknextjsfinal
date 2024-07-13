@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import SeoIcon from '/public/images/card-seo-icone.svg';
 import SeaIcon from '/public/images/card-sea-icone.svg';
 import GoogleIcon from '/public/images/card-google-icone.png';
@@ -108,11 +108,42 @@ export default function Services() {
     `${styles.bgBlue} ${styles.imgcenter}`,
   ];
 
+  const scrollDirectionRef = useRef(null);
+const lastScrollY = useRef(0);
+
+useEffect(() => {
+  const handleScroll = () => {
+    const currentScrollY = window.scrollY;
+    const deltaY = currentScrollY - lastScrollY.current;
+    lastScrollY.current = currentScrollY;
+
+    if (scrollDirectionRef.current) {
+      const currentTransform = getComputedStyle(scrollDirectionRef.current).transform;
+      let matrixValues = currentTransform.match(/matrix.*\((.+)\)/);
+      let currentX = matrixValues ? parseFloat(matrixValues[1].split(', ')[4]) : 0;
+
+      scrollDirectionRef.current.style.transform = `translateX(${currentX + deltaY}px)`;
+    }
+  };
+
+  window.addEventListener('scroll', handleScroll);
+
+  return () => {
+    window.removeEventListener('scroll', handleScroll);
+  };
+}, []);
+
   return (
     <section id="services" className={styles.services}>
+      <div className={styles.rel}>
+      <h2 ref={scrollDirectionRef} className={styles.h2scroll}>
+  Notre passion
+</h2>
       <h2 className={styles.servicesTitle}>
         {t('home_services_t1', { defaultValue: 'Nos services' })}
       </h2>
+      
+</div>
 
       <div className={styles.columns}>
       <div className={styles.servicesList}>

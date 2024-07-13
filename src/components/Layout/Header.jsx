@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import '/styles/headerheader.module.scss';
 import NavLeft from '/src/components/Layout/Header/NavLeft';
 import NavTop2 from '/src/components/Layout/Header/NavTop2';
+
 import NavTopMobile from '/src/components/Layout/Header/NavTopMobile';
 import NavMobile from '/src/components/Layout/Header/NavMobile';
 
@@ -53,6 +54,7 @@ export default function Header() {
     <header>
       {windowSize > 1215 ? (
         <>
+      
           <NavTop2
             handleHoverNav={handleHoverNav}
             currentNavHover={currentNavHover}

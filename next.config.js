@@ -5,4 +5,10 @@ module.exports = {
       return config;
     },
   };
+
+  module.exports = {
+    images: {
+      domains: ['lh3.googleusercontent.com'],
+    },
+  };
   

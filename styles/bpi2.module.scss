@@ -99,7 +99,7 @@
           content: "";
           width: 30px;
           height: 30px;
-          right: 30%;
+          right: 20%;
           top: 50%;
           transform: translateY(-50%);
           font-size: 2em;
@@ -124,8 +124,7 @@
     }
 
     &.colored {
-      background-color: #474747;
-      border: 1px #474747 solid;
+     
     }
   }
 }

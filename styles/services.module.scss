@@ -1,10 +1,12 @@
 @import "./base.module.scss";
 
 .services {
+  
   @extend ._baseSection;
   width: 85vw;
   margin: auto;
   padding: 0;
+  margin-top: 40px;
 
   .modalCard {
     z-index: 999;
@@ -74,6 +76,9 @@
     font-size:48px;
     font-weight: 700;
     margin-bottom: 2rem;
+    text-align: center;
+text-shadow: 0px 9px 9px rgba(0, 0, 0, 0.25);
+
 
     @include media-min("base") {
     
@@ -83,26 +88,29 @@
   .columns {
     @include media-min("custom2") {
       display: flex;
+      justify-content: center;
     }
 
     .servicesList {
       display: flex;
       flex-wrap: wrap;
-      width: 100%;
+      width: 55%;
       row-gap: 1.5rem;
       column-gap: 1.8rem;
       box-sizing: border-box;
+     
 
-      @include media-min("phone-down") {
+      @include media-max("tablet-down") {
         row-gap: 1.5rem;
         column-gap: 2rem;
+        width: 100%;
       }
 
       @include media-min("custom2") {
-        width: 55%;
+        width:55%;
         row-gap: 2rem;
         column-gap: 2.5rem;
-        padding-right: 3rem;
+
       }
 
       @include media-min("widescreen-up") {
@@ -113,10 +121,14 @@
 
       .card {
         width: 40%;
-        height: 200px;
+        
         flex-grow: 1;
         perspective: 1000px;
         cursor: pointer;
+
+        @include media-max("phone-down") {
+          height: 7rem;
+        }
 
         @include media-min("phone-down") {
           height: 9.5rem;
@@ -552,7 +564,20 @@
   transform: translate(-50%, -50%);
   bottom: 5px;
   right: 0;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  
 }
+
+.h2scroll {
+  font-size: 100px!important;
+overflow: hidden;
+  transition: transform 0.5s ease; // Transition pour un mouvement fluide
+  opacity: .2;
+  margin: 0px;
+  margin-left: -900px;
+ 
+}
+
+.rel{position: relative;
+  overflow: hidden;}
 
 

@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import icAppointement from '/public/images/ic-appointment.svg';
 import icGoogleAds from '/public/images/ic-google-ads.svg';
 import icWebUnivers from '/public/images/ic-web-univers.svg';
+import icseo from '/public/images/ic-social-ads.svg';
 import chevron from "/public/images/chevron.png";
 import { useTranslation } from 'react-i18next';
 import styles from '/styles/bpi2.module.scss';
@@ -37,8 +38,8 @@ export default function Bpi() {
       >
         <div className={styles.backJ}>
           <Image src={icWebUnivers} className={styles.faIcon} alt="webUnivers" />
-          <span>{t('home_bpi_t3', { defaultValue: 'Développement' })}</span>
-          <span>{t('home_bpi_t4', { defaultValue: 'WEB' })}</span>
+          <span>{t('home_bpi_t3', { defaultValue: 'Création de Site' })}</span>
+          <span>{t('home_bpi_t4', { defaultValue: 'internet' })}</span>
         </div>
       </div>
 
@@ -51,7 +52,7 @@ export default function Bpi() {
         style={{ '--chevron-url': `url(${chevronUrl})` }}
       >
       <div className={styles.backJ}>
-          <Image src={icWebUnivers} className={styles.faIcon} alt="maintenance" />
+          <Image src={icseo} className={styles.faIcon} alt="maintenance" />
           <span>{t('home_bpi_t5', { defaultValue: 'Référencement' })}</span>
           <span>{t('home_bpi_t6', { defaultValue: 'naturel' })}</span>
         </div>
@@ -77,15 +78,15 @@ export default function Bpi() {
       <div
         role="button"
         tabIndex={0}
-        onKeyDown={() => showCalendar()}
-        onClick={() => showCalendar()}
+        onKeyDown={() => goto('/contact')}
+        onClick={() => goto('/contact')}
         className={`${styles.boxPj} ${styles.colored}`}
         style={{ '--chevron-url': `url(${chevronUrl})` }}
       >
         <div className={styles.backJ}>
-          <Image src={icAppointement} className={styles.faIcon} alt="appointment" />
-          <span>{t('home_bpi_t7', { defaultValue: 'Prendre' })}</span>
-          <span>{t('home_bpi_t8', { defaultValue: 'RDV' })}</span>
+          <Image src={icAppointement} className={styles.faIcon} alt="audit" />
+          <span>{t('home_bpi_t7', { defaultValue: 'Audit' })}</span>
+          <span>{t('home_bpi_t8', { defaultValue: 'gratuit' })}</span>
         </div>
       </div>
     </div>

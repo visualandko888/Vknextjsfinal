@@ -10,12 +10,12 @@
   }
 
   > h2 {
-    font-size: 2.25em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
+    color: #ffffff;
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-align: center;
+text-shadow: 0px 9px 9px rgba(0, 0, 0, 0.25);
 
     // Assurez-vous que ces styles n'affectent pas négativement les images
     > img {

@@ -29,6 +29,12 @@ main {
   font-style: normal;
   background: linear-gradient(90deg, var(--gradient-start) 0%, var(--gradient-middle) 35%, var(--gradient-end) 100%);
   transition: background 0.5s ease;
+  width: 100%!important
+}
+
+.test{
+  
+  width: 100%!important
 }
 
 form select,
@@ -46,6 +52,31 @@ li span{padding-top: var(--height-header-top);
   font-style: normal;}
 
 body{margin: 0;}
+
+polygon {
+  fill: transparent;
+  cursor: pointer;
+}
+
+polygon:hover,
+polygon.hover {
+  fill: rgba(255, 0, 0, 0.3);
+}
+
+polygon:hover::before {
+  content: attr(title);
+  position: absolute;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  z-index: 10;
+  pointer-events: none;
+}
 
 
 

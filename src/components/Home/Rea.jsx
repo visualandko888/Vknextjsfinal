@@ -103,9 +103,39 @@ export default function RealisationsSlider() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  const scrollDirectionRef = useRef(null);
+const lastScrollY = useRef(0);
+
+useEffect(() => {
+  const handleScroll = () => {
+    const currentScrollY = window.scrollY;
+    const deltaY = currentScrollY - lastScrollY.current;
+    lastScrollY.current = currentScrollY;
+
+    if (scrollDirectionRef.current) {
+      const currentTransform = getComputedStyle(scrollDirectionRef.current).transform;
+      let matrixValues = currentTransform.match(/matrix.*\((.+)\)/);
+      let currentX = matrixValues ? parseFloat(matrixValues[1].split(', ')[4]) : 0;
+
+      scrollDirectionRef.current.style.transform = `translateX(${currentX - deltaY}px)`;
+    }
+  };
+
+  window.addEventListener('scroll', handleScroll);
+
+  return () => {
+    window.removeEventListener('scroll', handleScroll);
+  };
+}, []);
+
   return (
     <section id="projects" className={styles.realisationSlider}>
+      <div className={styles.rel}>
+      <h2 ref={scrollDirectionRef} className={styles.h2scroll}>
+  Nos résultats
+</h2>
       <h2>{t('home_projectSlider_t1', { defaultValue: 'Nos réalisations' })}</h2>
+      </div>
       <p>{t('home_projectSlider_t2', { defaultValue: 'Voici quelques-unes de nos missions' })}</p>
       <div onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd} className={styles.slider}>
         <div role="button" tabIndex={0} onKeyDown={() => changeSlide(2)} onClick={() => changeSlide(2)} className={styles.left}>

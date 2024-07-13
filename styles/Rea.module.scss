@@ -7,10 +7,13 @@
   min-height: clamp(200px, 80vw, 680px);
   box-sizing: border-box;
 
+  h2{text-align: center;
+    text-shadow: 0px 9px 7.5px rgba(0, 0, 0, 0.25);}
+
   .slider {
     position: relative;
-    overflow: hidden;
     padding: 5% 0;
+    overflow: hidden;
 
     .content {
       position: relative;
@@ -33,18 +36,7 @@
           a {
             text-decoration: none;
 
-            h2 {
-              // margin-top: 1rem;
-              // display: flex;
-              // justify-content: center;
-              // align-items: center;
-              // color: #000;
-              // gap: 0.5rem;
-
-              img {
-                width: 2.5rem;
-              }
-            }
+            
           }
         }
 
@@ -270,4 +262,27 @@ cursor: pointer;}
 #projects h2{font-size: 48px!important;
 color: white!important}
 
+.h2scroll {
+  font-size: 100px!important;
+overflow: hidden;
+  transition: transform 0.5s ease; // Transition pour un mouvement fluide
+  opacity: .2;
+  margin: 0px;
+  color:white;
+  margin-right: -1100px;
+ 
+}
 
+.rel{position: relative;
+  overflow: hidden;}
+
+  .rel h2 {
+    color: #FFF;
+    text-align: center;
+    text-shadow: 0px 9px 7.5px rgba(0, 0, 0, 0.25);
+    font-size: 48px;
+
+    img {
+      width: 2.5rem;
+    }
+  }
