@@ -1,5 +1,10 @@
 @import "./base.module.scss";
 
+.teamflex{display: flex;
+max-width: 1200px;
+justify-content: center;
+margin: auto;}
+
 .team {
   padding: 20px;
   text-align: center;
@@ -34,10 +39,10 @@
     overflow-x: auto;
     padding: 10px;
     justify-content: center;
-    width: 800px;
+  
     margin: auto;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    height: 150px;
+    
     border-radius: 10px;
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
@@ -51,6 +56,7 @@
     padding-top: 0px;
     padding-bottom: 20px;
     background-color: white;
+    flex-wrap: wrap;
 
     &::-webkit-scrollbar {
       display: none; // Hide scrollbar for a cleaner look
@@ -94,20 +100,25 @@
     border-top-right-radius: 0px;
     background-color: white;
     padding-top: 5px;
+    margin: 0;
+    height: 553px;
+
     }
 
     .teamButton {
-      border-radius: 1.8rem;
-      padding: .8rem 2rem;
-      background: #474747;
-      font-size: 1rem;
-      color: #fff;
-      text-align: center;
-      font-weight: 600;
-      cursor: pointer;
+      border-radius: 10px;
+    padding: 0.8rem 2rem;
+    background: #579daf;
+    font-size: 1rem;
+    color: #fff;
+    text-align: center;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
       &:hover {
-       
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 5px 8px;
       }
     }
   }
@@ -130,6 +141,9 @@
   height: auto;
 }
 
+.team .logo{margin-top: 20px;
+  width: 200px!important;}
+
 .Titleh2{color: #ffffff;
   font-size: 48px;
   font-weight: 700;
@@ -146,6 +160,7 @@
   .visible {
     opacity: 1;
     transform: translateY(0);
+    margin: 0px!important;
   }
   
   .rel, .aboutUs, .description1 {
@@ -183,4 +198,11 @@
       transform: scale(1.1); /* Zoom de l'image */
       transition-duration: 1s; /* Durée de l'animation */
     }
-  
+
+    .description1  p{line-height: 2;}
+    .description1  h2{color:#579daf;}
+
+    .strong{font-weight: 900;
+     color: #579dafd1;}
+
+    

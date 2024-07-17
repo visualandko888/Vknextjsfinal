@@ -85,7 +85,7 @@ useEffect(() => {
         
         <a ref={scrollDirectionRef} href="/nos-tarifs">Nos tarifs</a>
       </div>
-      {/* <Image ref={scrollDirectionRef}  className={styles.ordi} src={ordi} alt="Croissance des clients" width={500} height={500} /> */}
+      <Image ref={scrollDirectionRef}  className={styles.ordi} src={ordi} alt="Croissance des clients" width={500} height={500} />
     </div>
   );
 };

@@ -27,6 +27,7 @@ export default function Bpi() {
   const chevronUrl = chevron.src;
 
   return (
+  <section className={styles.NavSectionbpi}>
     <div className={styles.infoNavSection}>
       <div
         tabIndex="0"
@@ -90,5 +91,6 @@ export default function Bpi() {
         </div>
       </div>
     </div>
+    </section>
   );
 }

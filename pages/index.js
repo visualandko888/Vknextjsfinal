@@ -13,6 +13,7 @@ import Contact from '../src/components/Home/Contact';
 import BlogSection from '../src/components/Blog/BlogSection';
 import styles from '../styles/animation.module.scss'; // Importation du module SCSS
 import RegionMap from '../src/components/Home/RegionMap';
+import Test from '../src/components/Home/test';
 
 export default function Home() {
   console.log('Home page rendue');
@@ -78,7 +79,7 @@ export default function Home() {
   return (
     <main className={styles.test}>
       <HelmetMeta title={title} description={description} />
-      <div ref={el => sectionsRef.current[0] = el}><Hero /></div>
+      <div ref={el => sectionsRef.current[0] = el}><Test /></div>
       <div ref={el => sectionsRef.current[1] = el}><Bpi /></div>
       <div ref={el => sectionsRef.current[1] = el}><Team /></div>
       <div ref={el => sectionsRef.current[2] = el}><Services /></div>

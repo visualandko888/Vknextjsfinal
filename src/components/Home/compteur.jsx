@@ -42,7 +42,7 @@ const CountUp = ({ end, suffix = '', prefix = '' }) => {
 
   useEffect(() => {
     let start = 0;
-    const duration = 2000; // Duration of animation in milliseconds
+    const duration = 5000; // Duration of animation in milliseconds
     const stepTime = Math.abs(Math.floor(duration / end));
     const timer = setInterval(() => {
       start += 1;

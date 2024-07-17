@@ -9,6 +9,7 @@ import Prasath from '/public/images/prasath.png';
 import Julien from '/public/images/julien.png';
 import Elie from '/public/images/elie.png';
 import CounterSection from '/src/components/home/compteur';
+import logo from '/public/images/logo-blue.svg';
 
 export default function Team() {
   const { t } = useTranslation(); // Importing translations
@@ -123,6 +124,7 @@ useEffect(() => {
         Qui sommes nous ? 
         </h2>
       </div>
+      <section className={styles.teamflex}>
       <div className={`${styles.rel} ${styles.hidden}`} ref={(el) => (sectionsRef.current[0] = el)}>
         <h2 className={styles.teamTitle}>{t('home_team_t1', { defaultValue: 'Notre équipe de passionés' })}</h2>
         <div className={styles.teamPictures}>
@@ -138,21 +140,22 @@ useEffect(() => {
       <div className={`${styles.aboutUs} ${styles.hidden}`} ref={(el) => (sectionsRef.current[1] = el)}>
         <h2 className={styles.teamTitle}>{t('home_team_t1', { defaultValue: 'Pourquoi travailler avec nous ? ' })}</h2>
         <div className={styles.description1}>
+        <Image src={logo} className={styles.logo} />
           <p>
-            {t('home_team_t2', {
-              defaultValue:
-                "Visual & Ko est constituée d'une équipe de plusieurs développeurs expérimentés et d'experts en Marketing. Découvrez comment notre expertise en marketing digital peut propulser votre entreprise vers de nouveaux sommets grâce à des stratégies personnalisées et qui ont fait leurs preuves.",
-            })}{' '}
+            
+                Visual & Ko est constituée d'une équipe de<span className={styles.strong} > plusieurs développeurs expérimentés</span> et d'experts en Marketing. Découvrez comment notre <span className={styles.strong} >expertise en marketing digital</span> peut propulser votre entreprise vers de nouveaux sommets grâce à des stratégies personnalisées et qui ont fait leurs preuves.
+            
           </p>
+          <h2 className={styles.teamTitle2}>{t('home_team_t1', { defaultValue: 'Quelques chiffres clés !' })}</h2>
+          <CounterSection />
           <button className={styles.teamButton} onClick={showCalendar} type="button">
             {t('home_team_t16', { defaultValue: 'Prenez rdv avec nos experts' })}
           </button>
         </div>
-        <h2 className={styles.teamTitle}>{t('home_team_t1', { defaultValue: 'Quelques chiffres clés' })}</h2>
-        <div className={styles.hidden} ref={(el) => (sectionsRef.current[2] = el)}>
-          <CounterSection />
-        </div>
+        
+        
       </div>
+      </section>
     </section>
   );
 }

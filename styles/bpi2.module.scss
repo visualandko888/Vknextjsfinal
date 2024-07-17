@@ -1,12 +1,24 @@
 @import './base.module.scss';
 
+.NavSectionbpi{width: 100%;
+background-color: #e3c5ce;
+padding-bottom: 10px;}
+
 .infoNavSection {
-  bottom: 0px;
-  width: 100%;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  font-size: 16px;
+  flex-wrap: unset;
+  
+  bottom: 0ox;
+  gap: 10px;
+  /* background: radial-gradient(#579eb0, white); */
+  bottom: 10px;
+  max-width: 1200px;
+  margin: auto;
+  justify-content: center;
+  width: 1200px;
+  left: 50%;
   display: flex;
-  flex-wrap: wrap;
+    bottom: 0px!important;
+    
    
 
   @include media-min("base") {
@@ -22,6 +34,11 @@
     border: 1px #ffffff solid;
     text-align: center;
     cursor: pointer;
+    
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        background: #e3c5ce8c;
+        border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
    
 
     @include media-min("base") {
