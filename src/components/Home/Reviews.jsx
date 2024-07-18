@@ -57,7 +57,9 @@ export default function Reviews() {
   });
 
   return (
-    <section className={styles.reviews} {...handlers}>
+    
+      
+        <section className={styles.reviews} {...handlers}>
       <h2>{t('home_reviews_t1', { defaultValue: 'Ils nous ont écrit' })}</h2>
       <p>{t('home_reviews_t2', { defaultValue: 'Découvrez nos derniers avis Google' })}</p>
       <div className={styles.reviewsRating}>
@@ -68,6 +70,7 @@ export default function Reviews() {
         <FontAwesomeIcon className={`faIcon ${styles.active}`} icon={faStar} />
         ({reviewList.result.reviews.length} avis)
       </div>
+      <section className={styles.basecarousel}>
       <div className={styles.carousel}>
         <div className={styles.reviewContent}>
           {reviewList.result.reviews.slice(currentIndex, currentIndex + reviewsToShow).map((review, index) => (
@@ -110,6 +113,11 @@ export default function Reviews() {
           </button>
         </div>
       </div>
-    </section>
+      </section>
+      </section>
+    
+        
+      
+    
   );
 }

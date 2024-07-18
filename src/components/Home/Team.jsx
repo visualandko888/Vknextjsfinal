@@ -126,8 +126,8 @@ useEffect(() => {
       </div>
       <section className={styles.teamflex}>
       <div className={`${styles.rel} ${styles.hidden}`} ref={(el) => (sectionsRef.current[0] = el)}>
-        <h2 className={styles.teamTitle}>{t('home_team_t1', { defaultValue: 'Notre équipe de passionés' })}</h2>
-        <div className={styles.teamPictures}>
+      <Image src={logo} className={styles.logo} />
+      <h2 className={styles.teamTitle2}>{t('home_team_t1', { defaultValue: 'Une équipe de passionnés' })}</h2>        <div className={styles.teamPictures}>
           {teamMembers.map((e, index) => (
             <div key={index} className={styles.pictureWrapper}>
               <Image src={e.img} className={styles.picture} alt={e.fullName} width={300} height={300} />
@@ -135,18 +135,16 @@ useEffect(() => {
             </div>
           ))}
         </div>
-      </div>
-
-      <div className={`${styles.aboutUs} ${styles.hidden}`} ref={(el) => (sectionsRef.current[1] = el)}>
-        <h2 className={styles.teamTitle}>{t('home_team_t1', { defaultValue: 'Pourquoi travailler avec nous ? ' })}</h2>
+        <div className={`${styles.aboutUs} ${styles.hidden}`} ref={(el) => (sectionsRef.current[1] = el)}>
+        <h2 className={styles.teamTitle2}>{t('home_team_t1', { defaultValue: 'Pourquoi travailler avec nous ?' })}</h2>
         <div className={styles.description1}>
-        <Image src={logo} className={styles.logo} />
+        
           <p>
             
                 Visual & Ko est constituée d'une équipe de<span className={styles.strong} > plusieurs développeurs expérimentés</span> et d'experts en Marketing. Découvrez comment notre <span className={styles.strong} >expertise en marketing digital</span> peut propulser votre entreprise vers de nouveaux sommets grâce à des stratégies personnalisées et qui ont fait leurs preuves.
             
           </p>
-          <h2 className={styles.teamTitle2}>{t('home_team_t1', { defaultValue: 'Quelques chiffres clés !' })}</h2>
+          <h2 className={styles.teamTitle2}>{t('home_team_t1', { defaultValue: 'Quelques chiffres clés' })}</h2>
           <CounterSection />
           <button className={styles.teamButton} onClick={showCalendar} type="button">
             {t('home_team_t16', { defaultValue: 'Prenez rdv avec nos experts' })}
@@ -155,6 +153,9 @@ useEffect(() => {
         
         
       </div>
+      </div>
+
+      
       </section>
     </section>
   );

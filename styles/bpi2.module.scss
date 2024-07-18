@@ -1,8 +1,9 @@
 @import './base.module.scss';
 
 .NavSectionbpi{width: 100%;
-background-color: #e3c5ce;
-padding-bottom: 10px;}
+background-color: #fdfdfd;
+padding-bottom: 1px;
+padding: 20px;}
 
 .infoNavSection {
   flex-wrap: unset;
@@ -34,11 +35,11 @@ padding-bottom: 10px;}
     border: 1px #ffffff solid;
     text-align: center;
     cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     
-        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-        background: #e3c5ce8c;
-        border-top-right-radius: 20px;
-    border-top-left-radius: 20px;
+    
+      background: rgb(255 255 255);
+       border-radius: 20px;
    
 
     @include media-min("base") {
@@ -51,8 +52,8 @@ padding-bottom: 10px;}
       text-decoration: none;
       display: block;
       font-size: 0.7em;
-      color: rgb(255, 255, 255);
-      font-weight: bold;
+      color: #579eb0;;
+     
       transition: all 0.7s ease;
       position: relative;
       padding: 20px 0;
@@ -77,6 +78,7 @@ padding-bottom: 10px;}
         @include media-min("base") {
           width: 35px;
           // height: 20px;
+          filter: brightness(0) saturate(100%) invert(62%) sepia(36%) saturate(438%) hue-rotate(145deg) brightness(86%) contrast(96%);
         }
       }
 
@@ -120,13 +122,18 @@ padding-bottom: 10px;}
           top: 50%;
           transform: translateY(-50%);
           font-size: 2em;
-          color: #fff;
+          filter: brightness(0) saturate(100%) invert(62%) sepia(36%) saturate(438%) hue-rotate(145deg) brightness(86%) contrast(96%);
+
           background: var(--chevron-url) no-repeat;
           background-size: cover;
           animation-name: fadeIn;
           animation-duration: 0.7s;
           animation-fill-mode: forwards;
         }
+
+      
+
+
 
         @keyframes fadeIn {
           from {
@@ -141,8 +148,28 @@ padding-bottom: 10px;}
     }
 
     &.colored {
-     
+      background-color: #f4c4d2;
+
+      .backJ{color:white}
+    
+    .faIcon{filter: none;}
+    &:after{filter: none;}
+
+
     }
   }
 }
+
+.hidden {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+  margin: 0px!important;
+}
+
 

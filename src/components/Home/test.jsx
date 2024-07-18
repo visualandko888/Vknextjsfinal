@@ -8,6 +8,7 @@ import icGoogleAds from '/public/images/ic-google-ads.svg';
 import icWebUnivers from '/public/images/ic-web-univers.svg';
 import icseo from '/public/images/ic-social-ads.svg';
 // import Bpi from '/src/components/Home/bpi';
+import Fus from '/public/images/fusee.gif';
 
 const Hero = () => {
 //   const { t } = useTranslation();
@@ -84,10 +85,10 @@ const Hero = () => {
           <h1>
             Propulsez votre entreprise sur de nouveaux sommets grâce
             <br />
-            : 
-            {/* <Image className={styles.fusee} src={Fus} alt="Croissance des clients" width={90} height={90} /> */}
-            <span ref={typedRef}></span>
             
+            
+            <span ref={typedRef}></span>
+            <Image className={styles.fusee} src={Fus} alt="Croissance des clients" width={90} height={90} />
           </h1>
           
           <a ref={scrollDirectionRef} href="/nos-tarifs">Nos tarifs</a>

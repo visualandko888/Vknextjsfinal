@@ -15,6 +15,7 @@ import styles from '../styles/animation.module.scss'; // Importation du module S
 import RegionMap from '../src/components/Home/RegionMap';
 import Test from '../src/components/Home/test';
 
+
 export default function Home() {
   console.log('Home page rendue');
   const { t } = useTranslation(); // Importation de la traduction
@@ -92,6 +93,7 @@ export default function Home() {
       <div ref={el => sectionsRef.current[7] = el}><Contact /></div>
       <div ref={el => sectionsRef.current[8] = el}><Partenaires /></div>
       <div ref={el => sectionsRef.current[9] = el}><BlogSection /></div>
+      
     </main>
   );
 }
