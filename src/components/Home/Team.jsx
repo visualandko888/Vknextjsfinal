@@ -8,7 +8,7 @@ import Chandara from '/public/images/chandara.png';
 import Prasath from '/public/images/prasath.png';
 import Julien from '/public/images/julien.png';
 import Elie from '/public/images/elie.png';
-import CounterSection from '/src/components/home/compteur';
+import CounterSection from '/src/components/Home/compteur';
 import logo from '/public/images/logo-blue.svg';
 
 export default function Team() {
