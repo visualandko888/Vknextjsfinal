@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import Hero from '../src/components/Home/Hero2';
 import HelmetMeta from '../src/components/Helmet/HelmetMeta';
-import Bpi from '../src/components/Home/bpi';
+// import Bpi from '../src/components/Home/bpi';
 import Team from '../src/components/Home/Team';
 import Services from '../src/components/Home/Services';
 import Partenaires from '../src/components/Home/Partenaires';
@@ -81,7 +81,7 @@ export default function Home() {
     <main className={styles.test}>
       <HelmetMeta title={title} description={description} />
       <div ref={el => sectionsRef.current[0] = el}><Test /></div>
-      <div ref={el => sectionsRef.current[1] = el}><Bpi /></div>
+      {/* <div ref={el => sectionsRef.current[1] = el}><Bpi /></div> */}
       <div ref={el => sectionsRef.current[1] = el}><Team /></div>
       <div ref={el => sectionsRef.current[2] = el}><Services /></div>
       

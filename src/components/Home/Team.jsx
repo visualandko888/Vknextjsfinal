@@ -10,6 +10,7 @@ import Julien from '/public/images/julien.png';
 import Elie from '/public/images/elie.png';
 import CounterSection from '/src/components/Home/compteur';
 import logo from '/public/images/logo-blue.svg';
+import Bpi from '/src/components/Home/bpi';
 
 export default function Team() {
   const { t } = useTranslation(); // Importing translations
@@ -119,6 +120,7 @@ useEffect(() => {
 
   return (
     <section id="team" className={styles.team}>
+      <Bpi />
       <div className={styles.rel} >
         <h2 ref={scrollDirectionRef} className={styles.h2scroll}>
         Qui sommes nous ? 
@@ -146,9 +148,10 @@ useEffect(() => {
           </p>
           <h2 className={styles.teamTitle2}>{t('home_team_t1', { defaultValue: 'Quelques chiffres clés' })}</h2>
           <CounterSection />
-          <button className={styles.teamButton} onClick={showCalendar} type="button">
-            {t('home_team_t16', { defaultValue: 'Prenez rdv avec nos experts' })}
-          </button>
+          
+<button className={styles.button53} role="button">Prenez RDV gratuitement avec l'un de nos experts</button>
+
+
         </div>
         
         

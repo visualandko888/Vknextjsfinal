@@ -1,7 +1,7 @@
 @import './base.module.scss';
 
 .NavSectionbpi{width: 100%;
-background-color: #fdfdfd;
+background-color: #fdfdfd00;
 padding-bottom: 1px;
 position: relative;
 }
@@ -16,11 +16,7 @@ position: relative;
   left: 50%;
   display: flex;
   flex-wrap: unset;
-  position: absolute;
-  transform: translate(-50%, -50%);
-  left: 50%;
-  bottom: -10;
-  z-index: 1000;
+  ;
     
    
 

@@ -203,6 +203,19 @@ useEffect(() => {
           <Image src={chevron} alt="chevron" width={50} height={50} />
         </div>
       </div>
+      {/* <ul className={styles.circles}>
+          <li> </li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul> */}
     </section>
+    
   );
 }
