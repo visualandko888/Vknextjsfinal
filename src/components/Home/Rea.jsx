@@ -106,27 +106,41 @@ export default function RealisationsSlider() {
   const scrollDirectionRef = useRef(null);
 const lastScrollY = useRef(0);
 
-useEffect(() => {
-  const handleScroll = () => {
-    const currentScrollY = window.scrollY;
-    const deltaY = currentScrollY - lastScrollY.current;
-    lastScrollY.current = currentScrollY;
+const directionRef = useRef(1); // 1 pour droite, -1 pour gauche
 
-    if (scrollDirectionRef.current) {
-      const currentTransform = getComputedStyle(scrollDirectionRef.current).transform;
-      let matrixValues = currentTransform.match(/matrix.*\((.+)\)/);
-      let currentX = matrixValues ? parseFloat(matrixValues[1].split(', ')[4]) : 0;
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      const deltaY = currentScrollY - lastScrollY.current;
+      lastScrollY.current = currentScrollY;
 
-      scrollDirectionRef.current.style.transform = `translateX(${currentX - deltaY}px)`;
-    }
-  };
+      if (scrollDirectionRef.current) {
+        const currentTransform = getComputedStyle(scrollDirectionRef.current).transform;
+        let matrixValues = currentTransform.match(/matrix.*\((.+)\)/);
+        let currentX = matrixValues ? parseFloat(matrixValues[1].split(', ')[4]) : 0;
 
-  window.addEventListener('scroll', handleScroll);
+        // Calculer la nouvelle position en fonction du défilement
+        let newX = currentX + (directionRef.current * 50);
 
-  return () => {
-    window.removeEventListener('scroll', handleScroll);
-  };
-}, []);
+        // Appliquer les contraintes et changer de direction si nécessaire
+        if (newX > 200) {
+          newX = 200;
+          directionRef.current = -1; // Changer de direction vers la gauche
+        } else if (newX < -200) {
+          newX = -200;
+          directionRef.current = 1; // Changer de direction vers la droite
+        }
+
+        scrollDirectionRef.current.style.transform = `translateX(${newX}px)`;
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
     <section id="projects" className={styles.realisationSlider}>

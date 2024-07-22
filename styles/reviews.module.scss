@@ -40,7 +40,7 @@ text-shadow: 0px 9px 9px rgba(0, 0, 0, 0.25);
 }
 
 .reviewsCard {
-  flex: 0 0 calc(100% / 4); /* Adjust this to show 4 cards by default */
+  // flex: 0 0 calc(100% / 4); /* Adjust this to show 4 cards by default */
   margin: 10px;
   padding: 20px;
   background: rgba(255, 255, 255, 0.2);
@@ -49,6 +49,7 @@ text-shadow: 0px 9px 9px rgba(0, 0, 0, 0.25);
   transition: transform 0.3s, flex 0.3s;
   animation: slideIn 0.5s ease-in-out; /* Add slide-in animation */
   color: white;
+  
 }
 
 .reviewsCard:hover {

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import Hero from '../src/components/Home/Hero2';
 import HelmetMeta from '../src/components/Helmet/HelmetMeta';
@@ -14,13 +14,14 @@ import BlogSection from '../src/components/Blog/BlogSection';
 import styles from '../styles/animation.module.scss'; // Importation du module SCSS
 import RegionMap from '../src/components/Home/RegionMap';
 import Test from '../src/components/Home/test';
-
+import LoadingSpinner from '../src/components/Home/LoadingSpinner'; // Importation du composant de chargement
 
 export default function Home() {
   console.log('Home page rendue');
   const { t } = useTranslation(); // Importation de la traduction
 
   const sectionsRef = useRef([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const options = {
@@ -63,8 +64,13 @@ export default function Home() {
 
     window.addEventListener('scroll', handleScroll);
 
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000); // Simuler un temps de chargement de 2 secondes
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      clearTimeout(timer);
     };
   }, []);
 
@@ -79,21 +85,23 @@ export default function Home() {
 
   return (
     <main className={styles.test}>
-      <HelmetMeta title={title} description={description} />
-      <div ref={el => sectionsRef.current[0] = el}><Test /></div>
-      {/* <div ref={el => sectionsRef.current[1] = el}><Bpi /></div> */}
-      <div ref={el => sectionsRef.current[1] = el}><Team /></div>
-      <div ref={el => sectionsRef.current[2] = el}><Services /></div>
-      
-      <div ref={el => sectionsRef.current[3] = el}><Rea /></div>
-      <div ref={el => sectionsRef.current[4] = el}><RegionMap /></div>
-   
-      <div ref={el => sectionsRef.current[5] = el}><Reviews /></div>
-      <div ref={el => sectionsRef.current[6] = el}><Faq /></div>
-      <div ref={el => sectionsRef.current[7] = el}><Contact /></div>
-      <div ref={el => sectionsRef.current[8] = el}><Partenaires /></div>
-      <div ref={el => sectionsRef.current[9] = el}><BlogSection /></div>
-      
+      {isLoading && <LoadingSpinner />}
+      {!isLoading && (
+        <>
+          <HelmetMeta title={title} description={description} />
+          <div ref={el => sectionsRef.current[0] = el}><Test /></div>
+          {/* <div ref={el => sectionsRef.current[1] = el}><Bpi /></div> */}
+          <div ref={el => sectionsRef.current[1] = el}><Team /></div>
+          <div ref={el => sectionsRef.current[2] = el}><Services /></div>
+          <div ref={el => sectionsRef.current[3] = el}><Rea /></div>
+          <div ref={el => sectionsRef.current[4] = el}><RegionMap /></div>
+          <div ref={el => sectionsRef.current[5] = el}><Reviews /></div>
+          <div ref={el => sectionsRef.current[6] = el}><Faq /></div>
+          <div ref={el => sectionsRef.current[7] = el}><Contact /></div>
+          <div ref={el => sectionsRef.current[8] = el}><Partenaires /></div>
+          <div ref={el => sectionsRef.current[9] = el}><BlogSection /></div>
+        </>
+      )}
     </main>
   );
 }

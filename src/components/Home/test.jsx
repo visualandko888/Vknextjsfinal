@@ -88,7 +88,7 @@ const Hero = () => {
             
             
             <span ref={typedRef}></span>
-            <Image className={styles.fusee} src={Fus} alt="Croissance des clients" width={90} height={90} />
+            <Image className={styles.fusee} src={Fus} alt="Croissance des clients" width={50} height={50} />
           </h1>
           
           <a ref={scrollDirectionRef} href="/nos-tarifs">Nos tarifs</a>

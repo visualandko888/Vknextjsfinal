@@ -162,7 +162,7 @@ text-shadow: 0px 9px 9px rgba(0, 0, 0, 0.25);
           text-align: center;
           transition: transform 0.8s;
           transform-style: preserve-3d;
-          
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
           border-radius: 15px;
           background-color: rgba(255, 255, 255, 0.2);
           color: white;
@@ -242,7 +242,7 @@ text-shadow: 0px 9px 9px rgba(0, 0, 0, 0.25);
                 padding-right: 0.5rem;
 
                 @include media-min("widescreen-up") {
-                  font-size: 12px;
+                  font-size: 16px;
                 }
               }
             }
@@ -265,7 +265,9 @@ text-shadow: 0px 9px 9px rgba(0, 0, 0, 0.25);
               position: absolute;
               transform: translate(-50%,-50%);
               left:50%;
-              top:50%
+              top:50%;
+              font-size: 18px;
+    margin: 0;
             }
 
             span {
@@ -573,7 +575,7 @@ overflow: hidden;
   transition: transform 0.5s ease; // Transition pour un mouvement fluide
   opacity: .2;
   margin: 0px;
-  margin-left: -900px;
+  margin-left: -100px;
  
 }
 

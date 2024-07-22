@@ -4,6 +4,8 @@
 background-color: #fdfdfd00;
 padding-bottom: 1px;
 position: relative;
+margin-top: -110px;
+margin-bottom: 30px;
 }
 
 .infoNavSection {
@@ -30,7 +32,7 @@ position: relative;
     padding: 0;
     height: auto;
     position: relative;
-    border: 1px #ffffff solid;
+    
     text-align: center;
     cursor: pointer;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -146,7 +148,7 @@ position: relative;
     }
 
     &.colored {
-      background-color: #f4c4d2;
+      background-color: #8fbeca;
 
       .backJ{color:white}
     

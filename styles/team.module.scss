@@ -11,13 +11,13 @@ font-size: 1.2rem;
       border-radius: 10px;
       
     background-color: rgb(255, 255, 255);
-    padding-top: 50px!important;
+    padding-top: 10px!important;
     margin: 0;
   margin: auto;
   border-color:white;
   border-style:solid;
   
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .team {
@@ -32,6 +32,8 @@ font-size: 1.2rem;
   .rel {
     position: relative;
   }
+
+  .teamPictures img{ width: 140px!important;}
 
   .teamTitle {
     color: #ffffff;
@@ -104,6 +106,7 @@ font-size: 1.2rem;
     margin-top: 40px;
     text-align: left;
     padding: 0 20px;
+    padding-bottom: 20px;
     
     margin: auto;
     text-align: center;
@@ -146,7 +149,7 @@ font-size: 1.2rem;
 }
 
 .team img {
-  width: 140px!important;
+ 
   height: auto;
 }
 
@@ -219,60 +222,15 @@ font-size: 1.2rem;
 /* CSS */
 .button53 {
   background-color: #579daf;
-  border: 0 solid #E5E7EB;
-  box-sizing: border-box;
-  color: #ffffff;
-  display: flex;
-  font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-  font-size: 1rem;
-  font-weight: 700;
-  justify-content: center;
-  line-height: 1.75rem;
-  padding: .75rem 1.65rem;
-  position: relative;
-  text-align: center;
-  text-decoration: none #000000 solid;
-  text-decoration-thickness: auto;
-  width: 100%;
-  max-width: 460px;
-  position: relative;
-  cursor: pointer;
-  transform: rotate(-2deg);
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  width: 400px;
-        margin: auto;
-        margin-bottom: 20px;
-        margin-top: 20px;
-        box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    /* box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset; */
+    padding: 15px;
+    color: white;
+    font-weight: 600;
+    border-radius: 10px;
+    border-color: white;
 }
 
 
 
-.button53:focus {
-  outline: 0;
-}
 
-.button53:after {
-  content: '';
-  position: absolute;
-  border: 0px solid #ffe7ef;
-  bottom: 4px;
-  left: 4px;
-  width: calc(100% - 1px);
-  height: calc(100% - 1px);
-}
-
-.button53:hover:after {
-  bottom: 2px;
-  left: 2px;
-}
-
-@media (min-width: 768px) {
-  .button53 {
-    padding: .75rem 3rem;
-    font-size: 1.25rem;
-  }
-}
      

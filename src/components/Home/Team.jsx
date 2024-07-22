@@ -96,27 +96,42 @@ export default function Team() {
   const scrollDirectionRef = useRef(null);
 
 
-useEffect(() => {
-  const handleScroll = () => {
-    const currentScrollY = window.scrollY;
-    const deltaY = currentScrollY - lastScrollY.current;
-    lastScrollY.current = currentScrollY;
+  const directionRef = useRef(1); // 1 pour droite, -1 pour gauche
 
-    if (scrollDirectionRef.current) {
-      const currentTransform = getComputedStyle(scrollDirectionRef.current).transform;
-      let matrixValues = currentTransform.match(/matrix.*\((.+)\)/);
-      let currentX = matrixValues ? parseFloat(matrixValues[1].split(', ')[4]) : 0;
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      const deltaY = currentScrollY - lastScrollY.current;
+      lastScrollY.current = currentScrollY;
 
-      scrollDirectionRef.current.style.transform = `translateX(${currentX - deltaY}px)`;
-    }
-  };
+      if (scrollDirectionRef.current) {
+        const currentTransform = getComputedStyle(scrollDirectionRef.current).transform;
+        let matrixValues = currentTransform.match(/matrix.*\((.+)\)/);
+        let currentX = matrixValues ? parseFloat(matrixValues[1].split(', ')[4]) : 0;
 
-  window.addEventListener('scroll', handleScroll);
+        // Calculer la nouvelle position en fonction du défilement
+        let newX = currentX + (directionRef.current * 50);
 
-  return () => {
-    window.removeEventListener('scroll', handleScroll);
-  };
-}, []);
+        // Appliquer les contraintes et changer de direction si nécessaire
+        if (newX > 200) {
+          newX = 200;
+          directionRef.current = -1; // Changer de direction vers la gauche
+        } else if (newX < -200) {
+          newX = -200;
+          directionRef.current = 1; // Changer de direction vers la droite
+        }
+
+        scrollDirectionRef.current.style.transform = `translateX(${newX}px)`;
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
 
   return (
     <section id="team" className={styles.team}>
@@ -149,7 +164,7 @@ useEffect(() => {
           <h2 className={styles.teamTitle2}>{t('home_team_t1', { defaultValue: 'Quelques chiffres clés' })}</h2>
           <CounterSection />
           
-<button className={styles.button53} role="button">Prenez RDV gratuitement avec l'un de nos experts</button>
+<a className={styles.button53}>Prenez RDV gratuitement avec l'un de nos experts</a>
 
 
         </div>

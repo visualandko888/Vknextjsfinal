@@ -1,0 +1,54 @@
+[
+    {
+        "id": 1,
+        "titre": "Forfait Basique",
+        "description": "Pour les petites entreprises ou les débutants dans la publicité en ligne. Idéal pour ceux qui ont un budget limité et souhaitent commencer à attirer des clients en ligne.",
+        "elements": [
+            "Configuration initiale de la campagne",
+            "Recherche de mots-clés de base",
+            "Création d'annonces textuelles",
+            "Suivi des performances de la campagne",
+            "Rapport mensuel de base"
+        ],
+        "prix": "100€ TTC/mois"
+    },
+    {
+        "id": 2,
+        "titre": "Forfait Standard",
+        "description": "Convient aux entreprises de taille moyenne qui souhaitent augmenter leur visibilité en ligne et optimiser leurs campagnes pour un meilleur retour sur investissement.",
+        "elements": [
+            "Forfait Basique, plus :",
+            "Recherche de mots-clés avancée",
+            "Création d'annonces graphiques et textuelles",
+            "Optimisation hebdomadaire des campagnes",
+            "Suivi des conversions",
+            "Rapport bihebdomadaire détaillé"
+        ],
+        "prix": "200€ TTC/mois"
+    },
+    {
+        "id": 3,
+        "titre": "Forfait Premium",
+        "description": "Conçu pour les grandes entreprises ou celles ayant des besoins publicitaires importants. Une gestion complète et personnalisée des campagnes Google Ads pour maximiser les résultats.",
+        "elements": [
+            "Forfait Standard, plus :",
+            "Analyse concurrentielle",
+            "Stratégies de remarketing",
+            "Création de vidéos publicitaires",
+            "A/B testing des annonces",
+            "Consultation stratégique mensuelle",
+            "Rapport hebdomadaire complet",
+            "Optimisation du site internet"
+        ],
+        "prix": "500€ TTC/mois"
+    },
+    {
+        "id": 4,
+        "titre": "Option Référencement Local",
+        "description": "L’option supplémentaire pour apparaître en haut des recherches locales.",
+        "elements": [
+            "Optimisation pour les recherches locales"
+        ],
+        "prix": "100€ TTC/mois"
+    }
+]

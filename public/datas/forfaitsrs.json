@@ -1,0 +1,63 @@
+[
+    {
+        "id": 1,
+        "titre": "FORMULE BASIQUE",
+        "description": "Pour les petites entreprises ou les débutants souhaitant établir une présence sur les réseaux sociaux.",
+        "elements": [
+            "2 réseaux sociaux (Facebook et Instagram)",
+            "Post : 4 / mois",
+            "Story : 4 / mois",
+            "Animation/modération",
+            "Planning éditorial",
+            "Stratégie social média : Brief court",
+            "Rapport et bilan : sur demande (2 max par an)",
+            "Création et configuration réseaux : 75€ HT"
+        ],
+        "prix": "À PARTIR DE 150€ HT/mois"
+    },
+    {
+        "id": 2,
+        "titre": "FORMULE AVANCÉE",
+        "description": "Pour les entreprises de taille moyenne souhaitant une présence plus active et optimisée sur les réseaux sociaux.",
+        "elements": [
+            "2 réseaux sociaux (Facebook et Instagram) + Google",
+            "Post : 8 / mois",
+            "Story : 8 / mois",
+            "Animation/modération",
+            "Gestion des contacts",
+            "Planning éditorial",
+            "Stratégie social média : Intermédiaire",
+            "Rapport et bilan : trimestriel",
+            "Création et configuration réseaux : compris"
+        ],
+        "prix": "À PARTIR DE 300€ HT/mois"
+    },
+    {
+        "id": 3,
+        "titre": "FORMULE PREMIUM",
+        "description": "Pour les grandes entreprises ou celles cherchant une gestion complète et avancée de leurs réseaux sociaux.",
+        "elements": [
+            "3 réseaux sociaux au choix",
+            "Post : 3 / semaine",
+            "Story : 3 / semaine",
+            "Animation/modération",
+            "Gestion des contacts",
+            "Gestion des messages",
+            "Planning éditorial",
+            "Stratégie social média : Avancée",
+            "Rapport et bilan : mensuel",
+            "Création et configuration réseaux : compris"
+        ],
+        "prix": "À PARTIR DE 450€ HT/mois"
+    },
+    {
+        "id": 4,
+        "titre": "Option Sponsoring",
+        "description": "L’option pour augmenter sa communauté sur les réseaux et générer plus de leads.",
+        "elements": [
+            "Optimisation pour augmenter la communauté",
+            "Génération de leads"
+        ],
+        "prix": "À PARTIR DE 150€ HT/mois"
+    }
+]

@@ -7,13 +7,8 @@ import logo from '/public/images/logo-blue.svg';
 import france from '/public/images/country/france.png';
 import royaumeUni from '/public/images/country/royaume-uni.png';
 import leftIcoCalendar from '/public/images/left-ico-calendar.svg';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
-import { faPen } from '@fortawesome/free-solid-svg-icons';
-
-
-
-import { faPhone } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUserCircle, faPhone, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import styles from '/styles/navTop.module.scss';
 
 export default function NavTop2({ handleHoverNav, handleHoverLeftNav }) {
@@ -31,30 +26,14 @@ export default function NavTop2({ handleHoverNav, handleHoverLeftNav }) {
       translate_var: 'nos-services',
       isButton: false,
     },
-    
-    // {
-    //   name: (
-    //     <>
-    //       <FontAwesomeIcon className={styles.faIcontel2} icon={faPen} />
-    //       <span className={styles.auditText}>Audit gratuit</span>
-    //     </>
-    //   ),
-    //   url: '/contact',
-    //   // translate_var: 'Audit',
-    //   isButton: true,
-      
-    // },
     {
       name: (
         <>
-           <Image alt="logo" src={logo} />
-          
+          <Image alt="logo" src={logo} />
         </>
       ),
       url: '/',
-      // translate_var: 'Audit',
       isButton: true,
-      
     },
     {
       name: 'Nos projets',
@@ -65,15 +44,15 @@ export default function NavTop2({ handleHoverNav, handleHoverLeftNav }) {
     {
       name: 'Tarifs',
       url: '/tarifs',
-      // translate_var: 'demander-un-devis',
       isButton: false,
     },
-    
   ];
 
   const [showCountry, setShowCountry] = useState(false);
   const [currentCountry, setCurrentCountry] = useState(0);
   const [showButtonRdv, setShowButtonRdv] = useState(false);
+  const [showServicesSubMenu, setShowServicesSubMenu] = useState(false);
+  const [showTarifsSubMenu, setShowTarifsSubMenu] = useState(false);
 
   useEffect(() => {
     setTimeout(() => {
@@ -131,25 +110,288 @@ export default function NavTop2({ handleHoverNav, handleHoverLeftNav }) {
     <div className={styles.navTop2}>
       <div className={styles.left}>
         <ul>
-          
           {navTopElements.map((e, index) => (
             <li
-              role="button"
-              tabIndex={0}
-              onClick={() => index === 1 && handleHoverLeftNav(true)}
-              onKeyDown={() => handleHoverNav(index)}
               key={index}
-              className={`${e.url === currentPage ? styles.active : ''} ${
-                e.isButton ? styles.button : ''
-              }`}
+              className={`${e.url === currentPage ? styles.active : ''} ${e.isButton ? styles.button : ''}`}
+              onMouseEnter={() => {
+                if (index === 1) setShowServicesSubMenu(true);
+                if (index === 4) setShowTarifsSubMenu(false);
+              }}
+              onMouseLeave={() => {
+                if (index === 1) setShowServicesSubMenu(false);
+                if (index === 4) setShowTarifsSubMenu(false);
+              }}
             >
-              <Link href={e.url} passHref legacyBehavior>
+              <Link href={e.url} legacyBehavior passHref>
                 <a>
                   {t(`layout_navigation_${e.translate_var}`, {
                     defaultValue: e.name,
                   })}
                 </a>
               </Link>
+              {index === 1 && showServicesSubMenu && (
+                <div
+                  className={styles.subMenuContainer}
+                  onMouseEnter={() => setShowServicesSubMenu(true)}
+                  onMouseLeave={() => setShowServicesSubMenu(false)}
+                >
+                  <ul className={styles.subMenu}>
+                    <div className={styles.subMenuc1}>
+                      <h2>Création de Sites internet</h2>
+
+                      <li>
+                        <Link href="/tarif2" legacyBehavior passHref>
+                          <a>
+                            <FontAwesomeIcon className={styles.subMenuIcon} icon={faChevronRight} />
+                            Création de site vitrine
+                          </a>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="/tarif2" legacyBehavior passHref>
+                          <a>
+                            <FontAwesomeIcon className={styles.subMenuIcon} icon={faChevronRight} />
+                            Création de site e-commerce
+                          </a>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="/tarif2" legacyBehavior passHref>
+                          <a>
+                            <FontAwesomeIcon className={styles.subMenuIcon} icon={faChevronRight} />
+                            Refonte de votre site
+                          </a>
+                        </Link>
+                      </li>
+
+
+                    </div>
+
+                    <div className={styles.subMenuc1}>
+                      <h2>Référencement naturel</h2>
+
+                      <li>
+                        <Link href="/tarif2" legacyBehavior passHref>
+                          <a>
+                            <FontAwesomeIcon className={styles.subMenuIcon} icon={faChevronRight} />
+                            Référencement naturel
+                          </a>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="/tarif2" legacyBehavior passHref>
+                          <a>
+                            <FontAwesomeIcon className={styles.subMenuIcon} icon={faChevronRight} />
+                            Référencement naturel
+                          </a>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="/tarif2" legacyBehavior passHref>
+                          <a>
+                            <FontAwesomeIcon className={styles.subMenuIcon} icon={faChevronRight} />
+                            Référencement naturel
+                          </a>
+                        </Link>
+                      </li>
+
+
+                    </div>
+                    <div className={styles.subMenuc1}>
+                      <h2>Gestion google ADS</h2>
+
+                      <li>
+                        <Link href="/tarif2" legacyBehavior passHref>
+                          <a>
+                            <FontAwesomeIcon className={styles.subMenuIcon} icon={faChevronRight} />
+                            Référencement naturel
+                          </a>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="/tarif2" legacyBehavior passHref>
+                          <a>
+                            <FontAwesomeIcon className={styles.subMenuIcon} icon={faChevronRight} />
+                            Référencement naturel
+                          </a>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="/tarif2" legacyBehavior passHref>
+                          <a>
+                            <FontAwesomeIcon className={styles.subMenuIcon} icon={faChevronRight} />
+                            Référencement naturel
+                          </a>
+                        </Link>
+                      </li>
+
+
+                    </div>
+                    <div className={styles.subMenuc1}>
+                      <h2>Maintenance et sécurité</h2>
+
+                      <li>
+                        <Link href="/tarif2" legacyBehavior passHref>
+                          <a>
+                            <FontAwesomeIcon className={styles.subMenuIcon} icon={faChevronRight} />
+                            Référencement naturel
+                          </a>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="/tarif2" legacyBehavior passHref>
+                          <a>
+                            <FontAwesomeIcon className={styles.subMenuIcon} icon={faChevronRight} />
+                            Référencement naturel
+                          </a>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="/tarif2" legacyBehavior passHref>
+                          <a>
+                            <FontAwesomeIcon className={styles.subMenuIcon} icon={faChevronRight} />
+                            Référencement naturel
+                          </a>
+                        </Link>
+                      </li>
+
+
+                    </div>
+                  </ul>
+                </div>
+              )}
+              {index === 4 && showTarifsSubMenu && (
+                <div
+                  className={styles.subMenuContainer}
+                  onMouseEnter={() => setShowTarifsSubMenu(true)}
+                  onMouseLeave={() => setShowTarifsSubMenu(false)}
+                >
+                  <ul className={styles.subMenu}>
+                  <div className={styles.subMenuc1}>
+                      <h2>Création de Sites internet</h2>
+
+                      <li>
+                        <Link href="/tarif2" legacyBehavior passHref>
+                          <a>
+                            <FontAwesomeIcon className={styles.subMenuIcon} icon={faChevronRight} />
+                            Création de site vitrine
+                          </a>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="/tarif2" legacyBehavior passHref>
+                          <a>
+                            <FontAwesomeIcon className={styles.subMenuIcon} icon={faChevronRight} />
+                            Création de site e-commerce
+                          </a>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="/tarif2" legacyBehavior passHref>
+                          <a>
+                            <FontAwesomeIcon className={styles.subMenuIcon} icon={faChevronRight} />
+                            Refonte de votre site
+                          </a>
+                        </Link>
+                      </li>
+
+
+                    </div>
+
+                    <div className={styles.subMenuc1}>
+                      <h2>Référencement naturel</h2>
+
+                      <li>
+                        <Link href="/tarif2" legacyBehavior passHref>
+                          <a>
+                            <FontAwesomeIcon className={styles.subMenuIcon} icon={faChevronRight} />
+                            Référencement naturel
+                          </a>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="/tarif2" legacyBehavior passHref>
+                          <a>
+                            <FontAwesomeIcon className={styles.subMenuIcon} icon={faChevronRight} />
+                            Référencement naturel
+                          </a>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="/tarif2" legacyBehavior passHref>
+                          <a>
+                            <FontAwesomeIcon className={styles.subMenuIcon} icon={faChevronRight} />
+                            Référencement naturel
+                          </a>
+                        </Link>
+                      </li>
+
+
+                    </div>
+                    <div className={styles.subMenuc1}>
+                      <h2>Gestion google ADS</h2>
+
+                      <li>
+                        <Link href="/tarif2" legacyBehavior passHref>
+                          <a>
+                            <FontAwesomeIcon className={styles.subMenuIcon} icon={faChevronRight} />
+                            Référencement naturel
+                          </a>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="/tarif2" legacyBehavior passHref>
+                          <a>
+                            <FontAwesomeIcon className={styles.subMenuIcon} icon={faChevronRight} />
+                            Référencement naturel
+                          </a>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="/tarif2" legacyBehavior passHref>
+                          <a>
+                            <FontAwesomeIcon className={styles.subMenuIcon} icon={faChevronRight} />
+                            Référencement naturel
+                          </a>
+                        </Link>
+                      </li>
+
+
+                    </div>
+                    <div className={styles.subMenuc1}>
+                      <h2>Maintenance et sécurité</h2>
+
+                      <li>
+                        <Link href="/tarif2" legacyBehavior passHref>
+                          <a>
+                            <FontAwesomeIcon className={styles.subMenuIcon} icon={faChevronRight} />
+                            Référencement naturel
+                          </a>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="/tarif2" legacyBehavior passHref>
+                          <a>
+                            <FontAwesomeIcon className={styles.subMenuIcon} icon={faChevronRight} />
+                            Référencement naturel
+                          </a>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="/tarif2" legacyBehavior passHref>
+                          <a>
+                            <FontAwesomeIcon className={styles.subMenuIcon} icon={faChevronRight} />
+                            Référencement naturel
+                          </a>
+                        </Link>
+                      </li>
+
+
+                    </div>
+                  </ul>
+                </div>
+              )}
             </li>
           ))}
         </ul>
@@ -158,14 +400,14 @@ export default function NavTop2({ handleHoverNav, handleHoverLeftNav }) {
       <div className={styles.right}>
         <ul>
           <li>
-            <Link   href="/contactez-nous" passHref legacyBehavior>
+            <Link href="/contactez-nous" legacyBehavior passHref>
               <a className={styles.navTopbutton}>
-              <FontAwesomeIcon className={styles.faIcontel} icon={faPhone} style={{color: "#ffffff",}} />Contactez-nous
+                <FontAwesomeIcon className={styles.faIcontel} icon={faPhone} style={{ color: '#ffffff' }} />Contactez-nous
               </a>
             </Link>
           </li>
           <li>
-            <Link href="/espace-client/login" passHref legacyBehavior>
+            <Link href="/espace-client/login" legacyBehavior passHref>
               <a className={styles.login}>
                 <FontAwesomeIcon className={styles.faIcon} icon={faUserCircle} />
               </a>
@@ -181,25 +423,6 @@ export default function NavTop2({ handleHoverNav, handleHoverLeftNav }) {
           onMouseLeave={() => handleHoverCountry()}
           className={styles.country}
         >
-          {/* <Image
-            alt={`drapeau ${countryList[currentCountry].name}`}
-            src={countryList[currentCountry].img}
-          /> */}
-          {/* {showCountry && (
-            <div className={styles.subCountry}>
-              {countryList.map((e, index) => (
-                <div
-                  key={index}
-                  role="button"
-                  tabIndex={0}
-                  onClick={() => handleClickChangeCountry(index)}
-                  onKeyDown={() => handleClickChangeCountry(index)}
-                >
-                  <Image alt={`drapeau ${e.name}`} src={e.img} />
-                </div>
-              ))}
-            </div>
-          )} */}
         </div>
       </div>
       <div

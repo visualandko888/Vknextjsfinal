@@ -1,0 +1,78 @@
+[
+    {
+        "id": 1,
+        "titre": "Audit SEO Complet",
+        "description": "Analyse approfondie de votre site web pour identifier les opportunités d'amélioration et les problèmes techniques.",
+        "elements": [
+            "Plan d’action ON PAGE",
+            "Analyse technique",
+            "Analyse sémantique",
+            "Plan d’action OFF Page",
+            "Stratégie de Netlinking",
+            "Stratégie e-Réputation",
+            "Stratégie éditoriale",
+            "Cocon sémantique",
+            "Sélection des top mots clés",
+            "Arborescence",
+            "Sujets d’articles à rédiger",
+            "FAQ",
+            "Objectifs SEO",
+            "KPI’s SEO à suivre",
+            "Roadmap SEO"
+        ],
+        "prix": "à partir de 700€"
+    },
+    {
+        "id": 2,
+        "titre": "Formule Basique",
+        "description": "Services SEO de base pour les petites entreprises ou les débutants souhaitant améliorer leur visibilité en ligne.",
+        "elements": [
+            "Optimisation technique : Architecture site web, Méta données, Maillage interne, 1 optimisation technique",
+            "Optimisation sémantique",
+            "Création d’articles : 2",
+            "Off site : intégration aux pages jaunes",
+            "Suivi de positions mensuels",
+            "Netlinking : Offre starter",
+            "Analytics & Search console",
+            "Reporting SEO mensuel",
+            "RDV opérationnels réguliers (2 par mois)"
+        ],
+        "prix": "à partir de 250€/mois"
+    },
+    {
+        "id": 3,
+        "titre": "Formule Premium",
+        "description": "Services SEO avancés pour les entreprises de taille moyenne à grande cherchant à dominer leur marché.",
+        "elements": [
+            "Forfait Basique, plus :",
+            "2 optimisations techniques",
+            "Contenu : création d’articles (4)",
+            "Off site : intégration aux pages jaunes",
+            "RDV opérationnels réguliers (entre 3 et 4 points par mois)",
+            "Accompagnement stratégique"
+        ],
+        "prix": "à partir de 400€/mois"
+    },
+    {
+        "id": 4,
+        "titre": "Prestations Ponctuelles",
+        "description": "Services ponctuels pour répondre à des besoins spécifiques en matière de contenu et de netlinking.",
+        "elements": [
+            "Création de 4 textes ou articles de blog par mois, d’environ 1000 mots, optimisation des balises, des textes existants",
+            "Netlinking, environ 10 liens par mois avec un trustflow supérieur à 30"
+        ],
+        "prix": "à partir de 400€/mois"
+    },
+    {
+        "id": 5,
+        "titre": "Devis sur Mesure",
+        "description": "Services SEO personnalisés pour répondre aux besoins uniques de votre entreprise.",
+        "elements": [
+            "Audit personnalisé",
+            "Stratégie SEO sur mesure",
+            "Accompagnement continu",
+            "Reporting détaillé"
+        ],
+        "prix": "à partir de 400€/mois"
+    }
+]
