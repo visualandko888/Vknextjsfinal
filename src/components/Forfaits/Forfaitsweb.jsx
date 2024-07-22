@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import styles from '/styles/forfaitsweb.module.scss';
+import styles from '/styles/Forfaitsweb.module.scss';
 import Fus from '/public/images/fusee.gif';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';

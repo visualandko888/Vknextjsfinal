@@ -7,7 +7,7 @@ import Reviews from '../src/components/Home/Reviews';
 import Faq from '../src/components/Home/Faq';
 import Contact from '../src/components/Home/Contact';
 import Rea from '../src/components/Home/Rea';
-import styles from '../styles/forfaitsweb.module.scss';
+import styles from '../styles/Forfaitsweb.module.scss';
 
 
 const CreationSite = () => {
